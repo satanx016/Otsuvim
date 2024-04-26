@@ -1,5 +1,6 @@
 local map = vim.keymap.set
 local n, i, v, c, t = "n", "i", "v", "c", "t"
+local niv = { n, i, v }
 local ic = { i, c }
 local nt = { n, t }
 
@@ -36,7 +37,7 @@ map(n, "<C-q>", "<C-w>q", { desc = "Window Close" })
 -- Editor QoL
 map(c, "<C-S-v>", "<C-r>+") -- add paste in command mode
 
-map(n, "<C-s>", "<cmd>w<CR>", { desc = "File Save" })
+map(niv, "<C-s>", "<cmd>w<CR>", { desc = "File Save" })
 map(n, "<C-a>", "ggVG", { desc = "File Select whole" })
 map(n, "<C-c>", "<cmd>%y+<CR>", { desc = "File Copy whole" })
 
@@ -50,8 +51,9 @@ map(v, "J", ":m '>+1<CR>gv=gv")
 map(n, "<leader>ch", "<cmd>NvCheatsheet<CR>", { desc = "Toggle NvCheatsheet" })
 
 -- Session
+local persistence = require("persistence")
 map(n, "<leader>ol", function()
-	require("persistence").load({ last = true })
+	persistence.load({ last = true })
 end, { desc = "Load last session" })
 
 -- Format
