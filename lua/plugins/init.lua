@@ -22,6 +22,11 @@ return {
 		end,
 		config = function(_, opts)
 			require("noice").setup(opts)
+			require("notify").setup({
+				fps = 60,
+                top_down = false,
+                render = "wrapped-compact"
+			})
 		end,
 	},
 }
