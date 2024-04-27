@@ -46,9 +46,11 @@ map(niv, "<C-s>", "<cmd>w<CR>", { desc = "File Save" })
 map(n, "<C-a>", "ggVG", { desc = "File Select whole" })
 map(n, "<C-c>", "<cmd>%y+<CR>", { desc = "File Copy whole" })
 
-map(i, "<A-BS>", "<C-w>")
-map(c, "<A-BS>", "<C-w>")
+map(ic, "<A-BS>", "<C-w>")
 map(i, "<A-Del>", "<Cmd>norm! dw<CR>")
+
+map(ic, "<C-BS>", "<C-w>")
+map(i, "<C-Del>", "<Cmd>norm! dw<CR>")
 
 map(v, "K", ":m '<-2<CR>gv=gv")
 map(v, "J", ":m '>+1<CR>gv=gv")
