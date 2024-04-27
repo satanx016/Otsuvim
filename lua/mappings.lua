@@ -56,6 +56,9 @@ map(n, "<leader>ol", function()
 	persistence.load({ last = true })
 end, { desc = "Load last session" })
 
+-- Noice
+map(n, "<ESC>", "<cmd>lua require('notify').dismiss()<CR>", { desc = "Noice Dismiss Notifications" })
+
 -- Format
 map(n, "<leader>F", function()
 	require("conform").format({ lsp_fallback = true })
@@ -108,6 +111,8 @@ map(n, "<leader>ma", "<cmd>Telescope marks<CR>", { desc = "Telescope Find marks"
 
 map(n, "<leader>gc", "<cmd>Telescope git_commits<CR>", { desc = "Telescope Git commits" })
 map(n, "<leader>gt", "<cmd>Telescope git_status<CR>", { desc = "Telescope Git status" })
+
+map(n, "<leader>n", "<cmd>Telescope notify", { desc = "Telescope Notifications" })
 
 map(n, "<leader>tf", "<cmd>Telescope terms<CR>", { desc = "Telescope Pick hidden term" })
 map(n, "<leader>ot", "<cmd>Telescope themes<CR>", { desc = "Telescope Otsu themes" })
