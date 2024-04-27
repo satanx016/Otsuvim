@@ -16,7 +16,12 @@ map(ic, "<C-l>", "<Right>", { desc = "Move Right" })
 map(ic, "<C-j>", "<Down>", { desc = "Move Down" })
 map(ic, "<C-k>", "<Up>", { desc = "Move Up" })
 
-map(n, "<Esc>", "<cmd>noh<CR>", { desc = "General Clear highlights" })
+map(
+	n,
+	"<ESC>",
+	"<cmd>noh | lua require('notify').dismiss()<CR>",
+	{ desc = "General Clear screen from notifictions and highlights" }
+)
 
 -- Window management
 map(n, "<C-h>", "<C-w>h", { desc = "Switch Window left" })
@@ -55,9 +60,6 @@ local persistence = require("persistence")
 map(n, "<leader>ol", function()
 	persistence.load({ last = true })
 end, { desc = "Load last session" })
-
--- Noice
-map(n, "<ESC>", "<cmd>lua require('notify').dismiss()<CR>", { desc = "Noice Dismiss Notifications" })
 
 -- Format
 map(n, "<leader>F", function()
@@ -127,15 +129,15 @@ map(
 map(t, "<C-x>", "<C-\\><C-N>", { desc = "Terminal Escape terminal mode" })
 
 -- toggleable terminals
-map(nt, "<leader>tv", function()
+map(nt, "<A-v>", function()
 	require("otsu.term").toggle({ pos = "vsp", id = "vtoggleTerm", size = 0.3 })
 end, { desc = "Terminal Toggleable vertical term" })
 
-map(nt, "<leader>th", function()
+map(nt, "<A-s>", function()
 	require("otsu.term").toggle({ pos = "sp", id = "htoggleTerm", size = 0.3 })
 end, { desc = "Terminal New horizontal term" })
 
-map(nt, "<leader>tf", function()
+map(nt, "<A-t>", function()
 	require("otsu.term").toggle({ pos = "float", id = "floatTerm" })
 end, { desc = "Terminal Toggle Floating term" })
 
