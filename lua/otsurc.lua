@@ -2,7 +2,7 @@
 local M = {}
 
 M.ui = {
-	theme = "gruvbox",
+	theme = "tokyonight",
 	-- hl_override = {
 	-- 	Comment = { italic = true },
 	-- 	["@comment"] = { italic = true },

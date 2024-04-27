@@ -8,7 +8,7 @@ M.ui = {
 	changed_themes = {},
 	theme_toggle = { "onedark", "one_light" },
 	theme = "gruvbox", -- default theme
-	transparency = true,
+	transparency = false,
 
 	cmp = {
 		icons = true,

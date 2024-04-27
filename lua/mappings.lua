@@ -112,7 +112,7 @@ map(n, "<leader>ma", "<cmd>Telescope marks<CR>", { desc = "Telescope Find marks"
 map(n, "<leader>gc", "<cmd>Telescope git_commits<CR>", { desc = "Telescope Git commits" })
 map(n, "<leader>gt", "<cmd>Telescope git_status<CR>", { desc = "Telescope Git status" })
 
-map(n, "<leader>n", "<cmd>Telescope notify", { desc = "Telescope Notifications" })
+map(n, "<leader>n", "<cmd>Telescope notify<CR>", { desc = "Telescope Notifications" })
 
 map(n, "<leader>tf", "<cmd>Telescope terms<CR>", { desc = "Telescope Pick hidden term" })
 map(n, "<leader>ot", "<cmd>Telescope themes<CR>", { desc = "Telescope Otsu themes" })
