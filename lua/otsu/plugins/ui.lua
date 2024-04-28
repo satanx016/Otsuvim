@@ -10,7 +10,7 @@ return {
 
 	{
 		"Satanx016/otsu-ui",
-		dir = "~/Projects/otsu-ui-dev/",
+		dir = "~/projects/otsu-ui-dev/",
 
 		lazy = false,
 		config = function()
