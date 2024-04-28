@@ -16,13 +16,6 @@ map(ic, "<C-l>", "<Right>", { desc = "Move Right" })
 map(ic, "<C-j>", "<Down>", { desc = "Move Down" })
 map(ic, "<C-k>", "<Up>", { desc = "Move Up" })
 
-map(
-	n,
-	"<ESC>",
-	"<cmd>noh | lua require('notify').dismiss()<CR>",
-	{ desc = "General Clear screen from notifictions and highlights" }
-)
-
 -- Window management
 map(n, "<C-h>", "<C-w>h", { desc = "Switch Window left" })
 map(n, "<C-l>", "<C-w>l", { desc = "Switch Window right" })
@@ -126,7 +119,19 @@ map(
 )
 
 -- terminal
-map(t, "<C-x>", "<C-\\><C-N>", { desc = "Terminal Escape terminal mode" })
+map(t, "<ESC>", "<C-\\><C-N>", { desc = "Terminal Escape terminal mode" })
+
+map(n, "<ESC>", function()
+	local win = vim.api.nvim_get_current_win()
+	local bufr = vim.api.nvim_win_get_buf(win)
+
+	if vim.api.nvim_buf_get_option(bufr, "buftype") == "terminal" then
+		vim.api.nvim_win_close(win, true)
+	else
+		vim.cmd("noh")
+		require("notify").dismiss()
+	end
+end, { desc = "Terminal Close term" })
 
 -- toggleable terminals
 map(nt, "<A-v>", function()
@@ -140,11 +145,6 @@ end, { desc = "Terminal New horizontal term" })
 map(nt, "<A-t>", function()
 	require("otsu.term").toggle({ pos = "float", id = "floatTerm" })
 end, { desc = "Terminal Toggle Floating term" })
-
-map(t, "<ESC>", function()
-	local win = vim.api.nvim_get_current_win()
-	vim.api.nvim_win_close(win, true)
-end, { desc = "Terminal Close term in terminal mode" })
 
 -- whichkey
 map(n, "<leader>wk", function()
