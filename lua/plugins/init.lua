@@ -1,15 +1,13 @@
 -- Plugins are added and tested here, might be merged in otsu
 return {
 	{
-		"folke/persistence.nvim",
-		event = "BufReadPre", -- this will only start session saving when an actual file was opened
-		opts = function()
-			require("configs.persistence")
-		end,
+		"Shatur/neovim-session-manager",
+		event = "VeryLazy",
 		config = function(_, opts)
-			require("persistence").setup(opts)
+			require("session_manager").setup(opts)
 		end,
 	},
+
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
@@ -24,8 +22,9 @@ return {
 			require("noice").setup(opts)
 			require("notify").setup({
 				fps = 60,
-                top_down = false,
-                render = "wrapped-compact"
+				top_down = false,
+				render = "wrapped-compact",
+                background_colour = "#000000",
 			})
 		end,
 	},

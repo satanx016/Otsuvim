@@ -58,10 +58,7 @@ map(v, "J", ":m '>+1<CR>gv=gv")
 map(n, "<leader>ch", "<cmd>NvCheatsheet<CR>", { desc = "Toggle NvCheatsheet" })
 
 -- Session
-local persistence = require("persistence")
-map(n, "<leader>ol", function()
-	persistence.load({ last = true })
-end, { desc = "Load last session" })
+map(n, "<leader>ol", "<cmd>SessionManager load_last_session<CR>", { desc = "Load last session" })
 
 -- Format
 map(n, "<leader>F", function()
