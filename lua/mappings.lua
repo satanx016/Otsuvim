@@ -99,7 +99,8 @@ map(
 )
 
 -- nvimtree
-map(n, "<leader>ft", "<cmd>NvimTreeToggle<CR>", { desc = "Nvimtree Toggle window" })
+map(n, "<leader>tt", "<cmd>NvimTreeToggle<CR>", { desc = "Nvimtree Toggle" })
+map(n, "<leader>tf", "<cmd>NvimTreeFocus<CR>", { desc = "Nvimtree Focus" })
 
 -- telescope
 map(n, "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Telescope Find files" })
@@ -115,7 +116,7 @@ map(n, "<leader>gt", "<cmd>Telescope git_status<CR>", { desc = "Telescope Git st
 
 map(n, "<leader>n", "<cmd>Telescope notify<CR>", { desc = "Telescope Notifications" })
 
-map(n, "<leader>tf", "<cmd>Telescope terms<CR>", { desc = "Telescope Pick hidden term" })
+map(n, "<leader>ft", "<cmd>Telescope terms<CR>", { desc = "Telescope Pick hidden term" })
 map(n, "<leader>ot", "<cmd>Telescope themes<CR>", { desc = "Telescope Otsu themes" })
 map(
 	n,
