@@ -8,7 +8,7 @@ M.ui = {
 	changed_themes = {},
 	theme_toggle = { "onedark", "one_light" },
 	theme = "gruvbox", -- default theme
-	transparency = false,
+	transparency = true,
 
 	cmp = {
 		icons = true,
@@ -32,7 +32,7 @@ M.ui = {
 	tabufline = {
 		enabled = true,
 		lazyload = true,
-		order = { "treeOffset", "buffers", "tabs", "btns" },
+		order = { --[[ "treeOffset", ]] "buffers", "tabs", "btns" },
 		modules = nil,
 	},
 
@@ -77,6 +77,10 @@ M.ui = {
 			border = "single",
 		},
 	},
+
+    nvimtree = {
+        float = false,
+    }
 }
 
 M.base46 = {
