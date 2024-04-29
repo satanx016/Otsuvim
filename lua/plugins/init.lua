@@ -1,11 +1,13 @@
 -- Plugins are added and tested here, might be merged in otsu
 return {
 	{
-		"Shatur/neovim-session-manager",
-		event = "VeryLazy",
-		config = function(_, opts)
-			require("session_manager").setup(opts)
-		end,
+		"coffebar/neovim-project",
+		dependencies = {
+			{ "nvim-lua/plenary.nvim" },
+			{ "nvim-telescope/telescope.nvim", tag = "0.1.4" },
+			{ "Shatur/neovim-session-manager" },
+		},
+		opts = require("configs.neovim-projects"),
 	},
 
 	{
@@ -24,7 +26,7 @@ return {
 				fps = 60,
 				top_down = false,
 				render = "wrapped-compact",
-                background_colour = "#000000",
+				background_colour = "#000000",
 			})
 		end,
 	},

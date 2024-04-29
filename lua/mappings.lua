@@ -8,7 +8,7 @@ map(n, ";", ":", { desc = "CMD enter command mode" })
 map(i, "kj", "<ESC>")
 map(i, "jk", "<ESC>")
 
--- Input mode caret movement
+-- input mode caret movement
 map(ic, "<C-b>", "<ESC>^i", { desc = "Move Beginning of line" })
 map(ic, "<C-e>", "<End>", { desc = "Move End of line" })
 map(ic, "<C-h>", "<Left>", { desc = "Move Left" })
@@ -16,7 +16,7 @@ map(ic, "<C-l>", "<Right>", { desc = "Move Right" })
 map(ic, "<C-j>", "<Down>", { desc = "Move Down" })
 map(ic, "<C-k>", "<Up>", { desc = "Move Up" })
 
--- Window management
+-- window management
 map(n, "<C-h>", "<C-w>h", { desc = "Switch Window left" })
 map(n, "<C-l>", "<C-w>l", { desc = "Switch Window right" })
 map(n, "<C-j>", "<C-w>j", { desc = "Switch Window down" })
@@ -32,7 +32,7 @@ map(nt, "<A-k>", "<Cmd>hor res +1<CR>", { desc = "Resize Window up" })
 
 map(n, "<C-q>", "<C-w>q", { desc = "Window Close" })
 
--- Editor QoL
+-- editor qol
 map(c, "<C-S-v>", "<C-r>+") -- add paste in command mode
 
 map(niv, "<C-s>", "<cmd>w<CR>", { desc = "File Save" })
@@ -50,10 +50,12 @@ map(v, "J", ":m '>+1<CR>gv=gv")
 
 map(n, "<leader>ch", "<cmd>NvCheatsheet<CR>", { desc = "Toggle NvCheatsheet" })
 
--- Session
-map(n, "<leader>ol", "<cmd>SessionManager load_last_session<CR>", { desc = "Load last session" })
+-- sessions/projects
+map(n, "<leader>po", "<cmd>Telescope neovim-project discover<CR>", { desc = "Load last session" })
+map(n, "<leader>pr", "<cmd>Telescope neovim-project history<CR>", { desc = "Load last session" })
+map(n, "<leader>pl", "<cmd>NeovimProjectLoadRecent<CR>", { desc = "Load last session" })
 
--- Format
+-- format
 map(n, "<leader>F", function()
 	require("conform").format({ lsp_fallback = true })
 end, { desc = "Format Files" })
