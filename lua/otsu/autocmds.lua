@@ -33,11 +33,11 @@ autocmd("BufWritePost", {
 		require("plenary.reload").reload_module("base46")
 		require("plenary.reload").reload_module(module)
 
-		local config = require("nvconfig")
-
 		--nvimtree
 		require("plenary.reload").reload_module("otsu.configs.nvimtree")
 		require("nvim-tree").setup(require("otsu.configs.nvimtree"))
+
+        local config = require("nvconfig")
 
 		-- statusline
 		require("plenary.reload").reload_module("otsu.stl.utils")
