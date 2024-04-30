@@ -1,11 +1,8 @@
 local options = {
-	filters = {
-		dotfiles = false,
-	},
 	disable_netrw = true,
 	hijack_netrw = true,
 	hijack_cursor = true,
-	hijack_unnamed_buffer_when_opening = false,
+	hijack_unnamed_buffer_when_opening = true,
 	sync_root_with_cwd = true,
 	update_focused_file = {
 		enable = true,

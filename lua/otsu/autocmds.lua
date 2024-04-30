@@ -35,6 +35,10 @@ autocmd("BufWritePost", {
 
 		local config = require("nvconfig")
 
+		--nvimtree
+		require("plenary.reload").reload_module("otsu.configs.nvimtree")
+		require("nvim-tree").setup(require("otsu.configs.nvimtree"))
+
 		-- statusline
 		require("plenary.reload").reload_module("otsu.stl.utils")
 		require("plenary.reload").reload_module("otsu.stl." .. config.ui.statusline.theme)
