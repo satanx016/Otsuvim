@@ -2,6 +2,7 @@
 return {
 	{
 		"coffebar/neovim-project",
+        cmd = "NeovimProjectLoadRecent",
 		dependencies = {
 			{ "nvim-lua/plenary.nvim" },
 			{ "nvim-telescope/telescope.nvim", tag = "0.1.4" },

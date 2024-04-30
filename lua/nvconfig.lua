@@ -32,7 +32,11 @@ M.ui = {
 	tabufline = {
 		enabled = true,
 		lazyload = true,
-		order = { --[[ "treeOffset", ]] "buffers", "tabs", "btns" },
+		order = { --[[ "treeOffset", ]]
+			"buffers",
+			"tabs",
+			"btns",
+		},
 		modules = nil,
 	},
 
@@ -40,21 +44,21 @@ M.ui = {
 		load_on_startup = true,
 
 		header = {
-			" ▒█████     ▄▄▄█████▓     ██████     █    ██ ",
-			"▒██▒  ██▒   ▓  ██▒ ▓▒   ▒██    ▒     ██  ▓██▒",
-			"▒██░  ██▒   ▒ ▓██░ ▒░   ░ ▓██▄      ▓██  ▒██░",
-			"▒██   ██░   ░ ▓██▓ ░      ▒   ██▒   ▓▓█  ░██░",
-			"░ ████▓▒░     ▒██▒ ░    ▒██████▒▒   ▒▒█████▓ ",
-			"░ ▒░▒░▒░      ▒ ░░      ▒ ▒▓▒ ▒ ░   ░▒▓▒ ▒ ▒ ",
-			"  ░ ▒ ▒░        ░       ░ ░▒  ░ ░   ░░▒░ ░ ░ ",
-			"░ ░ ░ ▒       ░         ░  ░  ░      ░░░ ░ ░ ",
-			"    ░ ░                       ░        ░     ",
+			" ▒█████     ▄▄▄█████▓     ██████    ▓█    ██ ",
+			"▒██▒  ██▒   ▓  ██▒ ▓▒   ▒██▒   ▒   ▒███  ▓██▒",
+			"▒██░  ██▒   ▒ ▓██░ ▒░   ░ ▓██▄     ░▓██  ▒██░",
+			"▒██   ██░   ░ ▓██▓ ░      ▒  ▒██▒   ▓██  ░██░",
+			"░ ████▓▒░     ▒██▒ ░    ▒██████▒▒   ▒▓█████▓ ",
+			"░ ▒░▒░▒░      ▒ ░░      ▒ ▒▓▒ ▒ ░   ░▒▓▒░▒ ▒ ",
+			"  ░ ▒ ▒░        ░       ░ ░▒  ░      ░▒░ ░ ░ ",
+			"░   ░ ▒                    ░         ░░  ░   ",
+			"      ░        ░           ░          ░      ",
+			"      ░                                  x016",
 		},
 
 		buttons = {
-			{ "  Find File", "Spc f f", "Telescope find_files" },
+			{ "󰉋  Recent Project", "Spc p r", "Telescope neovim-project discover" },
 			{ "󰈚  Recent Files", "Spc f r", "Telescope oldfiles" },
-			{ "  Bookmarks", "Spc m a", "Telescope marks" },
 			{ "  Themes", "Spc o t", "Telescope themes" },
 			{ "  Mappings", "Spc c h", "Cheatsheet" },
 			{ "󰒲  Lazy", "Spc L", "Lazy" },
@@ -78,9 +82,9 @@ M.ui = {
 		},
 	},
 
-    nvimtree = {
-        float = false,
-    }
+	nvimtree = {
+		float = false,
+	},
 }
 
 M.base46 = {
