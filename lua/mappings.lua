@@ -51,7 +51,7 @@ map(v, "J", ":m '>+1<CR>gv=gv")
 map(n, "<leader>ch", "<cmd>NvCheatsheet<CR>", { desc = "Toggle NvCheatsheet" })
 
 -- sessions/projects
-map(n, "<leader>po", "<cmd>Telescope neovim-project discover<CR>", { desc = "Load last session" })
+map(n, "<leader>pf", "<cmd>Telescope neovim-project discover<CR>", { desc = "Load last session" })
 map(n, "<leader>pr", "<cmd>Telescope neovim-project history<CR>", { desc = "Load last session" })
 map(n, "<leader>pl", "<cmd>NeovimProjectLoadRecent<CR>", { desc = "Load last session" })
 
