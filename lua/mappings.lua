@@ -107,7 +107,7 @@ map(n, "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "Telescope Help pa
 map(n, "<leader>ma", "<cmd>Telescope marks<CR>", { desc = "Telescope Find marks" })
 
 map(n, "<leader>gc", "<cmd>Telescope git_commits<CR>", { desc = "Telescope Git commits" })
-map(n, "<leader>gt", "<cmd>Telescope git_status<CR>", { desc = "Telescope Git status" })
+map(n, "<leader>gs", "<cmd>Telescope git_status<CR>", { desc = "Telescope Git status" })
 
 map(n, "<leader>n", "<cmd>Telescope notify<CR>", { desc = "Telescope Notifications" })
 
