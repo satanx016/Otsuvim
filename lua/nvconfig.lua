@@ -84,7 +84,7 @@ M.ui = {
 	},
 
 	nvimtree = {
-		float = true,
+		float = false,
 	},
 }
 
