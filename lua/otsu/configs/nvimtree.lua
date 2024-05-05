@@ -15,6 +15,9 @@ local options = {
 			resize_window = true,
 		},
 	},
+    modified = {
+        enable = true,
+    },
 	diagnostics = {
 		enable = true,
 	},
@@ -67,10 +70,9 @@ if config.float then
 	}
 else
 	options.view = {
-		adaptive_size = false,
-		side = "left",
+		adaptive_size = true,
+        preserve_window_proportions = false,
 		width = 30,
-		preserve_window_proportions = true,
 	}
 end
 
