@@ -81,6 +81,14 @@ map(n, "<leader>bq", function()
 	require("otsu.tabufline").close_buffer()
 end, { desc = "Buffer Close" })
 
+map(n, "<leader>boq", function()
+	require("otsu.tabufline").closeOtherBufs()
+end, { desc = "Buffer Close Others" })
+
+map(n, "<leader>baq", function()
+	require("otsu.tabufline").closeAllBufs()
+end, { desc = "Buffer Close All" })
+
 -- Comment
 map(n, "<leader>/", function()
 	require("Comment.api").toggle.linewise.current()
