@@ -1,16 +1,11 @@
 local options = {
 	disable_netrw = true,
-	hijack_netrw = true,
 	hijack_cursor = true,
 	hijack_unnamed_buffer_when_opening = true,
 	sync_root_with_cwd = true,
 	update_focused_file = {
 		enable = true,
 		update_root = true,
-	},
-	git = {
-		enable = true,
-		ignore = true,
 	},
 	filesystem_watchers = {
 		enable = true,
@@ -26,48 +21,14 @@ local options = {
 	renderer = {
 		root_folder_label = false,
 		highlight_git = true,
-		highlight_opened_files = "none",
 
 		indent_markers = {
 			enable = true,
 		},
-
-		icons = {
-			show = {
-				file = true,
-				folder = true,
-				folder_arrow = true,
-				git = true,
-			},
-
-			glyphs = {
-				default = "󰈚",
-				symlink = "",
-				folder = {
-					default = "",
-					empty = "",
-					empty_open = "",
-					open = "",
-					symlink = "",
-					symlink_open = "",
-					arrow_open = "",
-					arrow_closed = "",
-				},
-				git = {
-					unstaged = "✗",
-					staged = "✓",
-					unmerged = "",
-					renamed = "➜",
-					untracked = "★",
-					deleted = "",
-					ignored = "◌",
-				},
-			},
-		},
 	},
 }
 
-local function on_attach(bufnr)
+options.on_attach = function(bufnr)
 	local api = require("nvim-tree.api")
 	local function opts(desc)
 		return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
@@ -77,15 +38,12 @@ local function on_attach(bufnr)
 	vim.keymap.set("n", "<C-[>", api.tree.change_root_to_parent, opts("CD"))
 end
 
-options.on_attach = on_attach
-
 local config = require("nvconfig").ui.nvimtree
 
 if config.float then
 	local HEIGHT_RATIO = 0.8
 	local WIDTH_RATIO = 0.2
 	options.view = {
-
 		float = {
 			enable = true,
 			open_win_config = function()
