@@ -5,7 +5,9 @@ local options = {
 	sync_root_with_cwd = true,
 	update_focused_file = {
 		enable = true,
-		update_root = true,
+		update_root = {
+            enable = true,
+        },
 	},
 	filesystem_watchers = {
 		enable = true,
@@ -70,7 +72,7 @@ if config.float then
 	}
 else
 	options.view = {
-		adaptive_size = true,
+		adaptive_size = false,
         preserve_window_proportions = false,
 		width = 30,
 	}
