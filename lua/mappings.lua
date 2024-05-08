@@ -30,12 +30,12 @@ map(nt, "<A-l>", "<Cmd>vert res +1<CR>", { desc = "Resize Window right" })
 map(nt, "<A-j>", "<Cmd>hor res -1<CR>", { desc = "Resize Window down" })
 map(nt, "<A-k>", "<Cmd>hor res +1<CR>", { desc = "Resize Window up" })
 
-map(n, "<C-q>", "<C-w>q", { desc = "Window Close" })
+map(niv, "<C-q>", "<C-w>q", { desc = "Window Close" })
 
 -- editor qol
 map(c, "<C-S-v>", "<C-r>+") -- add paste in command mode
 
-map(niv, "<C-s>", "<cmd>w<CR>", { desc = "File Save" })
+map(n, "<C-s>", "<cmd>w<CR>", { desc = "File Save" })
 map(n, "<C-a>", "ggVG", { desc = "File Select whole" })
 map(n, "<C-c>", "<cmd>%y+<CR>", { desc = "File Copy whole" })
 
