@@ -24,7 +24,7 @@ M.on_attach = function(client, bufnr)
 
   map("n", "<leader>ra", function()
     require "otsu.lsp.renamer"()
-  end, opts "Lsp NvRenamer")
+  end, opts "Lsp Rename symbol")
 
   map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts "Lsp Code action")
   map("n", "gr", vim.lsp.buf.references, opts "Lsp Show references")

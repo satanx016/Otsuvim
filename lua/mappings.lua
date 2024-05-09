@@ -50,10 +50,15 @@ map(v, "J", ":m '>+1<CR>gv=gv")
 
 map(n, "<leader>ch", "<cmd>NvCheatsheet<CR>", { desc = "Toggle NvCheatsheet" })
 
+-- git integration
+map(n, "<leader>gc", "<cmd>Telescope git_commits<CR>", { desc = "Telescope Git commits" })
+map(n, "<leader>gc", "<cmd>Telescope git_bcommits<CR>", { desc = "Telescope Git current buffer commits" })
+map(n, "<leader>gs", "<cmd>Telescope git_status<CR>", { desc = "Telescope Git status" })
+
 -- sessions/projects
-map(n, "<leader>pf", "<cmd>Telescope neovim-project discover<CR>", { desc = "Load last session" })
-map(n, "<leader>pr", "<cmd>Telescope neovim-project history<CR>", { desc = "Load last session" })
-map(n, "<leader>pl", "<cmd>NeovimProjectLoadRecent<CR>", { desc = "Load last session" })
+map(n, "<leader>pf", "<cmd>Telescope neovim-project discover<CR>", { desc = "Project list all" })
+map(n, "<leader>pr", "<cmd>Telescope neovim-project history<CR>", { desc = "Project list recent" })
+map(n, "<leader>pl", "<cmd>NeovimProjectLoadRecent<CR>", { desc = "Project load last session" })
 
 -- format
 map(n, "<leader>F", function()
@@ -92,43 +97,40 @@ end, { desc = "Buffer Close All" })
 -- Comment
 map(n, "<leader>/", function()
 	require("Comment.api").toggle.linewise.current()
-end, { desc = "Comment Toggle" })
+end, { desc = "Comment toggle" })
 
 map(
 	v,
 	"<leader>/",
 	"<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
-	{ desc = "Comment Toggle" }
+	{ desc = "Comment toggle" }
 )
 
 -- nvimtree
 map(n, "<leader>tt", "<cmd>NvimTreeToggle<CR>", { desc = "Nvimtree Toggle" })
 map(n, "<leader>tf", "<cmd>NvimTreeFocus<CR>", { desc = "Nvimtree Focus" })
 
--- telescope
+-- fuzzy finders
+map(
+    n,
+    "<leader>fa",
+    "<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>",
+    { desc = "Telescope Find all files" }
+)
 map(n, "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Telescope Find files" })
 map(n, "<leader>fr", "<cmd>Telescope oldfiles<CR>", { desc = "Telescope Find oldfiles" })
-map(n, "<leader>fg", "<cmd>Telescope live_grep<CR>", { desc = "Telescope Live grep" })
 map(n, "<leader>fw", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "Telescope Find in current buffer" })
+map(n, "<leader>fg", "<cmd>Telescope live_grep<CR>", { desc = "Telescope Live grep" })
 map(n, "<leader>fo", "<cmd>Telescope buffers<CR>", { desc = "Telescope Find buffers" })
-map(n, "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "Telescope Help page" })
-map(n, "<leader>ma", "<cmd>Telescope marks<CR>", { desc = "Telescope Find marks" })
 
-map(n, "<leader>gc", "<cmd>Telescope git_commits<CR>", { desc = "Telescope Git commits" })
-map(n, "<leader>gs", "<cmd>Telescope git_status<CR>", { desc = "Telescope Git status" })
+map(n, "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "Telescope Help page" })
 
 map(n, "<leader>n", "<cmd>Telescope notify<CR>", { desc = "Telescope Notifications" })
-
-map(n, "<leader>ft", "<cmd>Telescope terms<CR>", { desc = "Telescope Pick hidden term" })
 map(n, "<leader>ot", "<cmd>Telescope themes<CR>", { desc = "Telescope Otsu themes" })
-map(
-	n,
-	"<leader>fa",
-	"<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>",
-	{ desc = "Telescope Find all files" }
-)
 
 -- terminal
+map(n, "<leader>ft", "<cmd>Telescope terms<CR>", { desc = "Telescope Pick hidden term" })
+
 map(t, "<ESC>", "<C-\\><C-N>", { desc = "Terminal Escape terminal mode" })
 
 map(n, "<ESC>", function()
@@ -150,11 +152,11 @@ end, { desc = "Terminal Toggleable vertical term" })
 
 map(nt, "<A-s>", function()
 	require("otsu.term").toggle({ pos = "sp", id = "htoggleTerm", size = 0.3 })
-end, { desc = "Terminal New horizontal term" })
+end, { desc = "Terminal Toggleable horizontal term" })
 
 map(nt, "<A-t>", function()
 	require("otsu.term").toggle({ pos = "float", id = "floatTerm" })
-end, { desc = "Terminal Toggle Floating term" })
+end, { desc = "Terminal Toggle floating term" })
 
 -- whichkey
 map(n, "<leader>wk", function()
