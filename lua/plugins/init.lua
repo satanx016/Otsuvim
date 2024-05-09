@@ -1,8 +1,9 @@
 -- Plugins are added and tested here, might be merged in otsu
+
 return {
 	{
 		"coffebar/neovim-project",
-        cmd = "NeovimProjectLoadRecent",
+		cmd = "NeovimProjectLoadRecent",
 		dependencies = {
 			{ "nvim-lua/plenary.nvim" },
 			{ "nvim-telescope/telescope.nvim", tag = "0.1.4" },
@@ -28,6 +29,20 @@ return {
 				top_down = false,
 				render = "wrapped-compact",
 				background_colour = "#000000",
+			})
+		end,
+	},
+
+	-- Open Neovim help in vertical split if there is enough space
+	{
+		"anuvyklack/help-vsplit.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("help-vsplit").setup({
+				always = true,
+				side = "right",
+				buftype = { "help" },
+				filetype = { "man" },
 			})
 		end,
 	},
