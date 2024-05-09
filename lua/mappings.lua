@@ -36,8 +36,8 @@ map(niv, "<C-q>", "<C-w>q", { desc = "Window Close" })
 map(c, "<C-S-v>", "<C-r>+") -- add paste in command mode
 
 map(n, "<C-s>", "<cmd>w<CR>", { desc = "File Save" })
-map(n, "<C-a>", "ggVG", { desc = "File Select whole" })
-map(n, "<C-c>", "<cmd>%y+<CR>", { desc = "File Copy whole" })
+map(n, "<C-a>", "ggVG", { desc = "File Select all" })
+map(n, "<C-c>", "<cmd>%y+<CR>", { desc = "File Copy all" })
 
 map(ic, "<A-BS>", "<C-w>")
 map(i, "<A-Del>", "<Cmd>norm! dw<CR>")
@@ -56,9 +56,9 @@ map(n, "<leader>gc", "<cmd>Telescope git_bcommits<CR>", { desc = "Telescope Git 
 map(n, "<leader>gs", "<cmd>Telescope git_status<CR>", { desc = "Telescope Git status" })
 
 -- sessions/projects
-map(n, "<leader>pf", "<cmd>Telescope neovim-project discover<CR>", { desc = "Project list all" })
-map(n, "<leader>pr", "<cmd>Telescope neovim-project history<CR>", { desc = "Project list recent" })
-map(n, "<leader>pl", "<cmd>NeovimProjectLoadRecent<CR>", { desc = "Project load last session" })
+map(n, "<leader>pf", "<cmd>Telescope neovim-project discover<CR>", { desc = "Project List all" })
+map(n, "<leader>pr", "<cmd>Telescope neovim-project history<CR>", { desc = "Project List recent" })
+map(n, "<leader>pl", "<cmd>NeovimProjectLoadRecent<CR>", { desc = "Project Load last session" })
 
 -- format
 map(n, "<leader>F", function()
@@ -91,7 +91,8 @@ map(n, "<leader>boq", function()
 end, { desc = "Buffer Close Others" })
 
 map(n, "<leader>baq", function()
-	require("otsu.tabufline").closeAllBufs()
+    vim.cmd("Nvdash")
+	require("otsu.tabufline").closeOtherBufs()
 end, { desc = "Buffer Close All" })
 
 -- Comment
@@ -112,10 +113,10 @@ map(n, "<leader>tf", "<cmd>NvimTreeFocus<CR>", { desc = "Nvimtree Focus" })
 
 -- fuzzy finders
 map(
-    n,
-    "<leader>fa",
-    "<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>",
-    { desc = "Telescope Find all files" }
+	n,
+	"<leader>fa",
+	"<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>",
+	{ desc = "Telescope Find all files" }
 )
 map(n, "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Telescope Find files" })
 map(n, "<leader>fr", "<cmd>Telescope oldfiles<CR>", { desc = "Telescope Find oldfiles" })
@@ -123,6 +124,7 @@ map(n, "<leader>fw", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "T
 map(n, "<leader>fg", "<cmd>Telescope live_grep<CR>", { desc = "Telescope Live grep" })
 map(n, "<leader>fo", "<cmd>Telescope buffers<CR>", { desc = "Telescope Find buffers" })
 
+map(n, "<leader>fb", "<cmd>Telescope builtin<CR>", { desc = "Telescope Help page" })
 map(n, "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "Telescope Help page" })
 
 map(n, "<leader>n", "<cmd>Telescope notify<CR>", { desc = "Telescope Notifications" })
