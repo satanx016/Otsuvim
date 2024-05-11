@@ -125,14 +125,14 @@ map(n, "<leader>fw", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "T
 map(n, "<leader>fg", "<cmd>Telescope live_grep<CR>", { desc = "Telescope Live grep" })
 map(n, "<leader>fo", "<cmd>Telescope buffers<CR>", { desc = "Telescope Find buffers" })
 
-map(n, "<leader>fb", "<cmd>Telescope builtin<CR>", { desc = "Telescope Help page" })
+map(n, "<leader>fb", "<cmd>Telescope builtin<CR>", { desc = "Telescope List commands" })
 map(n, "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "Telescope Help page" })
 
-map(n, "<leader>n", "<cmd>Telescope notify<CR>", { desc = "Telescope Notifications" })
-map(n, "<leader>ot", "<cmd>Telescope themes<CR>", { desc = "Telescope Otsu themes" })
+map(n, "<leader>n", "<cmd>Telescope notify<CR>", { desc = "Notifications Show recent" })
+map(n, "<leader>ot", "<cmd>Telescope themes<CR>", { desc = "Otsu Select theme" })
 
 -- terminal
-map(n, "<leader>ft", "<cmd>Telescope terms<CR>", { desc = "Telescope Pick hidden term" })
+map(n, "<leader>ft", "<cmd>Telescope terms<CR>", { desc = "Terminal Pick hidden term" })
 
 map(t, "<ESC>", "<C-\\><C-N>", { desc = "Terminal Escape terminal mode" })
 
@@ -164,7 +164,7 @@ end, { desc = "Terminal Toggle floating term" })
 -- whichkey
 map(n, "<leader>wk", function()
 	vim.cmd("WhichKey " .. vim.fn.input("WhichKey: "))
-end, { desc = "Whichkey query lookup" })
+end, { desc = "Whichkey Query lookup" })
 
 -- Colorizer
 map(n, "<leader>h", "<Cmd>ColorizerToggle<CR>", { desc = "Highlight colors" })
