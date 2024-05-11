@@ -36,6 +36,7 @@ map(niv, "<C-q>", "<C-w>q", { desc = "Window Close" })
 map(c, "<C-S-v>", "<C-r>+") -- add paste in command mode
 
 map(n, "<C-s>", "<cmd>w<CR>", { desc = "File Save" })
+map(n, "<C-S-s>", "<cmd>w !sudo tee %<CR>", { desc = "File Sudo Save" }) -- Use this wisely
 map(n, "<C-a>", "ggVG", { desc = "File Select all" })
 map(n, "<C-c>", "<cmd>%y+<CR>", { desc = "File Copy all" })
 
