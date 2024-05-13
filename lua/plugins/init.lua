@@ -51,5 +51,15 @@ return {
 	{
 		"sindrets/diffview.nvim",
 		cmd = { "DiffviewOpen" },
+		config = true,
 	},
+
+    -- rich presence
+    {
+        'IogaMaster/neocord',
+        event = "VeryLazy",
+        config = function()
+            require("configs.neocord")
+        end,
+    },
 }
