@@ -46,4 +46,10 @@ return {
 			})
 		end,
 	},
+
+	-- Diff and merging tool for git
+	{
+		"sindrets/diffview.nvim",
+		cmd = { "DiffviewOpen" },
+	},
 }

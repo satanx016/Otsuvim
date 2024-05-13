@@ -33,6 +33,7 @@ return {
 	-- git stuff
 	{
 		"lewis6991/gitsigns.nvim",
+        -- enabled = false,
 		event = "User FilePost",
 		opts = function()
 			return require("otsu.configs.gitsigns")

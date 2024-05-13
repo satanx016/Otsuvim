@@ -52,9 +52,21 @@ map(v, "J", ":m '>+1<CR>gv=gv")
 map(n, "<leader>ch", "<cmd>NvCheatsheet<CR>", { desc = "Toggle NvCheatsheet" })
 
 -- git integration
-map(n, "<leader>gc", "<cmd>Telescope git_commits<CR>", { desc = "Telescope Git commits" })
-map(n, "<leader>gc", "<cmd>Telescope git_bcommits<CR>", { desc = "Telescope Git current buffer commits" })
-map(n, "<leader>gs", "<cmd>Telescope git_status<CR>", { desc = "Telescope Git status" })
+map(n, "<leader>fc", "<cmd>Telescope git_commits<CR>", { desc = "Git Commits" })
+map(n, "<leader>fC", "<cmd>Telescope git_bcommits<CR>", { desc = "Git Current buffer commits" })
+map(n, "<leader>gg", "<cmd>Telescope git_status<CR>", { desc = "Git Status" })
+
+map(n, "<leader>gp", "<cmd>Gitsigns preview_hunk<CR>", {desc = "Git Preview hunk"})
+map(n, "<leader>gs", "<cmd>Gitsigns stage_hunk<CR>", {desc = "Git Stage hunk"})
+map(n, "<leader>gu", "<cmd>Gitsigns undo_stage_hunk<CR>", {desc = "Git Undo stage hunk"})
+map(n, "<leader>gr", "<cmd>Gitsigns reset_hunk<CR>", {desc = "Git Reset hunk"})
+map(n, "<leader>gS", "<cmd>Gitsigns stage_buffer<CR>", {desc = "Git Stage buffer"})
+map(n, "<leader>gR", "<cmd>Gitsigns reset_buffer<CR>", {desc = "Git Reset buffer"})
+map(n, "<leader>gb", "<cmd>Gitsigns blame_line<CR>", {desc = "Git Blame line"})
+map(n, "<leader>gd", "<cmd>Gitsigns toggle_deleted<CR>", {desc = "Git Toggle deleted"})
+map(n, "<leader>gB", "<cmd>Gitsigns toggle_current_line_blame<CR>", {desc = "Git Toggle line blame"})
+
+map(n, "<leader>gD", "<cmd>DiffviewOpen<CR>", {desc = "Git Diffview open"})
 
 -- sessions/projects
 map(n, "<leader>pf", "<cmd>Telescope neovim-project discover<CR>", { desc = "Project List all" })
