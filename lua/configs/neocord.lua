@@ -15,7 +15,7 @@ local options = {
 	debounce_timeout = 10,
 	show_time = true,
 	global_timer = true,
-	enable_line_number = 1,
+	-- enable_line_number = 1,
 }
 
 require("neocord").setup(options)
