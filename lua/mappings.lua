@@ -4,9 +4,34 @@ local niv = { n, i, v }
 local ic = { i, c }
 local nt = { n, t }
 
+-- Otsu
+map(n, "<leader>oc", "<cmd>NvCheatsheet<CR>", { desc = "Otsu CheatSheet" })
+map(n, "<leader>ot", "<cmd>Telescope themes<CR>", { desc = "Otsu Select theme" })
+map(n, "<leader>om", function()
+    vim.cmd("only | cd | Nvdash")
+	require("otsu.tabufline").closeOtherBufs()
+end, { desc = "Otsu Menu" })
+
+-- extra motions
 map(n, ";", ":", { desc = "CMD enter command mode" })
 map(i, "kj", "<ESC>")
 map(i, "jk", "<ESC>")
+
+map(c, "<C-S-v>", "<C-r>+") -- add paste in command mode
+
+map(niv, "<C-s>", "<cmd>w<CR>", { desc = "File Save" })
+map(niv, "<C-S-s>", "<cmd>w !sudo tee %<CR>", { desc = "File Sudo Save" }) -- Use this wisely
+map(n, "<C-a>", "ggVG", { desc = "File Select all" })
+map(n, "<C-c>", "<cmd>%y+<CR>", { desc = "File Copy all" })
+
+map(ic, "<A-BS>", "<C-w>")
+map(i, "<A-Del>", "<Cmd>norm! dw<CR>")
+
+map(ic, "<C-BS>", "<C-w>")
+map(i, "<C-Del>", "<Cmd>norm! dw<CR>")
+
+map(v, "K", ":m '<-2<CR>gv=gv")
+map(v, "J", ":m '>+1<CR>gv=gv")
 
 -- input mode caret movement
 map(ic, "<C-b>", "<ESC>^i", { desc = "Move Beginning of line" })
@@ -29,27 +54,7 @@ map(nt, "<A-h>", "<Cmd>vert res -1<CR>", { desc = "Resize Window up" })
 map(nt, "<A-l>", "<Cmd>vert res +1<CR>", { desc = "Resize Window right" })
 map(nt, "<A-j>", "<Cmd>hor res -1<CR>", { desc = "Resize Window down" })
 map(nt, "<A-k>", "<Cmd>hor res +1<CR>", { desc = "Resize Window up" })
-
 map(niv, "<C-q>", "<C-w>q", { desc = "Window Close" })
-
--- editor qol
-map(c, "<C-S-v>", "<C-r>+") -- add paste in command mode
-
-map(n, "<C-s>", "<cmd>w<CR>", { desc = "File Save" })
-map(n, "<C-S-s>", "<cmd>w !sudo tee %<CR>", { desc = "File Sudo Save" }) -- Use this wisely
-map(n, "<C-a>", "ggVG", { desc = "File Select all" })
-map(n, "<C-c>", "<cmd>%y+<CR>", { desc = "File Copy all" })
-
-map(ic, "<A-BS>", "<C-w>")
-map(i, "<A-Del>", "<Cmd>norm! dw<CR>")
-
-map(ic, "<C-BS>", "<C-w>")
-map(i, "<C-Del>", "<Cmd>norm! dw<CR>")
-
-map(v, "K", ":m '<-2<CR>gv=gv")
-map(v, "J", ":m '>+1<CR>gv=gv")
-
-map(n, "<leader>ch", "<cmd>NvCheatsheet<CR>", { desc = "Toggle NvCheatsheet" })
 
 -- git integration
 map(n, "<leader>fc", "<cmd>Telescope git_commits<CR>", { desc = "Git Commits" })
@@ -104,6 +109,7 @@ map(n, "<leader>boq", function()
 end, { desc = "Buffer Close Others" })
 
 map(n, "<leader>baq", function()
+    vim.cmd("only")
 	vim.cmd("Nvdash")
 	require("otsu.tabufline").closeOtherBufs()
 end, { desc = "Buffer Close All" })
@@ -141,7 +147,6 @@ map(n, "<leader>fb", "<cmd>Telescope builtin<CR>", { desc = "Telescope List comm
 map(n, "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "Telescope Help page" })
 
 map(n, "<leader>n", "<cmd>Telescope notify<CR>", { desc = "Notifications Show recent" })
-map(n, "<leader>ot", "<cmd>Telescope themes<CR>", { desc = "Otsu Select theme" })
 
 -- terminal
 map(n, "<leader>ft", "<cmd>Telescope terms<CR>", { desc = "Terminal Pick hidden term" })
@@ -162,21 +167,16 @@ end, { desc = "Terminal Close term" })
 
 -- toggleable terminals
 map(nt, "<A-v>", function()
-	require("otsu.term").toggle({ pos = "vsp", id = "vtoggleTerm"})
+	require("otsu.term").toggle({ pos = "vsp", id = "vtoggleTerm" })
 end, { desc = "Terminal Toggleable vertical term" })
 
 map(nt, "<A-s>", function()
-	require("otsu.term").toggle({ pos = "sp", id = "htoggleTerm"})
+	require("otsu.term").toggle({ pos = "sp", id = "htoggleTerm" })
 end, { desc = "Terminal Toggleable horizontal term" })
 
 map(nt, "<A-t>", function()
-	require("otsu.term").toggle({ pos = "float", id = "floatTerm"})
+	require("otsu.term").toggle({ pos = "float", id = "floatTerm" })
 end, { desc = "Terminal Toggle floating term" })
-
--- whichkey
-map(n, "<leader>wk", function()
-	vim.cmd("WhichKey " .. vim.fn.input("WhichKey: "))
-end, { desc = "Whichkey Query lookup" })
 
 -- Colorizer
 map(n, "<leader>h", "<Cmd>ColorizerToggle<CR>", { desc = "Highlight colors" })
