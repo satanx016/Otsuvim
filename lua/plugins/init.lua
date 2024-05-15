@@ -49,17 +49,24 @@ return {
 
 	-- Diff and merging tool for git
 	{
-		"sindrets/diffview.nvim",
-		cmd = { "DiffviewOpen" },
-		config = true,
+		"NeogitOrg/neogit",
+		cmd = { "Neogit" },
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"sindrets/diffview.nvim",
+			"nvim-telescope/telescope.nvim",
+		},
+		config = function()
+			require("neogit").setup()
+		end,
 	},
 
-    -- rich presence
-    {
-        'IogaMaster/neocord',
-        event = "VeryLazy",
-        config = function()
-            require("configs.neocord")
-        end,
-    },
+	-- rich presence
+	{
+		"IogaMaster/neocord",
+		event = "VeryLazy",
+		config = function()
+			require("configs.neocord")
+		end,
+	},
 }

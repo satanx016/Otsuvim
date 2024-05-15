@@ -57,10 +57,10 @@ map(nt, "<A-k>", "<Cmd>hor res +1<CR>", { desc = "Resize Window up" })
 map(niv, "<C-q>", "<C-w>q", { desc = "Window Close" })
 
 -- git integration
+    -- Telescope
 map(n, "<leader>fc", "<cmd>Telescope git_commits<CR>", { desc = "Git Commits" })
 map(n, "<leader>fC", "<cmd>Telescope git_bcommits<CR>", { desc = "Git Current buffer commits" })
-map(n, "<leader>gg", "<cmd>Telescope git_status<CR>", { desc = "Git Status" })
-
+    -- Gitsigns
 map(n, "<leader>gp", "<cmd>Gitsigns preview_hunk<CR>", { desc = "Git Preview hunk" })
 map(n, "<leader>gs", "<cmd>Gitsigns stage_hunk<CR>", { desc = "Git Stage hunk" })
 map(n, "<leader>gu", "<cmd>Gitsigns undo_stage_hunk<CR>", { desc = "Git Undo stage hunk" })
@@ -70,8 +70,11 @@ map(n, "<leader>gR", "<cmd>Gitsigns reset_buffer<CR>", { desc = "Git Reset buffe
 map(n, "<leader>gb", "<cmd>Gitsigns blame_line<CR>", { desc = "Git Blame line" })
 map(n, "<leader>gd", "<cmd>Gitsigns toggle_deleted<CR>", { desc = "Git Toggle deleted" })
 map(n, "<leader>gB", "<cmd>Gitsigns toggle_current_line_blame<CR>", { desc = "Git Toggle line blame" })
-
-map(n, "<leader>gD", "<cmd>DiffviewOpen<CR>", { desc = "Git Diffview open" })
+    -- Neogit & Diffview
+map(n, "<leader>gg", "<cmd>Neogit<CR>", { desc = "Git Interface" })
+map(n, "<leader>gD", function ()
+    require("neogit.integrations.diffview").open()
+end, { desc = "Git Toggle line blame" })
 
 -- sessions/projects
 map(n, "<leader>pf", "<cmd>Telescope neovim-project discover<CR>", { desc = "Project List all" })
@@ -130,7 +133,7 @@ map(
 map(n, "<leader>tt", "<cmd>NvimTreeToggle<CR>", { desc = "Nvimtree Toggle" })
 map(n, "<leader>tf", "<cmd>NvimTreeFocus<CR>", { desc = "Nvimtree Focus" })
 
--- fuzzy finders
+-- Telescope Supermacy
 map(
 	n,
 	"<leader>fa",
