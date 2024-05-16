@@ -1,5 +1,14 @@
 local autocmd = vim.api.nvim_create_autocmd
 
+-- folding settings for neorg buffers
+autocmd("FileType", {
+	pattern = "norg",
+	callback = function()
+		vim.opt.foldmethod = "marker"
+		vim.wo.foldlevel = 99 -- Disable automatic folding
+	end,
+})
+
 -- dont list quickfix buffers
 autocmd("FileType", {
 	pattern = "qf",
@@ -37,7 +46,7 @@ autocmd("BufWritePost", {
 		require("plenary.reload").reload_module("otsu.configs.nvimtree")
 		require("nvim-tree").setup(require("otsu.configs.nvimtree"))
 
-        local config = require("nvconfig")
+		local config = require("nvconfig")
 
 		-- statusline
 		require("plenary.reload").reload_module("otsu.stl.utils")
