@@ -182,3 +182,6 @@ end, { desc = "Git Toggle line blame" })
 map(n, "<leader>pf", "<cmd>Telescope neovim-project discover<CR>", { desc = "Project List all" })
 map(n, "<leader>pr", "<cmd>Telescope neovim-project history<CR>", { desc = "Project List recent" })
 map(n, "<leader>pl", "<cmd>NeovimProjectLoadRecent<CR>", { desc = "Project Load last session" })
+
+-- browsing
+map(n, "gx", [[:execute '!xdg-open ' . shellescape(expand('<cfile>'), 1)<CR>]], { silent = true , desc = "Browser open link"})
