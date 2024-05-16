@@ -69,4 +69,23 @@ return {
 			require("configs.neocord")
 		end,
 	},
+
+	-- Neorg
+	{
+		"vhyrro/luarocks.nvim",
+		priority = 1000,
+		config = true,
+	},
+	{
+		"nvim-neorg/neorg",
+		dependencies = { "luarocks.nvim", "nvim-treesitter" },
+		event = "VeryLazy",
+		version = "*", -- Pin Neorg to the latest stable release
+		opts = function()
+			require("configs.neorg")
+		end,
+		config = function(_, opts)
+			require("neorg").setup(opts)
+		end,
+	},
 }
