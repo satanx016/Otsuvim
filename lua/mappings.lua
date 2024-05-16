@@ -5,31 +5,31 @@ local ic = { i, c }
 local nt = { n, t }
 
 -- motions
-    -- essential
+-- essential
 map(n, ";", ":", { desc = "CMD enter command mode" })
 map(i, "kj", "<ESC>")
 map(i, "jk", "<ESC>")
 map(v, "K", ":m '<-2<CR>gv=gv")
 map(v, "J", ":m '>+1<CR>gv=gv")
-    -- qol
+-- qol
 map(niv, "<C-S-s>", "<cmd>w !sudo tee %<CR>", { desc = "File Sudo Save" }) -- Use this wisely
 map(niv, "<C-s>", "<cmd>w<CR>", { desc = "File Save" })
 map(n, "<C-c>", "<cmd>%y+<CR>", { desc = "File Copy all" })
 map(n, "<C-a>", "ggVG", { desc = "File Select all" })
-    -- fixes
+-- fixes
 map(i, "<C-Del>", "<Cmd>norm! dw<CR>")
 map(i, "<A-Del>", "<Cmd>norm! dw<CR>")
 map(ic, "<C-BS>", "<C-w>")
 map(ic, "<A-BS>", "<C-w>")
 map(c, "<C-S-v>", "<C-r>+") -- add Ctrl+Shift+V paste in command-line mode
-    -- caret movement
+-- caret movement
 map(ic, "<C-b>", "<ESC>^i", { desc = "Caret Goto beginning of line" })
 map(ic, "<C-e>", "<End>", { desc = "Caret Goto end of line" })
 map(ic, "<C-h>", "<Left>", { desc = "Caret Goto left" })
 map(ic, "<C-l>", "<Right>", { desc = "Caret Goto right" })
 map(ic, "<C-j>", "<Down>", { desc = "Caret Goto down" })
 map(ic, "<C-k>", "<Up>", { desc = "Caret Goto up" })
-    -- window management
+-- window management
 map(n, "<C-h>", "<C-w>h", { desc = "Window Switch with left" })
 map(n, "<C-l>", "<C-w>l", { desc = "Window Switch with right" })
 map(n, "<C-j>", "<C-w>j", { desc = "Window Switch with bottom" })
@@ -184,4 +184,11 @@ map(n, "<leader>pr", "<cmd>Telescope neovim-project history<CR>", { desc = "Proj
 map(n, "<leader>pl", "<cmd>NeovimProjectLoadRecent<CR>", { desc = "Project Load last session" })
 
 -- browsing
-map(n, "gx", [[:execute '!xdg-open ' . shellescape(expand('<cfile>'), 1)<CR>]], { silent = true , desc = "Browser open link"})
+map(
+	n,
+	"gx",
+	[[:execute '!xdg-open ' . shellescape(expand('<cfile>'), 1)<CR>]],
+	{ silent = true, desc = "Browser open link" }
+)
+map(n, "<leader>ni", "<cmd>Neorg index<CR>", { desc = "Project List all" })
+map(n, "<leader>nc", "<cmd>Neorg toggle-concealer<CR>", { desc = "Project List all" })
