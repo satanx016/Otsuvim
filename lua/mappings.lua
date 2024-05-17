@@ -109,9 +109,9 @@ map(t, "<ESC>", "<C-\\><C-N>", { desc = "Terminal Escape terminal mode" })
 
 map(n, "<ESC>", function()
 	local win = vim.api.nvim_get_current_win()
-	local bufr = vim.api.nvim_win_get_buf(win)
+	local buf = vim.api.nvim_get_current_buf()
 
-	if vim.api.nvim_buf_get_option(bufr, "buftype") == "terminal" then
+	if vim.api.nvim_get_option_value("buftype", { buf = buf }) == "terminal" then
 		vim.api.nvim_win_close(win, true)
 	else
 		vim.cmd("noh")
@@ -184,12 +184,7 @@ map(n, "<leader>pr", "<cmd>Telescope neovim-project history<CR>", { desc = "Proj
 map(n, "<leader>pl", "<cmd>NeovimProjectLoadRecent<CR>", { desc = "Project Load last session" })
 
 -- browsing
-map(
-	n,
-	"gx",
-	[[:execute '!xdg-open ' . shellescape(expand('<cfile>'), 1)<CR>]],
-	{ silent = true, desc = "Xdg Open" }
-)
+map(n, "gx", [[:execute '!xdg-open ' . shellescape(expand('<cfile>'), 1)<CR>]], { silent = true, desc = "Xdg Open" })
 map(n, "<leader>ni", "<cmd>vsplit | Neorg index<CR>", { desc = "Neorg List all" })
 map(n, "<leader>nc", "<cmd>Neorg toggle-concealer<CR>", { desc = "Neog Toggle concealer" })
 map(n, "<leader>nq", "<cmd>Neorg return<CR>", { desc = "Neorg Quit" })
