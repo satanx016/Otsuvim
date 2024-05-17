@@ -92,11 +92,11 @@ map(n, "<leader>bq", function()
 	require("otsu.tabufline").close_buffer()
 end, { desc = "Buffer Close" })
 
-map(n, "<leader>boq", function()
+map(n, "<leader>bo", function()
 	require("otsu.tabufline").closeOtherBufs()
 end, { desc = "Buffer Close Others" })
 
-map(n, "<leader>baq", function()
+map(n, "<leader>ba", function()
 	vim.cmd("only")
 	vim.cmd("Nvdash")
 	require("otsu.tabufline").closeOtherBufs()
