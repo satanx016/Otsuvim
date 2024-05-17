@@ -190,6 +190,6 @@ map(
 	[[:execute '!xdg-open ' . shellescape(expand('<cfile>'), 1)<CR>]],
 	{ silent = true, desc = "Xdg Open" }
 )
-map(n, "<leader>ni", "<cmd>Neorg index<CR>", { desc = "Neorg List all" })
+map(n, "<leader>ni", "<cmd>vsplit | Neorg index<CR>", { desc = "Neorg List all" })
 map(n, "<leader>nc", "<cmd>Neorg toggle-concealer<CR>", { desc = "Neog Toggle concealer" })
 map(n, "<leader>nq", "<cmd>Neorg return<CR>", { desc = "Neorg Quit" })
