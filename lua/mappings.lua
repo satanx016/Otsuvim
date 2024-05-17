@@ -108,11 +108,11 @@ map(n, "<leader>ft", "<cmd>Telescope terms<CR>", { desc = "Terminal Pick hidden 
 map(t, "<ESC>", "<C-\\><C-N>", { desc = "Terminal Escape terminal mode" })
 
 map(n, "<ESC>", function()
-	local win = vim.api.nvim_get_current_win()
-	local buf = vim.api.nvim_get_current_buf()
+	local current_win = vim.api.nvim_get_current_win()
+	local current_buf = vim.api.nvim_get_current_buf()
 
-	if vim.api.nvim_get_option_value("buftype", { buf = buf }) == "terminal" then
-		vim.api.nvim_win_close(win, true)
+	if vim.api.nvim_get_option_value("buftype", { buf = current_buf }) == "terminal" then
+		vim.api.nvim_win_close(current_win, true)
 	else
 		vim.cmd("noh")
 		require("notify").dismiss()
