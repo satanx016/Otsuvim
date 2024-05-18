@@ -9,7 +9,12 @@ return {
 			{ "nvim-telescope/telescope.nvim", tag = "0.1.4" },
 			{ "Shatur/neovim-session-manager" },
 		},
-		opts = require("configs.neovim-projects"),
+		opts = function()
+			return require("configs.neovim-project")
+		end,
+		config = function(_, opts)
+			require("neovim-project").setup(opts)
+		end,
 	},
 
 	{
@@ -20,7 +25,7 @@ return {
 			"rcarriga/nvim-notify",
 		},
 		opts = function()
-			require("configs.noice")
+			return require("configs.noice")
 		end,
 		config = function(_, opts)
 			require("noice").setup(opts)

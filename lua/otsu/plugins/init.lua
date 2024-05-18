@@ -82,10 +82,25 @@ return {
 				-- snippet plugin
 				"L3MON4D3/LuaSnip",
 				dependencies = "rafamadriz/friendly-snippets",
-				opts = { history = true, updateevents = "TextChanged,TextChangedI" },
+				opts = function()
+					return require("otsu.configs.luasnip")
+				end,
 				config = function(_, opts)
 					require("luasnip").config.set_config(opts)
-					require("otsu.configs.luasnip")
+					-- lua format
+					require("luasnip.loaders.from_lua").load()
+					require("luasnip.loaders.from_lua").lazy_load({ paths = vim.g.lua_snippets_path or "" })
+
+					vim.api.nvim_create_autocmd("InsertLeave", {
+						callback = function()
+							if
+								require("luasnip").session.current_nodes[vim.api.nvim_get_current_buf()]
+								and not require("luasnip").session.jump_active
+							then
+								require("luasnip").unlink_current()
+							end
+						end,
+					})
 				end,
 			},
 
@@ -124,14 +139,6 @@ return {
 
 	{
 		"numToStr/Comment.nvim",
-		keys = {
-			{ "gcc", mode = "n", desc = "Comment toggle current line" },
-			{ "gc", mode = { "n", "o" }, desc = "Comment toggle linewise" },
-			{ "gc", mode = "x", desc = "Comment toggle linewise (visual)" },
-			{ "gbc", mode = "n", desc = "Comment toggle current block" },
-			{ "gb", mode = { "n", "o" }, desc = "Comment toggle blockwise" },
-			{ "gb", mode = "x", desc = "Comment toggle blockwise (visual)" },
-		},
 		config = function(_, opts)
 			require("Comment").setup(opts)
 		end,
