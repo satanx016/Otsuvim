@@ -14,10 +14,10 @@ o.cursorlineopt = "number"
 
 -- Indenting
 o.expandtab = true
-o.shiftwidth = 4
+o.shiftwidth = 2
 o.smartindent = true
-o.tabstop = 4
-o.softtabstop = 4
+o.tabstop = 2
+o.softtabstop = 2
 
 -- opt.sidescrolloff = 999 -- horizontal centering
 opt.scrolloff = 999 -- vertitcal
