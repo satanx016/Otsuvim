@@ -4,7 +4,9 @@ local niv = { n, i, v }
 local ic = { i, c }
 local nt = { n, t }
 
--- motions
+map(n, "<leader>L", "<Cmd>Lazy<CR>", { desc = "Lazy" }) -- lazy
+map(n, "<leader>M", "<Cmd>Mason<CR>", { desc = "Mason" }) -- mason
+
 -- essential
 map(n, ";", ":", { desc = "CMD enter command mode" })
 map(i, "kj", "<ESC>")
@@ -15,7 +17,9 @@ map(v, "J", ":m '>+1<CR>gv=gv")
 map(niv, "<C-S-s>", "<cmd>w !sudo tee %<CR>", { desc = "File Sudo Save" }) -- Use this wisely
 map(niv, "<C-s>", "<cmd>w<CR>", { desc = "File Save" })
 map(n, "<C-c>", "<cmd>%y+<CR>", { desc = "File Copy all" })
+
 map(n, "<C-a>", "ggVG", { desc = "File Select all" })
+
 -- fixes
 map(i, "<C-Del>", "<Cmd>norm! dw<CR>")
 map(i, "<A-Del>", "<Cmd>norm! dw<CR>")
@@ -42,18 +46,10 @@ map(nt, "<A-h>", "<Cmd>vert res -1<CR>", { desc = "Window Resize left" })
 map(nt, "<A-l>", "<Cmd>vert res +1<CR>", { desc = "Window Resize right" })
 map(nt, "<A-j>", "<Cmd>hor res -1<CR>", { desc = "Window Resize down" })
 map(nt, "<A-k>", "<Cmd>hor res +1<CR>", { desc = "Window Resize up" })
-map(niv, "<C-q>", "<C-w>q", { desc = "Window Close" })
+map(n, "<C-q>", "<C-w>q", { desc = "Window Close" })
 
--- lazy
-map(n, "<leader>L", "<Cmd>Lazy<CR>", { desc = "Lazy" })
-
--- otsu
-map(n, "<leader>oc", "<cmd>NvCheatsheet<CR>", { desc = "Otsu CheatSheet" })
-map(n, "<leader>ot", "<cmd>Telescope themes<CR>", { desc = "Otsu Select theme" })
-map(n, "<leader>om", function()
-	vim.cmd("only | cd | Nvdash")
-	require("otsu.tabufline").closeOtherBufs()
-end, { desc = "Otsu Menu" })
+-- colorizer
+map(n, "<leader>h", "<Cmd>ColorizerToggle<CR>", { desc = "Highlight colors" })
 
 -- nvimtree
 map(n, "<leader>tt", "<cmd>NvimTreeToggle<CR>", { desc = "Nvimtree Toggle" })
@@ -75,93 +71,39 @@ map(n, "<leader>fo", "<cmd>Telescope buffers<CR>", { desc = "Telescope Find buff
 map(n, "<leader>fb", "<cmd>Telescope builtin<CR>", { desc = "Telescope List commands" })
 map(n, "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "Telescope Help page" })
 
-map(n, "<leader>N", "<cmd>Telescope notify<CR>", { desc = "Notifications Show recent" })
+map(n, "<leader>fc", "<cmd>Telescope git_commits<CR>", { desc = "Git Commits" })
+map(n, "<leader>fC", "<cmd>Telescope git_bcommits<CR>", { desc = "Git Current buffer commits" })
 
--- tabufline
+-- otsutab
 map(n, "<leader>bn", "<cmd>enew<CR>", { desc = "Buffer New" })
 
 map(n, "<tab>", function()
-	require("otsu.tabufline").next()
+	require("otsuui.otsutab").next()
 end, { desc = "Buffer Goto next" })
 
 map(n, "<S-tab>", function()
-	require("otsu.tabufline").prev()
+	require("otsuui.otsutab").prev()
 end, { desc = "Buffer Goto prev" })
 
 map(n, "<leader>bq", function()
-	require("otsu.tabufline").close_buffer()
+	require("otsuui.otsutab").close_buffer()
 end, { desc = "Buffer Close" })
 
 map(n, "<leader>bo", function()
-	require("otsu.tabufline").closeOtherBufs()
+	require("otsuui.otsutab").closeOtherBufs()
 end, { desc = "Buffer Close Others" })
 
 map(n, "<leader>ba", function()
-	vim.cmd("only")
-	vim.cmd("Nvdash")
-	require("otsu.tabufline").closeOtherBufs()
+	vim.cmd("silent only")
+	vim.cmd("enew")
+	require("otsuui.otsutab").closeOtherBufs()
 end, { desc = "Buffer Close All" })
 
--- terminal
-map(n, "<leader>ft", "<cmd>Telescope terms<CR>", { desc = "Terminal Pick hidden term" })
+-- neovim-projects
+map(n, "<leader>pf", "<cmd>Telescope neovim-project discover<CR>", { desc = "Project List all" })
+map(n, "<leader>pr", "<cmd>Telescope neovim-project history<CR>", { desc = "Project List recent" })
+map(n, "<leader>pl", "<cmd>NeovimProjectLoadRecent<CR>", { desc = "Project Load last session" })
 
-map(t, "<ESC>", "<C-\\><C-N>", { desc = "Terminal Escape terminal mode" })
-
-map(n, "<ESC>", function()
-	local current_win = vim.api.nvim_get_current_win()
-	local current_buf = vim.api.nvim_get_current_buf()
-
-	if vim.api.nvim_get_option_value("buftype", { buf = current_buf }) == "terminal" then
-		vim.api.nvim_win_close(current_win, true)
-	else
-		vim.cmd("noh")
-		require("notify").dismiss()
-	end
-end, { desc = "Terminal Close term" })
-
--- toggleable terminals
-map(nt, "<A-v>", function()
-	require("otsu.term").toggle({ pos = "vsp", id = "vtoggleTerm" })
-end, { desc = "Terminal Toggleable vertical term" })
-
-map(nt, "<A-s>", function()
-	require("otsu.term").toggle({ pos = "sp", id = "htoggleTerm" })
-end, { desc = "Terminal Toggleable horizontal term" })
-
-map(nt, "<A-t>", function()
-	require("otsu.term").toggle({ pos = "float", id = "floatTerm" })
-end, { desc = "Terminal Toggle floating term" })
-
--- colorizer
-map(n, "<leader>h", "<Cmd>ColorizerToggle<CR>", { desc = "Highlight colors" })
-
--- comment
-map(n, "<leader>/", function()
-	require("Comment.api").toggle.linewise.current()
-end, { desc = "Comment toggle" })
-
-map(
-	v,
-	"<leader>/",
-	"<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
-	{ desc = "Comment toggle" }
-)
-
--- format
-map(n, "<leader>F", function()
-	require("conform").format({ lsp_fallback = true })
-end, { desc = "Format Files" })
-
--- global lsp mappings
-map(n, "<leader>lf", vim.diagnostic.open_float, { desc = "Lsp floating diagnostics" })
-map(n, "[d", vim.diagnostic.goto_prev, { desc = "Lsp prev diagnostic" })
-map(n, "]d", vim.diagnostic.goto_next, { desc = "Lsp next diagnostic" })
-map(n, "<leader>q", vim.diagnostic.setloclist, { desc = "Lsp diagnostic loclist" })
-
--- git integration
--- Telescope
-map(n, "<leader>fc", "<cmd>Telescope git_commits<CR>", { desc = "Git Commits" })
-map(n, "<leader>fC", "<cmd>Telescope git_bcommits<CR>", { desc = "Git Current buffer commits" })
 -- Gitsigns
 map(n, "<leader>gp", "<cmd>Gitsigns preview_hunk<CR>", { desc = "Git Preview hunk" })
 map(n, "<leader>gs", "<cmd>Gitsigns stage_hunk<CR>", { desc = "Git Stage hunk" })
@@ -172,19 +114,21 @@ map(n, "<leader>gR", "<cmd>Gitsigns reset_buffer<CR>", { desc = "Git Reset buffe
 map(n, "<leader>gb", "<cmd>Gitsigns blame_line<CR>", { desc = "Git Blame line" })
 map(n, "<leader>gd", "<cmd>Gitsigns toggle_deleted<CR>", { desc = "Git Toggle deleted" })
 map(n, "<leader>gB", "<cmd>Gitsigns toggle_current_line_blame<CR>", { desc = "Git Toggle line blame" })
+
 -- Neogit & Diffview
 map(n, "<leader>gg", "<cmd>Neogit<CR>", { desc = "Git Interface" })
 map(n, "<leader>gD", function()
 	require("neogit.integrations.diffview").open()
-end, { desc = "Git Toggle line blame" })
+end, { desc = "Git Open Diffview" })
 
--- sessions/projects
-map(n, "<leader>pf", "<cmd>Telescope neovim-project discover<CR>", { desc = "Project List all" })
-map(n, "<leader>pr", "<cmd>Telescope neovim-project history<CR>", { desc = "Project List recent" })
-map(n, "<leader>pl", "<cmd>NeovimProjectLoadRecent<CR>", { desc = "Project Load last session" })
+-- clear highlights
+map(n, "<ESC>", "<cmd>noh<CR>")
 
--- browsing
-map(n, "gx", [[:execute '!xdg-open ' . shellescape(expand('<cfile>'), 1)<CR>]], { silent = true, desc = "Xdg Open" })
-map(n, "<leader>ni", "<cmd>vsplit | Neorg index<CR>", { desc = "Neorg List all" })
-map(n, "<leader>nc", "<cmd>Neorg toggle-concealer<CR>", { desc = "Neog Toggle concealer" })
-map(n, "<leader>nq", "<cmd>Neorg return<CR>", { desc = "Neorg Quit" })
+-- comment
+map(n, "<leader>/", "gcc", { remap = true, desc = "Comment toggle" })
+map(v, "<leader>/", "gc", { remap = true, desc = "Comment toggle" })
+
+-- format
+map(n, "<leader>F", function()
+	require("conform").format({ async = true, lsp_fallback = true })
+end, { desc = "Format Files" })

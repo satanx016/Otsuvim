@@ -1,27 +1,26 @@
 local M = {}
 
 M.ui = {
-	------------------------------- base46 -------------------------------------
+	------------------------------- based -------------------------------------
 	-- hl = highlights
 	hl_add = {},
 	hl_override = {},
 	changed_themes = {},
-	theme_toggle = { "onedark", "one_light" },
-	theme = "gruvbox", -- default theme
-	transparency = true,
+	theme = "poimandres", -- default theme
+	transparency = false,
 
 	cmp = {
 		icons = true,
 		lspkind_text = true,
-		style = "default", -- default/flat_light/flat_dark/atom/atom_colored
+		style = "flat_light", -- default/flat_light/flat_dark/atom/atom_colored
 	},
 
 	telescope = { style = "borderless" }, -- borderless / bordered
 
-	------------------------------- otsu_ui modules -----------------------------
+	------------------------------- otsuui modules -----------------------------
 	statusline = {
-		theme = "default", -- default/vscode/vscode_colored/minimal
-		-- default/round/block/arrow separators work only for default statusline theme
+		theme = "default", -- default/vscode/minimal
+		-- default/round/block/arrow separators work only for default otsuline theme
 		-- round and block will work for minimal theme only
 		separator_style = "default",
 		order = nil,
@@ -32,11 +31,7 @@ M.ui = {
 	tabufline = {
 		enabled = true,
 		lazyload = true,
-		order = { --[[ "treeOffset", ]]
-			"buffers",
-			"tabs",
-			"btns",
-		},
+		order = { "treeOffset", "buffers", "tabs" },
 		modules = nil,
 	},
 
@@ -54,7 +49,7 @@ M.ui = {
 			"░   ░ ▒                    ░          ░  ░   ",
 			"      ░        ░           ░                 ",
 			"               ░                      ░      ",
-			"      ░                                  x016",
+			"      ░                                   002",
 		},
 
 		buttons = {
@@ -82,17 +77,25 @@ M.ui = {
 			border = "single",
 		},
 	},
-
-	nvimtree = {
-		float = true,
-	},
 }
 
-M.base46 = {
+M.based = {
 	integrations = {},
 }
 
-------------------------------- neovide -------------------------------------
-vim.g.neovide_transparency = M.ui.transparency and 0.8 or 1
+M.utils = {
+	-- define project roots
+	projects = {
+		"~/projects",
+		"~/projects/*",
+		"~/projects/test/*",
 
-return vim.tbl_deep_extend("force", M, require("otsurc"))
+		"~/dotfiles",
+		"~/dotfiles/*",
+		"~/.config/*",
+
+		"~/notes",
+	},
+}
+
+return M

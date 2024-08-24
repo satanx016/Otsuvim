@@ -2,13 +2,13 @@ local opt = vim.opt
 local o = vim.o
 local g = vim.g
 
--------------------------------------- globals -----------------------------------------
--- g.toggle_theme_icon = "   "
--------------------------------------- options ------------------------------------------
+g.mapleader = " "
+g.maplocalleader = vim.g.mapleader
+
 o.laststatus = 3
 o.showmode = false
 
-o.clipboard = "unnamedplus"
+o.clipboard = "unnamedplus" -- Synchronize with system clipboard
 o.cursorline = true
 o.cursorlineopt = "number"
 
@@ -52,11 +52,4 @@ o.swapfile = false
 -- when cursor reaches end/beginning of line
 opt.whichwrap:append("<>[]hl")
 
--- disable some default providers
-g["loaded_node_provider"] = 0
-g["loaded_python3_provider"] = 0
-g["loaded_perl_provider"] = 0
-g["loaded_ruby_provider"] = 0
-
-local is_windows = vim.fn.has("win32") ~= 0
-vim.env.PATH = vim.fn.stdpath("data") .. "/mason/bin" .. (is_windows and ";" or ":") .. vim.env.PATH
+vim.env.PATH = vim.fn.stdpath("data") .. "/mason/bin" .. ":" .. vim.env.PATH

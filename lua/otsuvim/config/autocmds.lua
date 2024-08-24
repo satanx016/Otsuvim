@@ -1,31 +1,32 @@
 local autocmd = vim.api.nvim_create_autocmd
 
--- folding settings for neorg buffers
+-- Help/Man Veritcal split
 autocmd("FileType", {
-	pattern = "norg",
+	pattern = { "help", "man" },
 	callback = function()
-		vim.opt.foldmethod = "marker"
-		vim.wo.foldlevel = 99 -- Disable automatic folding
+		vim.cmd("wincmd L")
 	end,
 })
 
--- dont list quickfix buffers
-autocmd("FileType", {
-	pattern = "qf",
+-- Highlight yanked text for 150ms
+autocmd("TextYankPost", {
 	callback = function()
-		vim.opt_local.buflisted = false
+		vim.highlight.on_yank()
 	end,
 })
 
--- reload highlights on startup
--- /!\ fixes wrong highlights when switching from neovide to nvim and vice versa
-autocmd("UIEnter", {
-	callback = function()
-		require("base46").load_all_highlights()
-	end,
-})
+if vim.version().minor >= 10 then
+	autocmd("LspProgress", {
+		callback = function(args)
+			if string.find(args.match, "end") then
+				vim.cmd("redrawstatus")
+			end
+			vim.cmd("redrawstatus")
+		end,
+	})
+end
 
--- reload some otsurc options on-save
+-- reload some nvconfig options on-save
 autocmd("BufWritePost", {
 	pattern = vim.tbl_map(function(path)
 		return vim.fs.normalize(vim.loop.fs_realpath(path))
@@ -38,35 +39,30 @@ autocmd("BufWritePost", {
 		local module = string.gsub(fp, "^.*/" .. app_name .. "/lua/", ""):gsub("/", ".")
 
 		require("plenary.reload").reload_module("nvconfig")
-		require("plenary.reload").reload_module("otsurc")
-		require("plenary.reload").reload_module("base46")
+		require("plenary.reload").reload_module("based")
 		require("plenary.reload").reload_module(module)
-
-		--nvimtree
-		require("plenary.reload").reload_module("otsu.configs.nvimtree")
-		require("nvim-tree").setup(require("otsu.configs.nvimtree"))
 
 		local config = require("nvconfig")
 
-		-- statusline
-		require("plenary.reload").reload_module("otsu.stl.utils")
-		require("plenary.reload").reload_module("otsu.stl." .. config.ui.statusline.theme)
-		vim.opt.statusline = "%!v:lua.require('otsu.stl." .. config.ui.statusline.theme .. "')()"
+		-- otsuline
+		require("plenary.reload").reload_module("otsuui.otsuline.utils")
+		require("plenary.reload").reload_module("otsuui.otsuline." .. config.ui.statusline.theme)
+		vim.opt.statusline = "%!v:lua.require('otsuui.otsuline." .. config.ui.statusline.theme .. "')()"
 
-		-- tabufline
+		-- otsutab
 		if config.ui.tabufline.enabled then
-			require("plenary.reload").reload_module("otsu.tabufline.modules")
-			vim.opt.tabline = "%!v:lua.require('otsu.tabufline.modules')()"
+			require("plenary.reload").reload_module("otsuui.otsutab.modules")
+			vim.opt.tabline = "%!v:lua.require('otsuui.otsutab.modules')()"
 		end
 
-		require("base46").load_all_highlights()
+		require("based").load_all_highlights()
 		-- vim.cmd("redraw!")
 	end,
 })
 
 -- user event that loads after UIEnter + only if file buf is there
 autocmd({ "UIEnter", "BufReadPost", "BufNewFile" }, {
-	group = vim.api.nvim_create_augroup("NvFilePost", { clear = true }),
+	group = vim.api.nvim_create_augroup("OtsuFilePost", { clear = true }),
 	callback = function(args)
 		local file = vim.api.nvim_buf_get_name(args.buf)
 		local buftype = vim.api.nvim_get_option_value("buftype", { buf = args.buf })
@@ -77,7 +73,7 @@ autocmd({ "UIEnter", "BufReadPost", "BufNewFile" }, {
 
 		if file ~= "" and buftype ~= "nofile" and vim.g.ui_entered then
 			vim.api.nvim_exec_autocmds("User", { pattern = "FilePost", modeline = false })
-			vim.api.nvim_del_augroup_by_name("NvFilePost")
+			vim.api.nvim_del_augroup_by_name("OtsuFilePost")
 
 			vim.schedule(function()
 				vim.api.nvim_exec_autocmds("FileType", {})

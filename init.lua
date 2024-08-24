@@ -1,38 +1,41 @@
-vim.loader.enable()
-vim.g.base46_cache = vim.fn.stdpath("data") .. "/otsu/base46/"
-vim.g.mapleader = " "
-vim.g.maplocalleader = vim.g.mapleader
+vim.loader.enable() -- experimental loader features (supposed to be faster)
+vim.g.based_cache = vim.fn.stdpath("data") .. "/otsuui/based/"
 
--- bootstrap lazy and all plugins
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
-if not vim.loop.fs_stat(lazypath) then
-	local repo = "https://github.com/folke/lazy.nvim.git"
-	vim.fn.system({ "git", "clone", "--filter=blob:none", repo, "--branch=stable", lazypath })
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable",
+		lazypath,
+	})
 end
 
 vim.opt.rtp:prepend(lazypath)
 
-local lazy_config = require("configs.lazy")
+require("otsuvim.config.options")
+--- neovide ---
+if vim.g.neovide then
+	require("otsuvim.config.neovide")
+end
 
-require("options")
+local lazy_config = require("otsuvim.config.lazy")
 
--- load plugins
 require("lazy").setup({
-	{ import = "otsu.plugins" },
-	{ import = "plugins" },
+	{ import = "otsuvim.plugins" },
+	{ import = "otsuvim.plugins.extras.vanity" },
+	-- { import = "otsuvim.plugins.test" },
 }, lazy_config)
 
--- load theme
-dofile(vim.g.base46_cache .. "defaults")
-dofile(vim.g.base46_cache .. "statusline")
+-- load theme ---
+dofile(vim.g.based_cache .. "defaults")
+dofile(vim.g.based_cache .. "statusline")
 
-require("otsu.autocmds")
+require("otsuvim.config.autocmds")
 
 vim.schedule(function()
-	require("mappings")
+	require("otsuvim.config.keymaps")
 end)
-
-if vim.g.neovide then
-	require("configs.neovide")
-end
