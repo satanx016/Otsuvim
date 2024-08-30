@@ -107,6 +107,11 @@ map(n, "<leader>pl", "<cmd>NeovimProjectLoadRecent<CR>", { desc = "Project Load 
 -- Gitsigns
 map(n, "<leader>gp", "<cmd>Gitsigns preview_hunk<CR>", { desc = "Git Preview hunk" })
 map(n, "<leader>gs", "<cmd>Gitsigns stage_hunk<CR>", { desc = "Git Stage hunk" })
+map(v, "<leader>gs", function()
+	local start = vim.fn.line("v")
+	local finish = vim.fn.getpos(".")[2]
+	require("gitsigns").stage_hunk({ start, finish })
+end, { desc = "Git VisualStage hunk" })
 map(n, "<leader>gu", "<cmd>Gitsigns undo_stage_hunk<CR>", { desc = "Git Undo stage hunk" })
 map(n, "<leader>gr", "<cmd>Gitsigns reset_hunk<CR>", { desc = "Git Reset hunk" })
 map(n, "<leader>gS", "<cmd>Gitsigns stage_buffer<CR>", { desc = "Git Stage buffer" })
