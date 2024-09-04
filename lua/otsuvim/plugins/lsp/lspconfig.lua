@@ -16,12 +16,6 @@ M.on_attach = function(client, bufnr)
 	map("n", "K", vim.lsp.buf.hover, opts("Lsp hover information"))
 	map("n", "<leader>sh", vim.lsp.buf.signature_help, opts("Lsp Show signature help"))
 
-	map("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, opts("Lsp Add workspace folder"))
-	map("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, opts("Lsp Remove workspace folder"))
-	map("n", "<leader>wl", function()
-		print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-	end, opts("Lsp List workspace folders"))
-
 	map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts("Lsp Code action"))
 	map("n", "<leader>cr", vim.lsp.buf.rename, opts("Lsp Rename"))
 
@@ -76,7 +70,6 @@ M.defaults = function()
 					library = {
 						vim.fn.expand("$VIMRUNTIME/lua"),
 						vim.fn.expand("$VIMRUNTIME/lua/vim/lsp"),
-						vim.fn.stdpath("data") .. "/lazy/ui/nvchad_types",
 						vim.fn.stdpath("data") .. "/lazy/lazy.nvim/lua/lazy",
 						"${3rd}/luv/library",
 					},

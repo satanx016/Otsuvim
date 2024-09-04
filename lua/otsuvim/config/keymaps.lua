@@ -52,8 +52,7 @@ map(n, "<C-q>", "<C-w>q", { desc = "Window Close" })
 map(n, "<leader>h", "<Cmd>ColorizerToggle<CR>", { desc = "Highlight colors" })
 
 -- nvimtree
-map(n, "<leader>tt", "<cmd>NvimTreeToggle<CR>", { desc = "Nvimtree Toggle" })
-map(n, "<leader>tf", "<cmd>NvimTreeFocus<CR>", { desc = "Nvimtree Focus" })
+map(n, "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Explorer" })
 
 -- telescope supermacy
 map(
