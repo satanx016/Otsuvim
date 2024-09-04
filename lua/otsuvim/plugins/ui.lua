@@ -11,14 +11,14 @@ return {
 	},
 
 	{
-		dir = "~/projects/based",
+    "satanx016/based",
 		build = function()
 			require("based").load_all_highlights()
 		end,
 	},
 
 	{
-		dir = "~/projects/otsuui/",
+    "satanx016/otsuui",
 		lazy = false,
 		config = function()
 			require("otsuui")
