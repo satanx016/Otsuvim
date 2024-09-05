@@ -1,14 +1,18 @@
 local M = {}
 
-M.ui = {
-	------------------------------- based -------------------------------------
-	-- hl = highlights
-	hl_add = {},
-	hl_override = {},
-	changed_themes = {},
+M.based = {
+	integrations = {},
+  changed_themes = {},
 	theme = "poimandres", -- default theme
 	transparency = false,
+	-- hl = highlights
+	hl_add = {},
+	hl_override = {
+		["@comment"] = { italic = true },
+	},
+}
 
+M.ui = {
 	cmp = {
 		icons = true,
 		lspkind_text = true,
@@ -77,10 +81,6 @@ M.ui = {
 			border = "single",
 		},
 	},
-}
-
-M.based = {
-	integrations = {},
 }
 
 M.utils = {
