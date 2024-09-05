@@ -1,10 +1,12 @@
 local autocmd = vim.api.nvim_create_autocmd
 
 -- Help/Man Veritcal split
-autocmd("FileType", {
-	pattern = { "help", "man" },
+autocmd("BufWinEnter", {
+	pattern = { "*.txt", "*(*)" },
 	callback = function()
-		vim.cmd("wincmd L")
+		if vim.bo.filetype == "help" or vim.bo.filetype == "man" then
+			vim.cmd("wincmd L")
+		end
 	end,
 })
 
