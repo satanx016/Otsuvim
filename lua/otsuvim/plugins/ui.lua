@@ -18,7 +18,7 @@ return {
 	},
 
 	{
-    "satanx016/otsuui",
+		"satanx016/otsuui",
 		lazy = false,
 		config = function()
 			require("otsuui")
@@ -78,6 +78,8 @@ return {
 						"lazy",
 						"mason",
 						"notify",
+            "NvimTree",
+            "neogitstatus",
 					},
 				},
 			}
