@@ -1,9 +1,9 @@
 return {
+	{ "nvim-lua/plenary.nvim" },
 	{
 		"coffebar/neovim-project",
 		cmd = "NeovimProjectLoadRecent",
 		dependencies = {
-			{ "nvim-lua/plenary.nvim" },
 			{ "Shatur/neovim-session-manager" },
 		},
 		opts = function()

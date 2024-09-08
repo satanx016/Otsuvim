@@ -73,13 +73,12 @@ return {
 				exclude = {
 					filetypes = {
 						"help",
-						"alpha",
-						"dashboard",
+						"man",
 						"lazy",
 						"mason",
 						"notify",
-            "NvimTree",
-            "neogitstatus",
+						"NvimTree",
+						"NeogitStatus",
 					},
 				},
 			}

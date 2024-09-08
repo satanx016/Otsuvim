@@ -2,9 +2,6 @@ return {
 	{
 		"nvim-tree/nvim-tree.lua",
 		cmd = { "NvimTreeToggle", "NvimTreeFocus" },
-		dependencies = {
-			"nvim-tree/nvim-web-devicons",
-		},
 		opts = function()
 			return {
 				hijack_cursor = true,
@@ -42,7 +39,6 @@ return {
 	{
 		"nvim-telescope/telescope.nvim",
 		dependencies = {
-			"nvim-lua/plenary.nvim",
 			"nvim-treesitter/nvim-treesitter",
 		},
 		cmd = "Telescope",
