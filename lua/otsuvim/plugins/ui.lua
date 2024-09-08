@@ -2,11 +2,8 @@ return {
 	{
 		"nvim-tree/nvim-web-devicons",
 		opts = function()
+      dofile(vim.g.based_cache .. "devicons")
 			return { override = require("otsuvim.config.icons.devicons") }
-		end,
-		config = function(_, opts)
-			dofile(vim.g.based_cache .. "devicons")
-			require("nvim-web-devicons").setup(opts)
 		end,
 	},
 

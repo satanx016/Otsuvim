@@ -2,7 +2,7 @@ local M = {}
 
 M.based = {
 	integrations = {},
-  changed_themes = {},
+	changed_themes = {},
 	theme = "poimandres", -- default theme
 	transparency = false,
 	-- hl = highlights
