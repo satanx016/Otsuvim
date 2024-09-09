@@ -7,7 +7,6 @@ local nv = { n, v }
 map(n, "<leader>L", "<Cmd>Lazy<CR>", { desc = "Lazy" }) -- lazy
 map(n, "<leader>M", "<Cmd>Mason<CR>", { desc = "Mason" }) -- mason
 
-
 -- essentials
 map(n, ";", ":", { desc = "CMD enter command mode" })
 map(i, "kj", "<ESC>")

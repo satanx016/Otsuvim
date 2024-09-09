@@ -2,13 +2,13 @@ return {
 	{
 		"nvim-tree/nvim-web-devicons",
 		opts = function()
-      dofile(vim.g.based_cache .. "devicons")
+			dofile(vim.g.based_cache .. "devicons")
 			return { override = require("otsuvim.config.icons.devicons") }
 		end,
 	},
 
 	{
-    "satanx016/based",
+		"satanx016/based",
 		build = function()
 			require("based").load_all_highlights()
 		end,
