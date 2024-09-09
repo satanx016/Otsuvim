@@ -12,6 +12,7 @@ return {
 					changedelete = { text = "~" },
 					untracked = { text = "│" },
 				},
+				signs_staged_enable = false,
 			}
 		end,
 		config = function(_, opts)
