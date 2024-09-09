@@ -1,26 +1,25 @@
 local map = vim.keymap.set
 local n, i, v, c, t = "n", "i", "v", "c", "t"
-local niv = { n, i, v }
 local ic = { i, c }
 local nt = { n, t }
+local nv = { n, v }
 
 map(n, "<leader>L", "<Cmd>Lazy<CR>", { desc = "Lazy" }) -- lazy
 map(n, "<leader>M", "<Cmd>Mason<CR>", { desc = "Mason" }) -- mason
 
--- essential
+
+-- essentials
 map(n, ";", ":", { desc = "CMD enter command mode" })
 map(i, "kj", "<ESC>")
 map(i, "jk", "<ESC>")
 map(v, "K", ":m '<-2<CR>gv=gv")
 map(v, "J", ":m '>+1<CR>gv=gv")
--- qol
-map(niv, "<C-S-s>", "<cmd>w !sudo tee %<CR>", { desc = "File Sudo Save" }) -- Use this wisely
-map(niv, "<C-s>", "<cmd>w<CR>", { desc = "File Save" })
-map(n, "<C-c>", "<cmd>%y+<CR>", { desc = "File Copy all" })
-
-map(n, "<C-a>", "ggVG", { desc = "File Select all" })
-
--- fixes
+-- quit
+map("n", "<leader>q", "<cmd>qa<cr>", { desc = "Quit All" })
+-- qol or fixes
+map(n, "<leader>w", "<cmd>w<CR>", { desc = "Save" })
+map(n, "<leader>W", "<cmd>w !sudo tee %<CR>", { desc = "Sudo Save" }) -- Use this wisely
+map(n, "<C-a>", "ggVG", { desc = "Select all" })
 map(i, "<C-Del>", "<Cmd>norm! dw<CR>")
 map(i, "<A-Del>", "<Cmd>norm! dw<CR>")
 map(ic, "<C-BS>", "<C-w>")
@@ -49,90 +48,66 @@ map(nt, "<A-k>", "<Cmd>hor res +1<CR>", { desc = "Window Resize up" })
 map(n, "<C-q>", "<C-w>q", { desc = "Window Close" })
 
 -- colorizer
-map(n, "<leader>h", "<Cmd>ColorizerToggle<CR>", { desc = "Highlight colors" })
+map(n, "<leader>h", "<Cmd>ColorizerToggle<CR>", { desc = "Highlight Colors" })
 
 -- nvimtree
-map(n, "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Explorer" })
+map(n, "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Explorer Toggle" })
+map(n, "<leader>E", "<cmd>NvimTreeFocus<CR>", { desc = "Explorer Focus" })
 
 -- telescope supermacy
-map(
-	n,
-	"<leader>fa",
-	"<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>",
-	{ desc = "Telescope Find all files" }
-)
-map(n, "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Telescope Find files" })
-map(n, "<leader>fr", "<cmd>Telescope oldfiles<CR>", { desc = "Telescope Find oldfiles" })
-map(n, "<leader>fw", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "Telescope Find in current buffer" })
-map(n, "<leader>fg", "<cmd>Telescope live_grep<CR>", { desc = "Telescope Live grep" })
-map(n, "<leader>fo", "<cmd>Telescope buffers<CR>", { desc = "Telescope Find buffers" })
-
-map(n, "<leader>fb", "<cmd>Telescope builtin<CR>", { desc = "Telescope List commands" })
-map(n, "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "Telescope Help page" })
-
-map(n, "<leader>fc", "<cmd>Telescope git_commits<CR>", { desc = "Git Commits" })
-map(n, "<leader>fC", "<cmd>Telescope git_bcommits<CR>", { desc = "Git Current buffer commits" })
+-- stylua: ignore
+map(n, "<leader>fa", "<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>", { desc = "Find all Files" })
+map(n, "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find Files" })
+map(n, "<leader>fr", "<cmd>Telescope oldfiles<CR>", { desc = "Find Oldfiles" })
+map(n, "<leader>fw", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "Find in current Buffer" })
+map(n, "<leader>fg", "<cmd>Telescope live_grep<CR>", { desc = "Live Grep" })
+map(n, "<leader>fo", "<cmd>Telescope buffers<CR>", { desc = "Find openned Buffers" })
+map(n, "<leader>fb", "<cmd>Telescope builtin<CR>", { desc = "List Commands" })
+map(n, "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "Help Page" })
+map(n, "<leader>fc", "<cmd>Telescope git_commits<CR>", { desc = "Git List Commits" })
+map(n, "<leader>fC", "<cmd>Telescope git_bcommits<CR>", { desc = "Git List buf Commits" })
 
 -- otsutab
+-- stylua: ignore start
 map(n, "<leader>bn", "<cmd>enew<CR>", { desc = "Buffer New" })
-
-map(n, "<tab>", function()
-	require("otsuui.otsutab").next()
-end, { desc = "Buffer Goto next" })
-
-map(n, "<S-tab>", function()
-	require("otsuui.otsutab").prev()
-end, { desc = "Buffer Goto prev" })
-
-map(n, "<leader>bq", function()
-	require("otsuui.otsutab").close_buffer()
-end, { desc = "Buffer Close" })
-
-map(n, "<leader>bo", function()
-	require("otsuui.otsutab").closeOtherBufs()
-end, { desc = "Buffer Close Others" })
-
-map(n, "<leader>ba", function()
-	vim.cmd("silent only")
-	vim.cmd("enew")
-	require("otsuui.otsutab").closeOtherBufs()
-end, { desc = "Buffer Close All" })
+map(n, "<tab>", function() require("otsuui.otsutab").next() end, { desc = "Buffer Goto next" })
+map(n, "<S-tab>", function() require("otsuui.otsutab").prev() end, { desc = "Buffer Goto prev" })
+map(n, "<leader>bq", function() require("otsuui.otsutab").close_buffer() end, { desc = "Buffer Close" })
+map(n, "<leader>bo", function() require("otsuui.otsutab").closeOtherBufs() end, { desc = "Buffer Close Others" })
+map(n, "<leader>ba", "<cmd>silent only | enew | lua require('otsuui.otsutab').closeOtherBufs()<CR>", { desc = "Buffer Close All" })
+-- stylua: ignore end
 
 -- neovim-projects
-map(n, "<leader>pf", "<cmd>Telescope neovim-project discover<CR>", { desc = "Project List all" })
-map(n, "<leader>pr", "<cmd>Telescope neovim-project history<CR>", { desc = "Project List recent" })
-map(n, "<leader>pl", "<cmd>NeovimProjectLoadRecent<CR>", { desc = "Project Load last session" })
+map(n, "<leader>pf", "<cmd>Telescope neovim-project discover<CR>", { desc = "List All" })
+map(n, "<leader>pr", "<cmd>Telescope neovim-project history<CR>", { desc = "List Recent" })
+map(n, "<leader>pl", "<cmd>NeovimProjectLoadRecent<CR>", { desc = "Load Last Session" })
 
--- Gitsigns
-map(n, "<leader>gp", "<cmd>Gitsigns preview_hunk<CR>", { desc = "Git Preview hunk" })
-map(n, "<leader>gs", "<cmd>Gitsigns stage_hunk<CR>", { desc = "Git Stage hunk" })
-map(v, "<leader>gs", function()
-	local start = vim.fn.line("v")
-	local finish = vim.fn.getpos(".")[2]
-	require("gitsigns").stage_hunk({ start, finish })
-end, { desc = "Git VisualStage hunk" })
-map(n, "<leader>gu", "<cmd>Gitsigns undo_stage_hunk<CR>", { desc = "Git Undo stage hunk" })
-map(n, "<leader>gr", "<cmd>Gitsigns reset_hunk<CR>", { desc = "Git Reset hunk" })
-map(n, "<leader>gS", "<cmd>Gitsigns stage_buffer<CR>", { desc = "Git Stage buffer" })
-map(n, "<leader>gR", "<cmd>Gitsigns reset_buffer<CR>", { desc = "Git Reset buffer" })
-map(n, "<leader>gb", "<cmd>Gitsigns blame_line<CR>", { desc = "Git Blame line" })
-map(n, "<leader>gd", "<cmd>Gitsigns diffthis<CR>", { desc = "Git Diff current buffer" })
-map(n, "<leader>gB", "<cmd>Gitsigns toggle_current_line_blame<CR>", { desc = "Git Toggle line blame" })
-
--- Neogit & Diffview
-map(n, "<leader>gg", "<cmd>Neogit<CR>", { desc = "Git Interface" })
-map(n, "<leader>gD", function()
-	require("neogit.integrations.diffview").open()
-end, { desc = "Git Open Diffview" })
+-- Gitsigns & Neogit & Diffview
+-- stylua: ignore start
+map(n, "<leader>gg", "<cmd>Neogit<CR>", { desc = "Neogit Interface" })
+map(n, "[H", "<cmd>Gitsigns nav_hunk first<CR>", { desc = "First Hunk" })
+map(n, "]H", "<cmd>Gitsigns nav_hunk last<CR>", { desc = "Last Hunk" })
+map(n, "[h", "<cmd>Gitsigns nav_hunk prev<CR>", { desc = "Prev Hunk" })
+map(n, "]h", "<cmd>Gitsigns nav_hunk next<CR>", { desc = "Next Hunk" })
+map(n, "<leader>ghp", "<cmd>Gitsigns preview_hunk<CR>", { desc = "Preview Hunk" })
+map(nv, "<leader>ghs", ":Gitsigns stage_hunk<CR>", { desc = "Stage Hunk" })
+map(nv, "<leader>ghr", ":Gitsigns reset_hunk<CR>", { desc = "Reset Hunk" })
+map(n, "<leader>ghu", "<cmd>Gitsigns undo_stage_hunk<CR>", { desc = "Undo Stage Hunk" })
+map(n, "<leader>ghS", "<cmd>Gitsigns stage_buffer<CR>", { desc = "Stage Buffer" })
+map(n, "<leader>ghR", "<cmd>Gitsigns reset_buffer<CR>", { desc = "Reset Buffer" })
+map(n, "<leader>ghb", "<cmd>Gitsigns blame_line<CR>", { desc = "Blame" })
+map(n, "<leader>ghB", function () require("gitsigns").blame_line({ full=true })end, { desc = "Full Blame" })
+map(n, "<leader>gd", "<cmd>Gitsigns diffthis<CR>", { desc = "Diff This" })
+map(n, "<leader>gD", function() require("neogit.integrations.diffview").open() end, { desc = "Diffview" })
+-- stylua: ignore end
 
 -- clear highlights
-map(n, "<ESC>", "<cmd>noh<CR>")
+map(n, "<ESC>", "<cmd>noh<CR>", { desc = "Clear Highlights" })
 
 -- comment
-map(n, "<leader>/", "gcc", { remap = true, desc = "Comment toggle" })
-map(v, "<leader>/", "gc", { remap = true, desc = "Comment toggle" })
+map(n, "<leader>/", "gcc", { remap = true, desc = "Comment Toggle" })
+map(v, "<leader>/", "gc", { remap = true, desc = "Comment Toggle" })
 
 -- format
-map(n, "<leader>F", function()
-	require("conform").format({ async = true, lsp_fallback = true })
-end, { desc = "Format Files" })
+-- stylua: ignore
+map(n, "<leader>F", function() require("conform").format({ async = true, lsp_fallback = true }) end, { desc = "Format Files" })

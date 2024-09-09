@@ -111,6 +111,37 @@ return {
 		"folke/which-key.nvim",
 		keys = { "<leader>", "<c-r>", "<c-w>", '"', "'", "`", "c", "v", "V", "g" },
 		cmd = "WhichKey",
+		opts = {
+			spec = {
+				{
+					mode = { "n", "v" },
+					{ "<leader>c", group = "code" },
+					{ "<leader>f", group = "file/find" },
+					{ "<leader>g", group = "git" },
+					{ "<leader>gh", group = "hunk" },
+					{ "<leader>p", group = "projects" },
+					{ "[", group = "prev" },
+					{ "]", group = "next" },
+					{ "g", group = "goto" },
+					{ "z", group = "fold" },
+					{
+						"<leader>b",
+						group = "buffer",
+						expand = function()
+							return require("which-key.extras").expand.buf()
+						end,
+					},
+					{
+						"<c-w>",
+						group = "windows",
+						expand = function()
+							return require("which-key.extras").expand.win()
+						end,
+					},
+					{ "gx", desc = "Open with system app" },
+				},
+			},
+		},
 		config = function(_, opts)
 			dofile(vim.g.based_cache .. "whichkey")
 			require("which-key").setup(opts)
