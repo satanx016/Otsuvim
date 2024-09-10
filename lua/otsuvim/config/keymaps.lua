@@ -109,4 +109,4 @@ map(v, "<leader>/", "gc", { remap = true, desc = "Comment Toggle" })
 
 -- format
 -- stylua: ignore
-map(n, "<leader>F", function() require("conform").format({ async = true, lsp_fallback = true }) end, { desc = "Format Files" })
+map(n, "<leader>cf", function() require("conform").format({ async = true, lsp_fallback = true }) end, { desc = "Format" })

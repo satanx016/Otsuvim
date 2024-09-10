@@ -7,17 +7,18 @@ M.on_attach = function(client, bufnr)
 		return { buffer = bufnr, desc = desc }
 	end
 
-	map("n", "<leader>D", vim.lsp.buf.type_definition, opts("Lsp Go to type definition"))
-	map("n", "gD", vim.lsp.buf.declaration, opts("Lsp Go to declaration"))
-	map("n", "gd", vim.lsp.buf.definition, opts("Lsp Go to definition"))
-	map("n", "gr", vim.lsp.buf.references, opts("Lsp Go to references"))
-	map("n", "gi", vim.lsp.buf.implementation, opts("Lsp Go to implementation"))
-
-	map("n", "K", vim.lsp.buf.hover, opts("Lsp hover information"))
-	map("n", "<leader>sh", vim.lsp.buf.signature_help, opts("Lsp Show signature help"))
-
-	map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts("Lsp Code action"))
-	map("n", "<leader>cr", vim.lsp.buf.rename, opts("Lsp Rename"))
+	map("n", "gy", vim.lsp.buf.type_definition, opts("Goto T[y]pe definition"))
+	map("n", "gD", vim.lsp.buf.declaration, opts("Goto Declaration"))
+	map("n", "gd", vim.lsp.buf.definition, opts("Goto Definition"))
+	map("n", "gr", vim.lsp.buf.references, opts("Goto References"))
+	map("n", "gI", vim.lsp.buf.implementation, opts("Goto Implementation"))
+	map("n", "K", vim.lsp.buf.hover, opts("Hover"))
+	map("n", "gk", vim.lsp.buf.signature_help, opts("Signature Help"))
+	map("n", "<leader>ca", vim.lsp.buf.code_action, opts("Code Action"))
+	map("n", "<leader>cr", vim.lsp.buf.rename, opts("Rename"))
+	map("n", "<leader>cc", vim.lsp.codelens.run, opts("Codelens Run"))
+	map("n", "<leader>cC", vim.lsp.codelens.refresh, opts("Codelesn Refresh"))
+	map("n", "<leader>cd", vim.diagnostic.open_float, opts("Line Diagnostics"))
 
 	-- setup signature popup
 	if client.server_capabilities.signatureHelpProvider then
