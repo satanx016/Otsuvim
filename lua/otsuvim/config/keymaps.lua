@@ -56,15 +56,26 @@ map(n, "<leader>E", "<cmd>NvimTreeFocus<CR>", { desc = "Explorer Focus" })
 -- telescope supermacy
 -- stylua: ignore
 map(n, "<leader>fa", "<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>", { desc = "Find all Files" })
-map(n, "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find Files" })
-map(n, "<leader>fr", "<cmd>Telescope oldfiles<CR>", { desc = "Find Oldfiles" })
-map(n, "<leader>fw", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "Find in current Buffer" })
-map(n, "<leader>fg", "<cmd>Telescope live_grep<CR>", { desc = "Live Grep" })
-map(n, "<leader>fo", "<cmd>Telescope buffers<CR>", { desc = "Find openned Buffers" })
-map(n, "<leader>fb", "<cmd>Telescope builtin<CR>", { desc = "List Commands" })
-map(n, "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "Help Page" })
-map(n, "<leader>fc", "<cmd>Telescope git_commits<CR>", { desc = "Git List Commits" })
-map(n, "<leader>fC", "<cmd>Telescope git_bcommits<CR>", { desc = "Git List buf Commits" })
+map(n, "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "Buffers" })
+map(n, "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Files" })
+map(n, "<leader>fr", "<cmd>Telescope oldfiles<CR>", { desc = "Recent Files" })
+
+map(n, '<leader>s"', "<cmd>Telescope registers<cr>", { desc = "Registers" })
+map(n, "<leader>sa", "<cmd>Telescope autocommands<cr>", { desc = "Auto Commands" })
+map(n, "<leader>sb", "<cmd>Telescope builtin<CR>", { desc = "Commands" })
+map(n, "<leader>sc", "<cmd>Telescope commands<cr>", { desc = "Commands" })
+map(n, "<leader>sd", "<cmd>Telescope diagnostics_document<cr>", { desc = "Diagnostics" })
+map(n, "<leader>sh", "<cmd>Telescope help_tags<CR>", { desc = "Help Page" })
+map(n, "<leader>sg", "<cmd>Telescope live_grep<CR>", { desc = "Grep" })
+map(n, "<leader>sk", "<cmd>Telescope keymaps<CR>", { desc = "Keymaps" })
+map(n, "<leader>sw", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "Word" })
+
+map(n, "<leader>gfc", "<cmd>Telescope git_commits<CR>", { desc = "Commits" })
+map(n, "<leader>gfC", "<cmd>Telescope git_bcommits<CR>", { desc = "Commits (%)" })
+map(n, "<leader>gff", "<cmd>Telescope git_files<CR>", { desc = "Files (git-files)" })
+map(n, "<leader>gfs", "<cmd>Telescope git_stash<CR>", { desc = "Stash" })
+map(n, "<leader>gfb", "<cmd>Telescope git_branches<CR>", { desc = "Branches" })
+map(n, "<leader>gs", "<cmd>Telescope git_status<CR>", { desc = "Status" })
 
 -- otsutab
 -- stylua: ignore start
