@@ -109,8 +109,7 @@ return {
 
 	{
 		"folke/which-key.nvim",
-		keys = { "<leader>", "<c-r>", "<c-w>", '"', "'", "`", "c", "v", "V", "g" },
-		cmd = "WhichKey",
+		event = "VeryLazy",
 		opts = {
 			spec = {
 				{
@@ -140,6 +139,18 @@ return {
 					},
 					{ "gx", desc = "Open with system app" },
 				},
+			},
+			win = {
+				no_overlap = false,
+			},
+		},
+		keys = {
+			{
+				"<leader>?",
+				function()
+					require("which-key").show({ global = false })
+				end,
+				desc = "Buffer Keymaps (which-key)",
 			},
 		},
 		config = function(_, opts)
