@@ -50,8 +50,7 @@ map(n, "<C-q>", "<C-w>q", { desc = "Window Close" })
 map(n, "<leader>h", "<Cmd>ColorizerToggle<CR>", { desc = "Highlight Colors" })
 
 -- nvimtree
-map(n, "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Explorer Toggle" })
-map(n, "<leader>E", "<cmd>NvimTreeFocus<CR>", { desc = "Explorer Focus" })
+map(n, "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Explorer NvimTree" })
 
 -- telescope supermacy
 -- stylua: ignore
