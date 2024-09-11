@@ -3,10 +3,10 @@ local function lspSymbol(name, icon)
 	vim.fn.sign_define(hl, { text = icon, numhl = hl, texthl = hl })
 end
 
-lspSymbol("Error", "󰅙")
-lspSymbol("Info", "󰋼")
-lspSymbol("Hint", "󰌵")
-lspSymbol("Warn", "")
+lspSymbol("Error", "󰅙 ")
+lspSymbol("Warn", " ")
+lspSymbol("Hint", " ")
+lspSymbol("Info", " ")
 
 return {
 	{
