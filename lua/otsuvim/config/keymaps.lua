@@ -116,7 +116,9 @@ map(n, "<leader>gD", function() require("neogit.integrations.diffview").open() e
 map(n, "<ESC>", "<cmd>noh<CR>", "Clear Highlights")
 map(n, "<leader>ui", vim.show_pos, "Inspect Pos")
 map(n, "<leader>uI", "<cmd>InspectTree<cr>")
-Otsuvim.toggle.map("<leader>uw", Otsuvim.toggle("relativenumber", { name = "Relative Number" }))
+Otsuvim.toggle.map("<leader>ur", Otsuvim.toggle("relativenumber", { name = "Relative Number" }))
+Otsuvim.toggle.map("<leader>uw", Otsuvim.toggle("wrap", { name = "Wrap" }))
+Otsuvim.toggle.map("<leader>us", Otsuvim.toggle("spell", { name = "Spelling" }))
 
 -- comment
 map(n, "<leader>/", "<cmd>normal gcc<CR>", "Comment Toggle")
