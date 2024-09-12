@@ -6,7 +6,14 @@ return {
 		build = ":TSUpdate",
 		opts = function()
 			return {
-				ensure_installed = { "lua", "luadoc", "regex", "printf", "vim", "vimdoc" },
+				ensure_installed = {
+					"lua",
+					"luadoc",
+					"printf",
+					"regex",
+					"vim",
+					"vimdoc",
+				},
 				auto_install = true,
 
 				highlight = {
