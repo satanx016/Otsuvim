@@ -118,7 +118,7 @@ return {
 					{ "<leader>f", group = "file/find" },
 					{ "<leader>s", group = "search" },
 					{ "<leader>g", group = "git" },
-          { "<leader>gf", group = "find" },
+					{ "<leader>gf", group = "find" },
 					{ "<leader>gh", group = "hunk" },
 					{ "<leader>p", group = "projects" },
 					{ "[", group = "prev" },
