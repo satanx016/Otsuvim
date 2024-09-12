@@ -1,4 +1,7 @@
-vim.loader.enable() -- experimental loader features (supposed to be faster)
+if vim.loader then
+	vim.loader.enable() -- experimental loader features (supposed to be faster)
+end
+
 vim.g.based_cache = vim.fn.stdpath("data") .. "/otsuui/based/"
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
