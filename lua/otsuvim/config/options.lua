@@ -4,6 +4,8 @@ local g = vim.g
 
 g.mapleader = " "
 g.maplocalleader = vim.g.mapleader
+-- Otsuvim auto format
+g.autoformat = true
 
 o.laststatus = 3
 o.showmode = false

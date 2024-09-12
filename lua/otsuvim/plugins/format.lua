@@ -10,10 +10,12 @@ return {
 					-- javascript = { { "prettierd", "prettier" } },
 				},
 
-				format_on_save = {
-					timeout_ms = 500,
-					lsp_fallback = true,
-				},
+				format_on_save = function()
+					return vim.g.autoformat and {
+						timeout_ms = 500,
+						lsp_fallback = true,
+					} or nil
+				end,
 			}
 		end,
 		config = function(_, opts)

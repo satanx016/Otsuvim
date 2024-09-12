@@ -56,4 +56,16 @@ function M.map(lhs, toggle)
 	})
 end
 
+function M.format()
+	return M.wrap({
+		name = "Auto Format",
+		get = function()
+			return vim.g.autoformat == nil or vim.g.autoformat
+		end,
+		set = function(state)
+			vim.g.autoformat = state
+		end,
+	})
+end
+
 return M
