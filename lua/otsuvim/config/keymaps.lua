@@ -114,8 +114,8 @@ map(n, "<leader>gD", function() require("neogit.integrations.diffview").open() e
 map(n, "<ESC>", "<cmd>noh<CR>", { desc = "Clear Highlights" })
 
 -- comment
-map(n, "<leader>/", "gcc", { remap = true, desc = "Comment Toggle" })
-map(v, "<leader>/", "gc", { remap = true, desc = "Comment Toggle" })
+map(n, "<leader>/", "<cmd>normal gcc<CR>", {  desc = "Comment Toggle" })
+map(v, "<leader>/", "<cmd>normal gc<CR>", { desc = "Comment Toggle" })
 
 -- format
 -- stylua: ignore
