@@ -120,6 +120,7 @@ return {
 					{ "<leader>g", group = "git" },
 					{ "<leader>gf", group = "find" },
 					{ "<leader>gh", group = "hunk" },
+					{ "<leader>u", group = "ui", icon = { icon = "󰙵 ", color = "cyan" } },
 					{ "<leader>p", group = "projects" },
 					{ "[", group = "prev" },
 					{ "]", group = "next" },

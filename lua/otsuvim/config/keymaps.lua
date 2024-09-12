@@ -110,8 +110,11 @@ map(n, "<leader>gd", "<cmd>Gitsigns diffthis<CR>", { desc = "Diff This" })
 map(n, "<leader>gD", function() require("neogit.integrations.diffview").open() end, { desc = "Diffview" })
 -- stylua: ignore end
 
--- clear highlights
+-- ui qol's
 map(n, "<ESC>", "<cmd>noh<CR>", { desc = "Clear Highlights" })
+map(n, "<leader>ui", vim.show_pos, { desc = "Inspect Pos" })
+map(n, "<leader>uI", "<cmd>InspectTree<cr>")
+Otsuvim.toggle.map("<leader>uw", Otsuvim.toggle("relativenumber", { name = "Relative Number" }))
 
 -- comment
 map(n, "<leader>/", "<cmd>normal gcc<CR>", { desc = "Comment Toggle" })
