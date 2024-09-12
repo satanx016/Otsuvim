@@ -2,6 +2,7 @@ if vim.loader then
 	vim.loader.enable() -- experimental loader features (supposed to be faster)
 end
 
+_G.Otsuvim = require("otsuvim.util")
 vim.g.based_cache = vim.fn.stdpath("data") .. "/otsuui/based/"
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
