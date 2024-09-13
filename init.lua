@@ -2,31 +2,19 @@ if vim.loader then
 	vim.loader.enable()
 end
 
-_G.Otsuvim = require("otsuvim.util")
 vim.g.based_cache = vim.fn.stdpath("data") .. "/otsuui/based/"
+_G.Otsuvim = require("otsuvim.util")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
-	vim.fn.system({
-		"git",
-		"clone",
-		"--filter=blob:none",
-		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable",
-		lazypath,
-	})
+if not vim.uv.fs_stat(lazypath) then
+  local repo = "https://github.com/folke/lazy.nvim.git"
+  vim.fn.system { "git", "clone", "--filter=blob:none", repo, "--branch=stable", lazypath }
 end
-
 vim.opt.rtp:prepend(lazypath)
 
 require("otsuvim.config.options")
-if vim.g.neovide then
-	require("otsuvim.config.neovide")
-end
 
 local lazy_config = require("otsuvim.config.lazy")
-
 require("lazy").setup({
 	{ import = "otsuvim.plugins" },
 	{ import = "otsuvim.plugins.extras.vanity" },

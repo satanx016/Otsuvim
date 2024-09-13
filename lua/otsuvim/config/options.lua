@@ -54,3 +54,7 @@ o.swapfile = false
 opt.whichwrap:append("<>[]hl")
 
 vim.env.PATH = vim.fn.stdpath("data") .. "/mason/bin" .. ":" .. vim.env.PATH
+
+if vim.g.neovide then
+	require("otsuvim.config.neovide")
+end
