@@ -54,8 +54,6 @@ return {
 			require("notify").setup({
 				fps = 60,
 				top_down = false,
-				render = "wrapped-compact",
-				background_colour = "#000000",
 			})
 		end,
 	},
