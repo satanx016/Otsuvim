@@ -1,7 +1,6 @@
 local M = {}
 local map = vim.keymap.set
 
--- export on_attach & capabilities
 M.on_attach = function(client, bufnr)
 	local function opts(desc)
 		return { buffer = bufnr, desc = desc }

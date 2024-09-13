@@ -1,5 +1,5 @@
 if vim.loader then
-	vim.loader.enable() -- experimental loader features (supposed to be faster)
+	vim.loader.enable()
 end
 
 _G.Otsuvim = require("otsuvim.util")
@@ -21,7 +21,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("otsuvim.config.options")
---- neovide ---
 if vim.g.neovide then
 	require("otsuvim.config.neovide")
 end
@@ -34,7 +33,6 @@ require("lazy").setup({
 	-- { import = "otsuvim.plugins.test" },
 }, lazy_config)
 
--- load theme ---
 dofile(vim.g.based_cache .. "defaults")
 dofile(vim.g.based_cache .. "statusline")
 

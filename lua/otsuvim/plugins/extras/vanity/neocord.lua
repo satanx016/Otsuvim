@@ -12,7 +12,6 @@ return {
 			}
 
 			return {
-				-- General options
 				logo = images.helltaker_malina_coding,
 				logo_tooltip = "Yet Another Vimmer",
 				main_image = "logo",
