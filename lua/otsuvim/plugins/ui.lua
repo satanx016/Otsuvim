@@ -144,7 +144,6 @@ return {
 							return require("which-key.extras").expand.win()
 						end,
 					},
-					{ "gx", desc = "Open with system app" },
 				},
 			},
 			win = {
