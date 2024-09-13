@@ -1,16 +1,14 @@
 local M = {}
 
-local util = require("otsuvim.util")
-
 function M.wrap(toggle)
 	return setmetatable(toggle, {
 		__call = function()
 			toggle.set(not toggle.get())
 			local state = toggle.get()
 			if state then
-				util.info("Enabled " .. toggle.name, { title = toggle.name })
+				Otsuvim.info("Enabled " .. toggle.name, { title = toggle.name })
 			else
-				util.warn("Disabled " .. toggle.name, { title = toggle.name })
+				Otsuvim.warn("Disabled " .. toggle.name, { title = toggle.name })
 			end
 			return state
 		end,
