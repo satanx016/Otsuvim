@@ -1,23 +1,23 @@
 local M = {}
-local map = vim.keymap.set
 
 M.on_attach = function(client, bufnr)
-	local function opts(desc)
+	local function map(mode, lhs, rhs, desc)
+    vim.keymap.set(mode, lhs, rhs, { desc = desc })
 		return { buffer = bufnr, desc = desc }
 	end
 
-	map("n", "gy", vim.lsp.buf.type_definition, opts("Goto T[y]pe definition"))
-	map("n", "gD", vim.lsp.buf.declaration, opts("Goto Declaration"))
-	map("n", "gd", vim.lsp.buf.definition, opts("Goto Definition"))
-	map("n", "gr", vim.lsp.buf.references, opts("Goto References"))
-	map("n", "gI", vim.lsp.buf.implementation, opts("Goto Implementation"))
-	map("n", "K", vim.lsp.buf.hover, opts("Hover"))
-	map("n", "gk", vim.lsp.buf.signature_help, opts("Signature Help"))
-	map("n", "<leader>ca", vim.lsp.buf.code_action, opts("Code Action"))
-	map("n", "<leader>cr", vim.lsp.buf.rename, opts("Rename"))
-	map("n", "<leader>cc", vim.lsp.codelens.run, opts("Codelens Run"))
-	map("n", "<leader>cC", vim.lsp.codelens.refresh, opts("Codelesn Refresh"))
-	map("n", "<leader>cd", vim.diagnostic.open_float, opts("Line Diagnostics"))
+	map("n", "gy", vim.lsp.buf.type_definition, "Goto T[y]pe definition")
+	map("n", "gD", vim.lsp.buf.declaration, "Goto Declaration")
+	map("n", "gd", vim.lsp.buf.definition, "Goto Definition")
+	map("n", "gr", vim.lsp.buf.references, "Goto References")
+	map("n", "gI", vim.lsp.buf.implementation, "Goto Implementation")
+	map("n", "K", vim.lsp.buf.hover, "Hover")
+	map("n", "gk", vim.lsp.buf.signature_help, "Signature Help")
+	map("n", "<leader>ca", vim.lsp.buf.code_action, "Code Action")
+	map("n", "<leader>cr", vim.lsp.buf.rename, "Rename")
+	map("n", "<leader>cc", vim.lsp.codelens.run, "Codelens Run")
+	map("n", "<leader>cC", vim.lsp.codelens.refresh, "Codelesn Refresh")
+	map("n", "<leader>cd", vim.diagnostic.open_float, "Line Diagnostics")
 
 	-- setup signature popup
 	if client.server_capabilities.signatureHelpProvider then
