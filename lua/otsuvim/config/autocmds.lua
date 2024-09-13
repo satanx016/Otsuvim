@@ -31,7 +31,7 @@ end
 -- reload some nvconfig options on-save
 autocmd("BufWritePost", {
 	pattern = vim.tbl_map(function(path)
-		return vim.fs.normalize(vim.loop.fs_realpath(path) or path)
+		return vim.fs.normalize(vim.uv.fs_realpath(path) or path)
 	end, vim.fn.glob(vim.fn.stdpath("config") .. "/lua/**/*.lua", true, true, true)),
 	group = vim.api.nvim_create_augroup("ReloadOtsu", {}),
 
