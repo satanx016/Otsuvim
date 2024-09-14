@@ -50,8 +50,8 @@ return {
 			}
 		end,
 		config = function(_, opts)
+			dofile(vim.g.based_cache .. "notify")
 			require("noice").setup(opts)
-      dofile(vim.g.based_cache .. "notify")
 			require("notify").setup({
 				fps = 60,
 				top_down = false,
