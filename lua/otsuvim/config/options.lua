@@ -4,8 +4,7 @@ local g = vim.g
 
 g.mapleader = " "
 g.maplocalleader = vim.g.mapleader
--- Otsuvim auto format
-g.autoformat = true
+g.autoformat = true -- Otsuvim auto format
 
 o.laststatus = 3
 o.showmode = false
@@ -45,9 +44,7 @@ o.wrap = false
 
 
 opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp", "folds" }
-
--- disable nvim intro
-opt.shortmess:append("sI")
+opt.shortmess:append("sI") -- disable nvim intro
 
 o.signcolumn = "yes"
 o.splitbelow = true
@@ -63,9 +60,7 @@ opt.foldlevel = 99
 
 o.swapfile = false
 
--- go to previous/next line with h,l,left arrow and right arrow
--- when cursor reaches end/beginning of line
-opt.whichwrap:append("<>[]hl")
+opt.whichwrap:append("<>[]hl") -- switch to previous/next line when cursor reaches end/beginning of line
 
 vim.env.PATH = vim.fn.stdpath("data") .. "/mason/bin" .. ":" .. vim.env.PATH
 
