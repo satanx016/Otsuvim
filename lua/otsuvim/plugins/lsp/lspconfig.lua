@@ -2,7 +2,7 @@ local M = {}
 
 M.on_attach = function(client, bufnr)
 	local function map(mode, lhs, rhs, desc)
-    vim.keymap.set(mode, lhs, rhs, { desc = desc })
+		vim.keymap.set(mode, lhs, rhs, { desc = desc })
 		return { buffer = bufnr, desc = desc }
 	end
 
