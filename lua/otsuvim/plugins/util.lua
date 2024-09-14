@@ -1,5 +1,6 @@
 return {
 	{ "nvim-lua/plenary.nvim" },
+
 	{
 		"coffebar/neovim-project",
 		cmd = "NeovimProjectLoadRecent",
