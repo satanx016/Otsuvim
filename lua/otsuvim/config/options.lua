@@ -23,12 +23,12 @@ o.softtabstop = 2
 -- opt.sidescrolloff = 999 -- horizontal centering
 opt.scrolloff = 999 -- vertitcal
 opt.fillchars = {
-  foldopen = "",
-  foldclose = "",
-  fold = " ",
-  foldsep = " ",
-  diff = "╱",
-  eob = " ",
+	foldopen = "",
+	foldclose = "",
+	fold = " ",
+	foldsep = " ",
+	diff = "╱",
+	eob = " ",
 }
 opt.cmdheight = 0
 o.ignorecase = true
@@ -41,7 +41,6 @@ o.number = true
 o.numberwidth = 2
 o.ruler = false
 o.wrap = false
-
 
 opt.shortmess:append("sI") -- disable nvim intro
 
