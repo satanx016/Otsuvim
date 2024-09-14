@@ -43,7 +43,6 @@ o.ruler = false
 o.wrap = false
 
 
-opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp", "folds" }
 opt.shortmess:append("sI") -- disable nvim intro
 
 o.signcolumn = "yes"
