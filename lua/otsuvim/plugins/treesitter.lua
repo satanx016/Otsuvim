@@ -25,8 +25,10 @@ return {
 			}
 		end,
 		config = function(_, opts)
-			dofile(vim.g.based_cache .. "syntax")
-			dofile(vim.g.based_cache .. "treesitter")
+			pcall(function()
+				dofile(vim.g.based_cache .. "syntax")
+				dofile(vim.g.based_cache .. "treesitter")
+			end)
 			require("nvim-treesitter.configs").setup(opts)
 
 			vim.filetype.add({
