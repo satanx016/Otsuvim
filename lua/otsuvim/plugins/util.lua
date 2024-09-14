@@ -12,9 +12,7 @@ return {
 
 			return {
 				projects = config.utils.projects,
-
 				last_session_on_startup = false,
-				dashboard_mode = true,
 			}
 		end,
 		config = function(_, opts)
