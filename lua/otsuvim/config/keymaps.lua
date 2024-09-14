@@ -89,8 +89,8 @@ map(n, "<leader>ba", "<cmd>silent only | enew | lua require('otsuui.otsutab').cl
 -- stylua: ignore end
 
 -- neovim-projects
-map(n, "<leader>pf", "<cmd>Telescope neovim-project discover<CR>", "List All")
-map(n, "<leader>pr", "<cmd>Telescope neovim-project history<CR>", "List Recent")
+map(n, "<leader>pf", "<cmd>NeovimProjectDiscover<CR>", "List All")
+map(n, "<leader>pr", "<cmd>NeovimProjectHistory<CR>", "List Recent")
 map(n, "<leader>pl", "<cmd>NeovimProjectLoadRecent<CR>", "Load Last Session")
 
 -- Gitsigns & Neogit & Diffview
