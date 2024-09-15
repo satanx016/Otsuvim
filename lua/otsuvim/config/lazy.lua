@@ -2,6 +2,8 @@ return {
 	defaults = { lazy = true },
 	install = { colorscheme = { "otsu" } },
 
+	rocks = { enabled = false },
+
 	ui = {
 		icons = {
 			ft = "",
