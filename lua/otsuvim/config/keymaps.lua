@@ -63,7 +63,7 @@ map(n, "<leader>fr", "<cmd>Telescope oldfiles<CR>", "Recent Files")
 
 map(n, '<leader>s"', "<cmd>Telescope registers<cr>", "Registers")
 map(n, "<leader>sa", "<cmd>Telescope autocommands<cr>", "Auto Commands")
-map(n, "<leader>sb", "<cmd>Telescope builtin<CR>", "Commands")
+map(n, "<leader>sb", "<cmd>Telescope builtin<CR>", "Pickers")
 map(n, "<leader>sc", "<cmd>Telescope commands<cr>", "Commands")
 map(n, "<leader>sd", "<cmd>Telescope diagnostics_document<cr>", "Diagnostics")
 map(n, "<leader>sh", "<cmd>Telescope help_tags<CR>", "Help Page")
