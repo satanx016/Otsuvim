@@ -28,7 +28,7 @@ return {
 			"sindrets/diffview.nvim",
 		},
 		config = function()
-      dofile(vim.g.based_cache .. "neogit")
+			dofile(vim.g.based_cache .. "neogit")
 			require("neogit").setup()
 		end,
 	},
