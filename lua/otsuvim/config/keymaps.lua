@@ -91,7 +91,7 @@ map(n, "<leader>ba", "<cmd>silent only | enew | lua require('otsuui.otsutab').cl
 -- neovim-projects
 map(n, "<leader>pf", "<cmd>NeovimProjectDiscover<CR>", "List All")
 map(n, "<leader>pr", "<cmd>NeovimProjectHistory<CR>", "List Recent")
-map(n, "<leader>pl", "<cmd>NeovimProjectLoadRecent<CR>", "Load Last Session")
+map(n, "<leader>pl", "<cmd>NeovimProjectLoadRecent<CR>", "Restore Last Project")
 
 -- Gitsigns & Neogit & Diffview
 -- stylua: ignore start
