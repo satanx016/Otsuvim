@@ -7,9 +7,7 @@ M.based = {
 	transparency = false,
 	-- hl = highlights
 	hl_add = {},
-	hl_override = {
-		["@comment"] = { italic = true },
-	},
+	hl_override = {},
 }
 
 M.ui = {
