@@ -66,7 +66,10 @@ return {
 					},
 
 					mappings = {
-						n = { ["q"] = require("telescope.actions").close },
+						n = {
+							["q"] = require("telescope.actions").close,
+							["<C-p>"] = require("telescope.actions.layout").toggle_preview,
+						},
 					},
 					file_ignore_patterns = {
 						"%.git/",
