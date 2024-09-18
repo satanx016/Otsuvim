@@ -69,6 +69,18 @@ return {
 						n = {
 							["q"] = require("telescope.actions").close,
 							["<C-p>"] = require("telescope.actions.layout").toggle_preview,
+							["<Tab>"] = function(prompt_bufnr)
+								local action_state = require("telescope.actions.state")
+								local picker = action_state.get_current_picker(prompt_bufnr)
+								local prompt_win = picker.prompt_win
+								local previewer = picker.previewer
+								local winid = previewer.state.winid
+								local bufnr = previewer.state.bufnr
+								vim.keymap.set("n", "<Tab>", function()
+									vim.cmd(string.format("noautocmd lua vim.api.nvim_set_current_win(%s)", prompt_win))
+								end, { buffer = bufnr })
+								vim.cmd(string.format("noautocmd lua vim.api.nvim_set_current_win(%s)", winid))
+							end,
 						},
 					},
 					file_ignore_patterns = {
