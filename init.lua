@@ -1,4 +1,8 @@
 vim.g.based_cache = vim.fn.stdpath("data") .. "/otsuui/based/"
+
+vim.g.mapleader = " "
+vim.g.maplocalleader = vim.g.mapleader
+
 _G.Otsuvim = require("otsuvim.util")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
