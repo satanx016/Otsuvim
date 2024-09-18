@@ -58,7 +58,7 @@ return {
 
 	{
 		"neovim/nvim-lspconfig",
-		event = "User FilePost",
+		event = "LazyFile",
 		config = function()
 			require("otsuvim.plugins.lsp.lspconfig").defaults()
 		end,

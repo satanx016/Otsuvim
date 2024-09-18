@@ -3,8 +3,6 @@ vim.g.based_cache = vim.fn.stdpath("data") .. "/otsuui/based/"
 vim.g.mapleader = " "
 vim.g.maplocalleader = vim.g.mapleader
 
-_G.Otsuvim = require("otsuvim.util")
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.uv.fs_stat(lazypath) then
 	local repo = "https://github.com/folke/lazy.nvim.git"
@@ -13,6 +11,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("otsuvim.config.options")
+_G.Otsuvim = require("otsuvim.util")
+Otsuvim.lazy.setup()
 
 local lazy_config = require("otsuvim.config.lazy")
 require("lazy").setup({

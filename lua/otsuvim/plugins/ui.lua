@@ -75,7 +75,7 @@ return {
 
 	{
 		"lukas-reineke/indent-blankline.nvim",
-		event = "User FilePost",
+		event = "LazyFile",
 		opts = function()
 			return {
 				indent = { char = "│", highlight = "IblChar" },

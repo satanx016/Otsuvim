@@ -22,7 +22,7 @@ return {
 
 	{
 		"NvChad/nvim-colorizer.lua",
-		event = "User FilePost",
+		event = "LazyFile",
 		opts = function()
 			return { user_default_options = { names = false } }
 		end,

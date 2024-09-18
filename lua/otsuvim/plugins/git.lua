@@ -1,7 +1,7 @@
 return {
 	{
 		"lewis6991/gitsigns.nvim",
-		event = "User FilePost",
+		event = "LazyFile",
 		opts = function()
 			return {
 				signs = {
