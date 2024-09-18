@@ -1,7 +1,3 @@
-if vim.loader then
-	vim.loader.enable()
-end
-
 vim.g.based_cache = vim.fn.stdpath("data") .. "/otsuui/based/"
 _G.Otsuvim = require("otsuvim.util")
 
