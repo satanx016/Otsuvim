@@ -22,14 +22,6 @@ o.softtabstop = 2
 
 -- opt.sidescrolloff = 999 -- horizontal centering
 opt.scrolloff = 999 -- vertitcal
-opt.fillchars = {
-	foldopen = "",
-	foldclose = "",
-	fold = " ",
-	foldsep = " ",
-	diff = "╱",
-	eob = " ",
-}
 opt.cmdheight = 0
 o.ignorecase = true
 o.smartcase = true
@@ -51,10 +43,6 @@ o.timeoutlen = 300
 o.undofile = true
 
 opt.smoothscroll = true
-opt.foldexpr = "v:lua.require'otsuui.otsucolumn'.foldexpr()"
-opt.foldmethod = "expr"
-opt.foldtext = ""
-opt.foldlevel = 99
 
 o.swapfile = false
 

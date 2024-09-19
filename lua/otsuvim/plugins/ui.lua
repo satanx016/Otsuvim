@@ -16,9 +16,9 @@ return {
 
 	{
 		"satanx016/otsuui",
-		lazy = false,
+    event = "VeryLazy",
 		config = function()
-			require("otsuui")
+			require("otsuui").setup()
 		end,
 	},
 
