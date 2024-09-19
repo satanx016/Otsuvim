@@ -3,7 +3,7 @@ return {
 
 	{
 		"coffebar/neovim-project",
-		cmd = { "NeovimProjectDiscover", "NeovimProjectHistory", "NeovimProjectLoadRecent"},
+		cmd = { "NeovimProjectDiscover", "NeovimProjectHistory", "NeovimProjectLoadRecent" },
 		dependencies = {
 			{ "Shatur/neovim-session-manager" },
 		},
