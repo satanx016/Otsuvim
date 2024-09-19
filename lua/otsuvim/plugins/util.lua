@@ -8,10 +8,8 @@ return {
 			{ "Shatur/neovim-session-manager" },
 		},
 		opts = function()
-			local config = require("nvconfig")
-
 			return {
-				projects = config.utils.projects,
+				projects = require("nvconfig").utils.projects,
 				last_session_on_startup = false,
 			}
 		end,
