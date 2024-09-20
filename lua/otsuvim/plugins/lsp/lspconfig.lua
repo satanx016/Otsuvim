@@ -6,6 +6,7 @@ M.on_attach = function(client, bufnr)
 		return { buffer = bufnr, desc = desc }
 	end
 
+	map("n", "<leader>cl", "<cmd>LspInfo<cr>", "Lsp Info")
 	map("n", "gy", vim.lsp.buf.type_definition, "Goto T[y]pe definition")
 	map("n", "gD", vim.lsp.buf.declaration, "Goto Declaration")
 	map("n", "gd", vim.lsp.buf.definition, "Goto Definition")
