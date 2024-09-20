@@ -32,8 +32,5 @@ return {
 				terminal_text = "Using Terminal",
 			}
 		end,
-		config = function(_, opts)
-			require("neocord").setup(opts)
-		end,
 	},
 }

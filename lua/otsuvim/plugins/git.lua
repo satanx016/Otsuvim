@@ -3,6 +3,8 @@ return {
 		"lewis6991/gitsigns.nvim",
 		event = "LazyFile",
 		opts = function()
+			dofile(vim.g.based_cache .. "git")
+
 			return {
 				signs = {
 					add = { text = "▎" },
@@ -15,10 +17,6 @@ return {
 				signs_staged_enable = false,
 			}
 		end,
-		config = function(_, opts)
-			dofile(vim.g.based_cache .. "git")
-			require("gitsigns").setup(opts)
-		end,
 	},
 
 	{
@@ -27,9 +25,9 @@ return {
 		dependencies = {
 			"sindrets/diffview.nvim",
 		},
-		config = function()
+		opts = function()
 			dofile(vim.g.based_cache .. "neogit")
-			require("neogit").setup()
+			return {}
 		end,
 	},
 }

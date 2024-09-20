@@ -13,9 +13,6 @@ return {
 				last_session_on_startup = false,
 			}
 		end,
-		config = function(_, opts)
-			require("neovim-project").setup(opts)
-		end,
 	},
 
 	{
@@ -23,9 +20,6 @@ return {
 		event = "LazyFile",
 		opts = function()
 			return { user_default_options = { names = false } }
-		end,
-		config = function(_, opts)
-			require("colorizer").setup(opts)
 		end,
 	},
 }

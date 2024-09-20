@@ -3,6 +3,8 @@ return {
 		"nvim-tree/nvim-tree.lua",
 		cmd = { "NvimTreeToggle", "NvimTreeFocus" },
 		opts = function()
+			dofile(vim.g.based_cache .. "nvimtree")
+
 			return {
 				hijack_cursor = true,
 				sync_root_with_cwd = true,
@@ -30,16 +32,14 @@ return {
 				},
 			}
 		end,
-		config = function(_, opts)
-			dofile(vim.g.based_cache .. "nvimtree")
-			require("nvim-tree").setup(opts)
-		end,
 	},
 
 	{
 		"nvim-telescope/telescope.nvim",
 		cmd = "Telescope",
 		opts = function()
+			dofile(vim.g.based_cache .. "telescope")
+
 			return {
 				defaults = {
 					vimgrep_arguments = {
@@ -101,10 +101,6 @@ return {
 					},
 				},
 			}
-		end,
-		config = function(_, opts)
-			dofile(vim.g.based_cache .. "telescope")
-			require("telescope").setup(opts)
 		end,
 	},
 }

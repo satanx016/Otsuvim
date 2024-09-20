@@ -18,8 +18,5 @@ return {
 				end,
 			}
 		end,
-		config = function(_, opts)
-			require("conform").setup(opts)
-		end,
 	},
 }

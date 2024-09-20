@@ -16,15 +16,15 @@ return {
 
 	{
 		"satanx016/otsuui",
-    event = "VeryLazy",
-		config = function()
-			require("otsuui").setup()
-		end,
+		event = "VeryLazy",
+		opts = {},
 	},
 
 	{
 		"rcarriga/nvim-notify",
 		opts = function()
+			dofile(vim.g.based_cache .. "notify")
+
 			return {
 				fps = 60,
 				top_down = false,
@@ -35,10 +35,6 @@ return {
 					return math.floor(vim.o.columns * 0.6)
 				end,
 			}
-		end,
-		config = function(_, opts)
-			dofile(vim.g.based_cache .. "notify")
-			require("notify").setup(opts)
 		end,
 	},
 
@@ -67,9 +63,6 @@ return {
 					lsp_doc_border = true, -- add a border to hover docs and signature help
 				},
 			}
-		end,
-		config = function(_, opts)
-			require("noice").setup(opts)
 		end,
 	},
 
@@ -123,45 +116,49 @@ return {
 	{
 		"folke/which-key.nvim",
 		event = "VeryLazy",
-		opts = {
-			preset = "modern",
-			spec = {
-				{
-					mode = { "n", "v" },
-					{ "<leader>c", group = "code" },
-					{ "<leader>f", group = "file/find" },
-					{ "<leader>s", group = "search" },
-					{ "<leader>g", group = "git" },
-					{ "<leader>gf", group = "find" },
-					{ "<leader>gh", group = "hunk" },
-					{ "<leader>u", group = "ui", icon = { icon = "󰙵 ", color = "azure" } },
-					{ "<leader>p", group = "projects", icon = { icon = "󰉋 ", color = "blue" } },
-					{ "<leader>L", icon = { icon = "󰒲", color = "azure" } },
-					{ "<leader>M", icon = { icon = "", color = "yellow" } },
-					{ "[", group = "prev" },
-					{ "]", group = "next" },
-					{ "g", group = "goto" },
-					{ "z", group = "fold" },
+		opts = function()
+			dofile(vim.g.based_cache .. "whichkey")
+
+			return {
+				preset = "modern",
+				spec = {
 					{
-						"<leader>b",
-						group = "buffer",
-						expand = function()
-							return require("which-key.extras").expand.buf()
-						end,
-					},
-					{
-						"<c-w>",
-						group = "windows",
-						expand = function()
-							return require("which-key.extras").expand.win()
-						end,
+						mode = { "n", "v" },
+						{ "<leader>c", group = "code" },
+						{ "<leader>f", group = "file/find" },
+						{ "<leader>s", group = "search" },
+						{ "<leader>g", group = "git" },
+						{ "<leader>gf", group = "find" },
+						{ "<leader>gh", group = "hunk" },
+						{ "<leader>u", group = "ui", icon = { icon = "󰙵 ", color = "azure" } },
+						{ "<leader>p", group = "projects", icon = { icon = "󰉋 ", color = "blue" } },
+						{ "<leader>L", icon = { icon = "󰒲", color = "azure" } },
+						{ "<leader>M", icon = { icon = "", color = "yellow" } },
+						{ "[", group = "prev" },
+						{ "]", group = "next" },
+						{ "g", group = "goto" },
+						{ "z", group = "fold" },
+						{
+							"<leader>b",
+							group = "buffer",
+							expand = function()
+								return require("which-key.extras").expand.buf()
+							end,
+						},
+						{
+							"<c-w>",
+							group = "windows",
+							expand = function()
+								return require("which-key.extras").expand.win()
+							end,
+						},
 					},
 				},
-			},
-			win = {
-				no_overlap = false,
-			},
-		},
+				win = {
+					no_overlap = false,
+				},
+			}
+		end,
 		keys = {
 			{
 				"<leader>?",
@@ -171,9 +168,5 @@ return {
 				desc = "Buffer Keymaps (which-key)",
 			},
 		},
-		config = function(_, opts)
-			dofile(vim.g.based_cache .. "whichkey")
-			require("which-key").setup(opts)
-		end,
 	},
 }

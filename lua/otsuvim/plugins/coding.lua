@@ -178,8 +178,5 @@ return {
 
 			return options
 		end,
-		config = function(_, opts)
-			require("cmp").setup(opts)
-		end,
 	},
 }
