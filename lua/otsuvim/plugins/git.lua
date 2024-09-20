@@ -7,12 +7,9 @@ return {
 
 			return {
 				signs = {
-					add = { text = "▎" },
-					change = { text = "▎" },
 					delete = { text = "" },
 					topdelete = { text = "" },
-					changedelete = { text = "▎" },
-					untracked = { text = "▎" },
+					changedelete = { text = "󱕖" },
 				},
 				signs_staged_enable = false,
 			}
