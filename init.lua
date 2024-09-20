@@ -1,4 +1,4 @@
-vim.g.based_cache = vim.fn.stdpath("data") .. "/otsuui/based/"
+vim.g.based_cache = vim.fn.stdpath("data") .. "/otsu-ui/based/"
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.uv.fs_stat(lazypath) then

@@ -19,7 +19,7 @@ M.ui = {
 
 	telescope = { style = "borderless" }, -- borderless / bordered
 
-	------------------------------- otsuui modules -----------------------------
+	------------------------------- otsu-ui modules -----------------------------
 	statusline = {
 		theme = "default", -- default/vscode/minimal
 		-- default/round/block/arrow separators work only for default otsuline theme

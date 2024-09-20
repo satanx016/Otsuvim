@@ -47,14 +47,14 @@ autocmd("BufWritePost", {
 		local config = require("nvconfig")
 
 		-- otsuline
-		require("plenary.reload").reload_module("otsuui.otsuline.utils")
-		require("plenary.reload").reload_module("otsuui.otsuline." .. config.ui.statusline.theme)
-		vim.opt.statusline = "%!v:lua.require('otsuui.otsuline." .. config.ui.statusline.theme .. "')()"
+		require("plenary.reload").reload_module("otsu-ui.otsuline.utils")
+		require("plenary.reload").reload_module("otsu-ui.otsuline." .. config.ui.statusline.theme)
+		vim.opt.statusline = "%!v:lua.require('otsu-ui.otsuline." .. config.ui.statusline.theme .. "')()"
 
 		-- otsutab
 		if config.ui.tabufline.enabled then
-			require("plenary.reload").reload_module("otsuui.otsutab.modules")
-			vim.opt.tabline = "%!v:lua.require('otsuui.otsutab.modules')()"
+			require("plenary.reload").reload_module("otsu-ui.otsutab.modules")
+			vim.opt.tabline = "%!v:lua.require('otsu-ui.otsutab.modules')()"
 		end
 
 		require("based").load_all_highlights()

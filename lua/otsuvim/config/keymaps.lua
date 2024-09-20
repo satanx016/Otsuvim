@@ -81,11 +81,11 @@ map(n, "<leader>gs", "<cmd>Telescope git_status<CR>", "Status")
 -- otsutab
 -- stylua: ignore start
 map(n, "<leader>bn", "<cmd>enew<CR>", "Buffer New")
-map(n, "<tab>", function() require("otsuui.otsutab").next() end, "Buffer Goto next")
-map(n, "<S-tab>", function() require("otsuui.otsutab").prev() end, "Buffer Goto prev")
-map(n, "<leader>bq", function() require("otsuui.otsutab").close_buffer() end, "Buffer Close")
-map(n, "<leader>bo", function() require("otsuui.otsutab").closeOtherBufs() end, "Buffer Close Others")
-map(n, "<leader>ba", "<cmd>silent only | enew | lua require('otsuui.otsutab').closeOtherBufs()<CR>", "Buffer Close All")
+map(n, "<tab>", function() require("otsu-ui.otsutab").next() end, "Buffer Goto next")
+map(n, "<S-tab>", function() require("otsu-ui.otsutab").prev() end, "Buffer Goto prev")
+map(n, "<leader>bq", function() require("otsu-ui.otsutab").close_buffer() end, "Buffer Close")
+map(n, "<leader>bo", function() require("otsu-ui.otsutab").closeOtherBufs() end, "Buffer Close Others")
+map(n, "<leader>ba", "<cmd>silent only | enew | lua require('otsu-ui.otsutab').closeOtherBufs()<CR>", "Buffer Close All")
 -- stylua: ignore end
 
 -- neovim-projects
