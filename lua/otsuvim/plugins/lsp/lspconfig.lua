@@ -16,7 +16,7 @@ M.on_attach = function(client, bufnr)
 	map("n", "<leader>ca", vim.lsp.buf.code_action, "Code Action")
 	map("n", "<leader>cr", vim.lsp.buf.rename, "Rename")
 	map("n", "<leader>cc", vim.lsp.codelens.run, "Codelens Run")
-	map("n", "<leader>cC", vim.lsp.codelens.refresh, "Codelesn Refresh")
+	map("n", "<leader>cC", vim.lsp.codelens.refresh, "Codelens Refresh")
 	map("n", "<leader>cd", vim.diagnostic.open_float, "Line Diagnostics")
 
 	-- setup signature popup
