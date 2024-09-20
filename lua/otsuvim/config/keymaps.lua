@@ -93,24 +93,10 @@ map(n, "<leader>pf", "<cmd>NeovimProjectDiscover<CR>", "List All")
 map(n, "<leader>pr", "<cmd>NeovimProjectHistory<CR>", "List Recent")
 map(n, "<leader>pl", "<cmd>NeovimProjectLoadRecent<CR>", "Restore Last Project")
 
--- Gitsigns & Neogit & Diffview
--- stylua: ignore start
+-- Neogit & Diffview
 map(n, "<leader>gg", "<cmd>Neogit<CR>", "Neogit Interface")
-map(n, "[H", "<cmd>Gitsigns nav_hunk first<CR>", "First Hunk")
-map(n, "]H", "<cmd>Gitsigns nav_hunk last<CR>", "Last Hunk")
-map(n, "[h", "<cmd>Gitsigns nav_hunk prev<CR>", "Prev Hunk")
-map(n, "]h", "<cmd>Gitsigns nav_hunk next<CR>", "Next Hunk")
-map(n, "<leader>ghp", "<cmd>Gitsigns preview_hunk<CR>", "Preview Hunk")
-map(nv, "<leader>ghs", ":Gitsigns stage_hunk<CR>", "Stage Hunk")
-map(nv, "<leader>ghr", ":Gitsigns reset_hunk<CR>", "Reset Hunk")
-map(n, "<leader>ghu", "<cmd>Gitsigns undo_stage_hunk<CR>", "Undo Stage Hunk")
-map(n, "<leader>ghS", "<cmd>Gitsigns stage_buffer<CR>", "Stage Buffer")
-map(n, "<leader>ghR", "<cmd>Gitsigns reset_buffer<CR>", "Reset Buffer")
-map(n, "<leader>ghb", "<cmd>Gitsigns blame_line<CR>", "Blame")
-map(n, "<leader>ghB", function () require("gitsigns").blame_line({ full=true })end, "Full Blame")
-map(n, "<leader>gd", "<cmd>Gitsigns diffthis<CR>", "Diff This")
+-- stylua: ignore
 map(n, "<leader>gD", function() require("neogit.integrations.diffview").open() end, "Diffview")
--- stylua: ignore end
 
 -- ui qol's
 map(n, "<ESC>", "<cmd>noh<CR>", "Clear Highlights")
