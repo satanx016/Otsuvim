@@ -133,7 +133,7 @@ return {
 						{ "<leader>u", group = "ui", icon = { icon = "󰙵 ", color = "azure" } },
 						{ "<leader>p", group = "projects", icon = { icon = "󰉋 ", color = "blue" } },
 						{ "<leader>L", icon = { icon = "󰒲", color = "azure" } },
-						{ "<leader>M", icon = { icon = "", color = "yellow" } },
+						{ "<leader>cm", icon = { icon = "󱌢", color = "grey" } },
 						{ "[", group = "prev" },
 						{ "]", group = "next" },
 						{ "g", group = "goto" },
