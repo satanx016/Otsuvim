@@ -16,7 +16,7 @@ return {
 
 	{
 		"satanx016/otsu-ui",
-		event = "VeryLazy",
+		event = "UIEnter",
 		opts = {},
 	},
 
