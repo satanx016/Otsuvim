@@ -1,7 +1,7 @@
 return {
 	{
 		"IogaMaster/neocord",
-		enabled = true,
+		enabled = false,
 		event = "VeryLazy",
 		opts = function()
 			local images = {
