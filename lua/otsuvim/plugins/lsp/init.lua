@@ -22,7 +22,7 @@ return {
 					height = 0.8,
 
 					icons = {
-						package_pending = " ",
+						package_pending = " ",
 						package_installed = "󰄳 ",
 						package_uninstalled = " 󰚌",
 					},
