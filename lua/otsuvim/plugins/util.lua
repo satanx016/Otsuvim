@@ -8,6 +8,8 @@ return {
 			{ "Shatur/neovim-session-manager" },
 		},
 		opts = function()
+      vim.opt.sessionoptions:remove("folds")
+
 			return {
 				projects = require("nvconfig").utils.projects,
 				last_session_on_startup = false,
