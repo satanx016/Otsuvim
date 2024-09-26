@@ -66,4 +66,16 @@ function M.format()
 	})
 end
 
+function M.inlay_hints()
+	return M.wrap({
+		name = "Inlay Hints",
+		get = function()
+			return vim.lsp.inlay_hint.is_enabled({ bufnr = 0 })
+		end,
+		set = function(state)
+			vim.lsp.inlay_hint.enable(state, { bufnr = 0 })
+		end,
+	})
+end
+
 return M
