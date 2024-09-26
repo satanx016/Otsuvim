@@ -7,7 +7,6 @@ local nt = { n, t }
 local nv = { n, v }
 
 map(n, "<leader>L", "<Cmd>Lazy<CR>", "Lazy") -- lazy
-map(n, "<leader>cm", "<Cmd>Mason<CR>", "Mason") -- mason
 
 -- essentials
 map(n, ";", ":", "CMD enter command mode")

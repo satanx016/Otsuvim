@@ -48,8 +48,6 @@ o.swapfile = false
 
 opt.whichwrap:append("<>[]hl") -- switch to previous/next line when cursor reaches end/beginning of line
 
-vim.env.PATH = vim.fn.stdpath("data") .. "/mason/bin" .. ":" .. vim.env.PATH
-
 if vim.g.neovide then
 	require("otsuvim.config.neovide")
 end
