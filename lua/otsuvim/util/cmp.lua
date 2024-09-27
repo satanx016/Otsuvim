@@ -1,15 +1,16 @@
 local M = {}
 
-local cmp = package.loaded["cmp"]
 local luasnip = package.loaded["luasnip"]
 
 function M.is_visible()
+	local cmp = package.loaded["cmp"]
 	return cmp and cmp.core.view:visible()
 end
 
 function M.select_next()
+	local cmp = package.loaded["cmp"]
 	return function(fallback)
-		if cmp.visible() then
+		if M.is_visible() then
 			cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
 		elseif luasnip.expand_or_jumpable() then
 			luasnip.expand_or_jump()
@@ -20,8 +21,9 @@ function M.select_next()
 end
 
 function M.select_prev()
+	local cmp = package.loaded["cmp"]
 	return function(fallback)
-		if cmp.visible() then
+		if M.is_visible() then
 			cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
 		elseif luasnip.jumpable(-1) then
 			luasnip.jump(-1)

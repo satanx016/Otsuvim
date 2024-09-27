@@ -67,7 +67,7 @@ return {
 			dofile(vim.g.based_cache .. "cmp")
 			vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true }) -- for colorschemes missing this
 
-			local cmp = package.loaded["cmp"]
+			local cmp = require("cmp")
 
 			return {
 				completion = { completeopt = "menu,menuone" },
