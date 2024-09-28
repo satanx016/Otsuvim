@@ -109,6 +109,7 @@ return {
 		end,
 		config = function(_, opts)
 			dofile(vim.g.based_cache .. "lsp")
+			dofile(vim.g.based_cache .. "semantic_tokens")
 
 			Otsuvim.lsp.setup(opts)
 			Otsuvim.lsp.on_attach(function(_, buffer) -- set keymaps

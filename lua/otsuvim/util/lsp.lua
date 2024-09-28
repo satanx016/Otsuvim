@@ -45,6 +45,10 @@ function M.setup(opts)
 			})
 		end)
 	end
+
+	M.on_supports_method("textDocument/semanticTokens/full", function(client, _)
+		client.server_capabilities.semanticTokensProvider = nil
+	end)
 end
 
 function M.on_attach(on_attach, name)
