@@ -1,7 +1,9 @@
 vim.g.based_cache = vim.fn.stdpath("data") .. "/otsu-ui/based/"
 
 require("otsuvim.config.options")
+
 _G.Otsuvim = require("otsuvim.util")
+Otsuvim.config = require("otsuvim.config.otsurc")
 
 Otsuvim.lazy.setup()
 

@@ -34,7 +34,7 @@ function M.select_prev()
 end
 
 function M.get_formatting_style()
-	local cmp_ui = require("nvconfig").ui.cmp
+	local cmp_ui = Otsuvim.config.ui.cmp
 	local icons = require("otsu-ui.icons.lspkind")
 
 	return {

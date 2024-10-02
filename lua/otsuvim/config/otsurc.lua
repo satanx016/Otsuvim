@@ -3,7 +3,7 @@ local M = {}
 M.based = {
 	integrations = {},
 	changed_themes = {},
-	theme = "chocolate", -- default theme
+	theme = "gruvbox", -- default theme
 	transparency = true,
 	-- hl = highlights
 	hl_add = {},
@@ -14,7 +14,7 @@ M.ui = {
 	cmp = {
 		icons = true,
 		lspkind_text = true,
-		style = "default", -- default/flat_light/flat_dark/atom/atom_colored
+		style = "default", -- default/flat_light/flat_dark
 	},
 
 	telescope = { style = "borderless" }, -- borderless / bordered
@@ -37,7 +37,7 @@ M.ui = {
 		modules = nil,
 	},
 
-	nvdash = {
+	otsudash = {
 		load_on_startup = true,
 
 		header = {
@@ -62,8 +62,6 @@ M.ui = {
 			{ "󰒲  Lazy", "Spc L", "Lazy" },
 		},
 	},
-
-	cheatsheet = { theme = "grid" }, -- simple/grid
 
 	lsp = { signature = true },
 
