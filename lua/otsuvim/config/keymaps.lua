@@ -106,6 +106,7 @@ Otsuvim.toggle.map("<leader>ur", Otsuvim.toggle("relativenumber", { name = "Rela
 Otsuvim.toggle.map("<leader>us", Otsuvim.toggle("spell", { name = "Spelling" }))
 Otsuvim.toggle.map("<leader>uw", Otsuvim.toggle("wrap", { name = "Wrap" }))
 Otsuvim.toggle.map("<leader>uh", Otsuvim.toggle.inlay_hints())
+Otsuvim.toggle.map("<leader>ut", Otsuvim.toggle.transparency())
 
 -- comment
 map(n, "<leader>/", "<cmd>normal gcc<CR>", "Comment Toggle")

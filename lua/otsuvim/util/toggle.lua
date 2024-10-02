@@ -78,4 +78,21 @@ function M.inlay_hints()
 	})
 end
 
+function M.transparency()
+	return M.wrap({
+		name = "Transparency",
+		get = function()
+			return Otsuvim.config.based.transparency
+		end,
+		set = function(state)
+			Otsuvim.config.based.transparency = not Otsuvim.config.based.transparency
+			require("based").load_all_highlights()
+			require("otsu-ui.utils").replace_key_value(
+				"transparency = " .. tostring(not state),
+				"transparency = " .. tostring(state)
+			)
+		end,
+	})
+end
+
 return M
