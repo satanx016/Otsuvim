@@ -52,6 +52,17 @@ return {
 						["vim.lsp.util.stylize_markdown"] = true,
 						["cmp.entry.get_documentation"] = true,
 					},
+
+					documentation = {
+						opts = {
+							win_options = {
+								winhighlight = {
+									Normal = "CmpDoc",
+									FloatBorder = "CmpDocBorder",
+								},
+							},
+						},
+					},
 				},
 
 				presets = {
