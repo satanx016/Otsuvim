@@ -1,6 +1,7 @@
 return {
 	{
 		"stevearc/conform.nvim",
+		event = "LazyFile",
 		opts = function()
 			return {
 				-- Conform will run multiple formatters sequentially / Use a sub-list to run only the first available formatter
