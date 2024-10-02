@@ -1,50 +1,49 @@
 local opt = vim.opt
-local o = vim.o
 local g = vim.g
 
 g.mapleader = " "
 g.maplocalleader = vim.g.mapleader
 g.autoformat = true -- Otsuvim auto format
 
-o.laststatus = 3
-o.showmode = false
+opt.laststatus = 3
+opt.showmode = false
 
-o.clipboard = "unnamedplus" -- Synchronize with system clipboard
-o.cursorline = true
-o.cursorlineopt = "number"
+opt.clipboard = "unnamedplus" -- Synchronize with system clipboard
+opt.cursorline = true
+opt.cursorlineopt = "number"
 
 -- Indenting
-o.expandtab = true
-o.shiftwidth = 2
-o.smartindent = true
-o.tabstop = 2
-o.softtabstop = 2
+opt.expandtab = true
+opt.shiftwidth = 2
+opt.smartindent = true
+opt.tabstop = 2
+opt.softtabstop = 2
 
 -- opt.sidescrolloff = 999 -- horizontal centering
 opt.scrolloff = 999 -- vertitcal
 opt.cmdheight = 0
-o.ignorecase = true
-o.smartcase = true
+opt.ignorecase = true
+opt.smartcase = true
 opt.mouse = ""
 
 -- Numbers
 opt.relativenumber = true
-o.number = true
-o.numberwidth = 2
-o.ruler = false
-o.wrap = false
+opt.number = true
+opt.numberwidth = 2
+opt.ruler = false
+opt.wrap = false
 
 opt.shortmess:append("sI") -- disable nvim intro
 
-o.signcolumn = "yes"
-o.splitbelow = true
-o.splitright = true
-o.timeoutlen = 300
-o.undofile = true
+opt.signcolumn = "yes"
+opt.splitbelow = true
+opt.splitright = true
+opt.timeoutlen = 300
+opt.undofile = true
 
 opt.smoothscroll = true
 
-o.swapfile = false
+opt.swapfile = false
 
 opt.whichwrap:append("<>[]hl") -- switch to previous/next line when cursor reaches end/beginning of line
 
