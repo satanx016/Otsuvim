@@ -42,12 +42,11 @@ return {
 		end,
 	},
 
+	{ "sindrets/diffview.nvim" },
+
 	{
 		"NeogitOrg/neogit",
 		cmd = { "Neogit" },
-		dependencies = {
-			"sindrets/diffview.nvim",
-		},
 		opts = function()
 			dofile(vim.g.based_cache .. "neogit")
 			return {}
