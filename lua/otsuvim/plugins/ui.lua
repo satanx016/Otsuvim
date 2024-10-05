@@ -144,6 +144,8 @@ return {
 						{ "<leader>M", icon = { icon = "󱌢", color = "yellow" } },
 						{ "<leader>n", group = "Neorg", icon = { icon = "󱚌", color = "grey" } },
 						{ "<leader>b", group = "Buffer" },
+            -- stylua: ignore
+						{ "<leader>?", function() require("which-key").show({ global = false }) end, desc = "Buffer Keymaps (which-key)", },
 					},
 				},
 				win = {
@@ -151,14 +153,5 @@ return {
 				},
 			}
 		end,
-		keys = {
-			{
-				"<leader>?",
-				function()
-					require("which-key").show({ global = false })
-				end,
-				desc = "Buffer Keymaps (which-key)",
-			},
-		},
 	},
 }
