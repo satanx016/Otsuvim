@@ -20,6 +20,7 @@ return {
 					"vim",
 					"vimdoc",
 				},
+				auto_install = true,
 				indent = { enable = true },
 				incremental_selection = {
 					enable = true,
