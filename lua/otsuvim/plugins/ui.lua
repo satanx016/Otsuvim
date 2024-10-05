@@ -132,7 +132,6 @@ return {
 				preset = "modern",
 				spec = {
 					{
-						mode = { "n", "v" },
 						{ "<leader>c", group = "code" },
 						{ "<leader>f", group = "file/find" },
 						{ "<leader>s", group = "search" },
@@ -143,10 +142,6 @@ return {
 						{ "<leader>p", group = "projects", icon = { icon = "󰉋 ", color = "blue" } },
 						{ "<leader>L", icon = { icon = "󰒲", color = "azure" } },
 						{ "<leader>cm", icon = { icon = "󱌢", color = "grey" } },
-						{ "[", group = "prev" },
-						{ "]", group = "next" },
-						{ "g", group = "goto" },
-						{ "z", group = "fold" },
 						{
 							"<leader>b",
 							group = "buffer",
