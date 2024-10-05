@@ -141,7 +141,8 @@ return {
 						{ "<leader>u", group = "ui", icon = { icon = "󰙵 ", color = "azure" } },
 						{ "<leader>p", group = "projects", icon = { icon = "󰉋 ", color = "blue" } },
 						{ "<leader>L", icon = { icon = "󰒲", color = "azure" } },
-						{ "<leader>cm", icon = { icon = "󱌢", color = "grey" } },
+						{ "<leader>M", icon = { icon = "󱌢", color = "yellow" } },
+						{ "<leader>n", icon = { icon = "󱚌", color = "grey" } },
 						{
 							"<leader>b",
 							group = "buffer",
