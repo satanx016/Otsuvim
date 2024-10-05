@@ -101,6 +101,7 @@ return {
 					{ name = "lazydev", group_index = 0 },
 					{ name = "nvim_lsp" },
 					{ name = "luasnip" },
+					{ name = "neorg" },
 					{ name = "buffer" },
 					{ name = "nvim_lua" },
 					{ name = "path" },

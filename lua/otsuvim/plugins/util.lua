@@ -24,4 +24,35 @@ return {
 			return { user_default_options = { names = false } }
 		end,
 	},
+
+	{
+		"nvim-neorg/neorg",
+		ft = "norg",
+		version = "*",
+		keys = { { "<leader>n", "<cmd>Neorg<CR>", desc = "Neorg" } },
+		opts = function()
+			vim.wo.conceallevel = 2
+
+			return {
+				load = {
+					["core.defaults"] = {},
+					["core.concealer"] = {},
+					["core.dirman"] = {
+						config = {
+							workspaces = {
+								notes = "~/notes",
+							},
+							default_workspace = "notes",
+						},
+					},
+					["core.summary"] = {},
+					["core.completion"] = {
+						config = {
+							engine = "nvim-cmp",
+						},
+					},
+				},
+			}
+		end,
+	},
 }

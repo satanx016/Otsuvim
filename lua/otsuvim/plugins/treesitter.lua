@@ -11,6 +11,7 @@ return {
 		},
 		opts = function()
 			return {
+				highlight = { enable = true },
 				ensure_installed = {
 					"lua",
 					"luadoc",
