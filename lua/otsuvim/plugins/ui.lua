@@ -143,20 +143,7 @@ return {
 						{ "<leader>L", icon = { icon = "󰒲", color = "azure" } },
 						{ "<leader>M", icon = { icon = "󱌢", color = "yellow" } },
 						{ "<leader>n", icon = { icon = "󱚌", color = "grey" } },
-						{
-							"<leader>b",
-							group = "buffer",
-							expand = function()
-								return require("which-key.extras").expand.buf()
-							end,
-						},
-						{
-							"<c-w>",
-							group = "windows",
-							expand = function()
-								return require("which-key.extras").expand.win()
-							end,
-						},
+						{ "<leader>b", group = "Buffer" },
 					},
 				},
 				win = {
