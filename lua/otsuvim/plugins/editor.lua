@@ -40,6 +40,16 @@ return {
 		opts = function()
 			dofile(vim.g.based_cache .. "telescope")
 
+      -- stylua: ignore
+			local function toggle_preview_focus(prompt_bufnr)
+				local picker = require("telescope.actions.state").get_current_picker(prompt_bufnr)
+				local previewer = picker.previewer
+				local bufnr = previewer.state.bufnr
+				vim.keymap.set("n", "<C-l>", function() vim.cmd(string.format("noautocmd lua vim.api.nvim_set_current_win(%s)", picker.prompt_win)) end, { buffer = bufnr })
+				vim.keymap.set("n", "<C-h>", function() vim.cmd(string.format("noautocmd lua vim.api.nvim_set_current_win(%s)", picker.prompt_win)) end, { buffer = bufnr })
+				vim.cmd(string.format("noautocmd lua vim.api.nvim_set_current_win(%s)", previewer.state.winid))
+			end
+
 			return {
 				defaults = {
 					vimgrep_arguments = {
@@ -69,18 +79,8 @@ return {
 						n = {
 							["q"] = require("telescope.actions").close,
 							["<C-p>"] = require("telescope.actions.layout").toggle_preview,
-							["<Tab>"] = function(prompt_bufnr)
-								local action_state = require("telescope.actions.state")
-								local picker = action_state.get_current_picker(prompt_bufnr)
-								local prompt_win = picker.prompt_win
-								local previewer = picker.previewer
-								local winid = previewer.state.winid
-								local bufnr = previewer.state.bufnr
-								vim.keymap.set("n", "<Tab>", function()
-									vim.cmd(string.format("noautocmd lua vim.api.nvim_set_current_win(%s)", prompt_win))
-								end, { buffer = bufnr })
-								vim.cmd(string.format("noautocmd lua vim.api.nvim_set_current_win(%s)", winid))
-							end,
+							["<C-h>"] = toggle_preview_focus,
+							["<C-l>"] = toggle_preview_focus,
 						},
 					},
 					file_ignore_patterns = {
