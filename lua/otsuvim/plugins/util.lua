@@ -29,7 +29,12 @@ return {
 		"nvim-neorg/neorg",
 		ft = "norg",
 		version = "*",
-		keys = { { "<leader>n", "<cmd>Neorg<CR>", desc = "Neorg" } },
+		keys = {
+			{ "<leader>nn", "<cmd>Neorg<CR>", desc = "neorg" },
+			{ "<leader>ni", "<cmd>Neorg index<CR>", desc = "index" },
+			{ "<leader>nr", "<cmd>Neorg return<CR>", desc = "return" },
+			{ "<localleader>nn", "<Plug>(neorg.dirman.new-note)", desc = "[neorg] Create New Note" },
+		},
 		opts = function()
 			vim.wo.conceallevel = 2
 

@@ -142,7 +142,7 @@ return {
 						{ "<leader>p", group = "Projects", icon = { icon = "󰉋 ", color = "blue" } },
 						{ "<leader>L", icon = { icon = "󰒲", color = "azure" } },
 						{ "<leader>M", icon = { icon = "󱌢", color = "yellow" } },
-						{ "<leader>n", icon = { icon = "󱚌", color = "grey" } },
+						{ "<leader>n", group = "Neorg", icon = { icon = "󱚌", color = "grey" } },
 						{ "<leader>b", group = "Buffer" },
 					},
 				},
