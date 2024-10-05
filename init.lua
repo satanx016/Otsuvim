@@ -7,9 +7,6 @@ Otsuvim.config = require("otsuvim.config.otsurc")
 
 Otsuvim.lazy.setup()
 
-dofile(vim.g.based_cache .. "defaults")
-dofile(vim.g.based_cache .. "statusline")
-
 vim.api.nvim_create_autocmd("User", {
 	pattern = "VeryLazy",
 	callback = function()

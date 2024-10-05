@@ -17,7 +17,11 @@ return {
 	{
 		"satanx016/otsu-ui",
 		event = "UIEnter",
-		opts = {},
+		opts = function()
+			dofile(vim.g.based_cache .. "defaults")
+			dofile(vim.g.based_cache .. "statusline")
+			return {}
+		end,
 	},
 
 	{
