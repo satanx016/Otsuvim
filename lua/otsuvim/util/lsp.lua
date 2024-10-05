@@ -8,7 +8,7 @@ function M.setup(opts)
 		M.on_supports_method("textDocument/documentHighlight", function(_, buf)
 			vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI", "CursorMoved", "CursorMovedI" }, {
 				buffer = buf,
-				group = vim.api.nvim_create_augroup("lsp_word_" .. buf, { clear = true }),
+				group = vim.api.nvim_create_augroup("Otsuvim_lsp_word_" .. buf, { clear = true }),
 				callback = function()
 					if not Otsuvim.cmp.is_visible() then
 						vim.lsp.buf.document_highlight()
