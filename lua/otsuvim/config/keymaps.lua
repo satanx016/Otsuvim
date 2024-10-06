@@ -15,7 +15,7 @@ map(i, "jk", "<ESC>")
 map(v, "K", ":m '<-2<CR>gv=gv")
 map(v, "J", ":m '>+1<CR>gv=gv")
 -- quit
-map("n", "<leader>q", "<cmd>qa<cr>", "Quit All")
+map("n", "<leader>Q", "<cmd>qa<cr>", "Quit All")
 -- qol or fixes
 map(n, "<leader>w", "<cmd>w<CR>", "Save")
 map(n, "<leader>W", "<cmd>w !sudo tee %<CR>", "Sudo Save") -- Use this wisely
