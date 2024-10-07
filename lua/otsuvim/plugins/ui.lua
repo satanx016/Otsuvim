@@ -88,8 +88,9 @@ return {
 				scope = { char = "│", highlight = "IblScopeChar" },
 				exclude = {
 					filetypes = {
-						"help",
 						"man",
+						"help",
+						"norg",
 						"lazy",
 						"mason",
 						"notify",
