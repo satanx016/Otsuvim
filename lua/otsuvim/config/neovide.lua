@@ -1,4 +1,6 @@
-vim.o.guifont = "Mononoki Nerd Font Propo,Noto Color Emoji:h12"
+vim.o.guifont = "Mononoki Nerd Font Propo,Noto Color Emoji:#h-none:h12"
+vim.g.neovide_text_gamma = 0.95
+vim.g.neovide_text_contrast = 0.5
 
 vim.g.neovide_confirm_quit = true
 vim.g.neovide_hide_mouse_when_typing = true
