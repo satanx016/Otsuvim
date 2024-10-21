@@ -14,6 +14,7 @@ M.setup = function()
 	require("lazy").setup({
 		{ import = "otsuvim.plugins" },
 		{ import = "otsuvim.plugins.extras.vanity.neocord" },
+		{ import = "otsuvim.plugins.extras.util.fcitx" },
 	}, lazy_config)
 end
 
