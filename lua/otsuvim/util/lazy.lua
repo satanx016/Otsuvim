@@ -13,7 +13,7 @@ M.setup = function()
 	local lazy_config = require("otsuvim.config.lazy")
 	require("lazy").setup({
 		{ import = "otsuvim.plugins" },
-		{ import = "otsuvim.plugins.extras.vanity" },
+		{ import = "otsuvim.plugins.extras.vanity.neocord" },
 	}, lazy_config)
 end
 
