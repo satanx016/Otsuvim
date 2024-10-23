@@ -16,8 +16,8 @@ opt.cursorlineopt = "number"
 opt.expandtab = true
 opt.shiftwidth = 0
 opt.smartindent = true
-opt.tabstop = 2
-opt.softtabstop = 2
+opt.tabstop = 4
+opt.softtabstop = 4
 
 -- opt.sidescrolloff = 999 -- horizontal centering
 opt.scrolloff = 999 -- vertitcal
