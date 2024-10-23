@@ -1,5 +1,5 @@
 local map = function(mode, lhs, rhs, desc)
-	vim.keymap.set(mode, lhs, rhs, { desc = desc })
+  vim.keymap.set(mode, lhs, rhs, { desc = desc })
 end
 local n, i, v, c, t = "n", "i", "v", "c", "t"
 local ic = { i, c }

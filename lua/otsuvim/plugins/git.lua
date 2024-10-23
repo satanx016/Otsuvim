@@ -1,24 +1,24 @@
 return {
-	{
-		"lewis6991/gitsigns.nvim",
-		event = "LazyFile",
-		opts = function()
-			dofile(vim.g.based_cache .. "git")
+  {
+    "lewis6991/gitsigns.nvim",
+    event = "LazyFile",
+    opts = function()
+      dofile(vim.g.based_cache .. "git")
 
-			return {
-				signs = {
-					delete = { text = "" },
-					topdelete = { text = "" },
-					changedelete = { text = "󱕖" },
-				},
-				signs_staged_enable = false,
+      return {
+        signs = {
+          delete = { text = "" },
+          topdelete = { text = "" },
+          changedelete = { text = "󱕖" },
+        },
+        signs_staged_enable = false,
 
-				on_attach = function(bufnr)
-					local gs = package.loaded.gitsigns
+        on_attach = function(bufnr)
+          local gs = package.loaded.gitsigns
 
-					local map = function(mode, lhs, rhs, desc)
-						vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, desc = desc })
-					end
+          local map = function(mode, lhs, rhs, desc)
+            vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, desc = desc })
+          end
 
           -- stylua: ignore start
 					map("n", "[H", function() gs.nav_hunk("first") end, "First Hunk")
@@ -36,20 +36,20 @@ return {
 					map("n", "<leader>ghb", gs.blame_line, "Blame")
 					map("n", "<leader>ghB", function() gs.blame_line({ full = true }) end, "Full Blame")
 					map("n", "<leader>gd", gs.diffthis, "Diff This")
-					-- stylua: ignore end
-				end,
-			}
-		end,
-	},
+          -- stylua: ignore end
+        end,
+      }
+    end,
+  },
 
-	{ "sindrets/diffview.nvim" },
+  { "sindrets/diffview.nvim" },
 
-	{
-		"NeogitOrg/neogit",
-		cmd = { "Neogit" },
-		opts = function()
-			dofile(vim.g.based_cache .. "neogit")
-			return {}
-		end,
-	},
+  {
+    "NeogitOrg/neogit",
+    cmd = { "Neogit" },
+    opts = function()
+      dofile(vim.g.based_cache .. "neogit")
+      return {}
+    end,
+  },
 }
