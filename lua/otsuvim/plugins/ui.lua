@@ -150,7 +150,7 @@ return {
             { "<leader>n", group = "Neorg", icon = { icon = "󱚌", color = "grey" } },
             { "<leader>b", group = "Buffer" },
             -- stylua: ignore
-						{ "<leader>?", function() require("which-key").show({ global = false }) end, desc = "Buffer Keymaps (which-key)", },
+            { "<leader>?", function() require("which-key").show({ global = false }) end, desc = "Buffer Keymaps (which-key)" },
           },
         },
         win = {
