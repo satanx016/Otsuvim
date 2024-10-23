@@ -6,6 +6,7 @@ return {
 		build = ":MasonUpdate",
 		opts = {
 			ensure_installed = {
+				"hyprls",
 				"stylua",
 				"shfmt",
 			},
