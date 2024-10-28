@@ -6,6 +6,7 @@ return {
     build = ":MasonUpdate",
     opts = {
       ensure_installed = {
+        "bash-language-server",
         "hyprls",
         "stylua",
         "shfmt",
