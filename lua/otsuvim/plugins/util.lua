@@ -4,9 +4,7 @@ return {
   {
     "coffebar/neovim-project",
     cmd = { "NeovimProjectDiscover", "NeovimProjectHistory", "NeovimProjectLoadRecent" },
-    dependencies = {
-      { "Shatur/neovim-session-manager" },
-    },
+    dependencies = { "Shatur/neovim-session-manager" },
     opts = function()
       vim.opt.sessionoptions:remove("folds")
 
