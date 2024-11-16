@@ -27,6 +27,7 @@ return {
     "nvim-neorg/neorg",
     ft = "norg",
     version = "*",
+    dependencies = { "satanx016/neorg-colorizer" },
     keys = {
       { "<leader>nn", "<cmd>Neorg<CR>", desc = "neorg" },
       { "<leader>ni", "<cmd>Neorg index<CR>", desc = "index" },
@@ -55,6 +56,7 @@ return {
           },
           ["core.summary"] = {},
           ["core.completion"] = { config = { engine = "nvim-cmp" } },
+          ["external.neorg-colorizer"] = {},
         },
       }
     end,
