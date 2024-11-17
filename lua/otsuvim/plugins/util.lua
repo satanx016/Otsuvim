@@ -36,6 +36,7 @@ return {
       { "<localleader>nn", "<Plug>(neorg.dirman.new-note)", desc = "[neorg] Create New Note" },
     },
     opts = function()
+      dofile(vim.g.based_cache .. "neorg")
       vim.wo.conceallevel = 2
 
       return {
