@@ -40,17 +40,6 @@ return {
     opts = function()
       dofile(vim.g.based_cache .. "telescope")
 
-      local function toggle_preview_focus(prompt_bufnr)
-        local picker = require("telescope.actions.state").get_current_picker(prompt_bufnr)
-        local previewer = picker.previewer
-        local bufnr = previewer.state.bufnr
-        -- stylua: ignore start
-        vim.keymap.set("n", "<C-l>", function() vim.cmd(string.format("noautocmd lua vim.api.nvim_set_current_win(%s)", picker.prompt_win)) end, { buffer = bufnr })
-        vim.keymap.set("n", "<C-h>", function() vim.cmd(string.format("noautocmd lua vim.api.nvim_set_current_win(%s)", picker.prompt_win)) end, { buffer = bufnr })
-        -- stylua: ignore end
-        vim.cmd(string.format("noautocmd lua vim.api.nvim_set_current_win(%s)", previewer.state.winid))
-      end
-
       return {
         defaults = {
           vimgrep_arguments = {
@@ -63,6 +52,7 @@ return {
             "--column",
             "--smart-case",
           },
+
           prompt_prefix = "   ",
           selection_caret = "󰥓  ",
           sorting_strategy = "ascending",
@@ -80,10 +70,11 @@ return {
             n = {
               ["q"] = require("telescope.actions").close,
               ["<C-p>"] = require("telescope.actions.layout").toggle_preview,
-              ["<C-h>"] = toggle_preview_focus,
-              ["<C-l>"] = toggle_preview_focus,
+              ["<C-h>"] = Otsuvim.telescope.toggle_preview_focus,
+              ["<C-l>"] = Otsuvim.telescope.toggle_preview_focus,
             },
           },
+
           file_ignore_patterns = {
             "%.git/",
             "node_modules/",
