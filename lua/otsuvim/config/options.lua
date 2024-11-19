@@ -1,8 +1,6 @@
 local opt = vim.opt
 local g = vim.g
 
-g.mapleader = " "
-g.maplocalleader = ","
 g.autoformat = true -- Otsuvim auto format
 
 opt.laststatus = 3
