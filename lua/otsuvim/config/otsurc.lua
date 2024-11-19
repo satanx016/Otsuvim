@@ -11,6 +11,8 @@ M.based = {
 }
 
 M.ui = {
+  lsp = { signature = true },
+
   cmp = {
     icons = true,
     lspkind_text = true,
@@ -60,21 +62,6 @@ M.ui = {
       { "  Themes", "Spc o t", "Telescope themes" },
       { "  Mappings", "Spc c h", "Cheatsheet" },
       { "󰒲  Lazy", "Spc L", "Lazy" },
-    },
-  },
-
-  lsp = { signature = true },
-
-  term = {
-    hl = "Normal:term,WinSeparator:WinSeparator",
-    sizes = { sp = 0.3, vsp = 0.2 },
-    float = {
-      relative = "editor",
-      row = 0.3,
-      col = 0.25,
-      width = 0.5,
-      height = 0.4,
-      border = "single",
     },
   },
 }
