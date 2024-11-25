@@ -3,8 +3,8 @@ return {
 
   {
     "coffebar/neovim-project",
-    cmd = { "NeovimProjectDiscover", "NeovimProjectHistory", "NeovimProjectLoadRecent" },
     dependencies = { "Shatur/neovim-session-manager" },
+    cmd = { "NeovimProjectDiscover", "NeovimProjectHistory", "NeovimProjectLoadRecent" },
     opts = function()
       vim.opt.sessionoptions:remove("folds")
 
@@ -25,9 +25,9 @@ return {
 
   {
     "nvim-neorg/neorg",
-    ft = "norg",
     version = "*",
     dependencies = { "satanx016/neorg-colorizer" },
+    ft = "norg",
     keys = {
       { "<leader>nn", "<cmd>Neorg<CR>", desc = "neorg" },
       { "<leader>ni", "<cmd>Neorg index<CR>", desc = "index" },

@@ -44,8 +44,8 @@ return {
 
   {
     "folke/noice.nvim",
-    event = "VeryLazy",
     dependencies = { "MunifTanjim/nui.nvim" },
+    event = "VeryLazy",
     opts = function()
       return {
         lsp = {

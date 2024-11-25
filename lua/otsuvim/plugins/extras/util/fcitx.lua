@@ -1,3 +1,6 @@
 return {
-  { "h-hg/fcitx.nvim", event = "InsertEnter" },
+  {
+    "h-hg/fcitx.nvim",
+    event = "InsertEnter",
+  },
 }
