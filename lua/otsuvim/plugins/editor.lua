@@ -108,8 +108,8 @@ return {
       },
 
       float = {
-        max_width = 90,
-        max_height = 20,
+        max_width = 140,
+        max_height = 25,
       },
     },
   },
