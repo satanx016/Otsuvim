@@ -103,6 +103,9 @@ return {
       { "<leader>-", function() require("oil").toggle_float() end, desc = "Oil" },
     },
     opts = {
+      keymaps = {
+        ["q"] = "actions.close",
+      },
       view_options = {
         show_hidden = true,
       },
