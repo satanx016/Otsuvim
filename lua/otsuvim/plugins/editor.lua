@@ -97,6 +97,24 @@ return {
   },
 
   {
+    "stevearc/oil.nvim",
+    -- stylua: ignore
+    keys = {
+      { "<leader>-", function() require("oil").toggle_float() end, desc = "Oil" },
+    },
+    opts = {
+      view_options = {
+        show_hidden = true,
+      },
+
+      float = {
+        max_width = 90,
+        max_height = 20,
+      },
+    },
+  },
+
+  {
     "folke/todo-comments.nvim",
     event = "LazyFile",
     cmd = { "TodoTelescope" },
