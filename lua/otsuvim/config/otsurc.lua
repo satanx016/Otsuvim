@@ -24,7 +24,7 @@ M.ui = {
   ------------------------------- otsu-ui modules -----------------------------
   statusline = {
     theme = "default", -- default/vscode/minimal
-    -- default/round/block/arrow separators work only for default otsuline theme
+    -- default/round/block/arrow separators work only for default statusline theme
     -- round and block will work for minimal theme only
     separator_style = "default",
     order = nil,
@@ -32,7 +32,7 @@ M.ui = {
   },
 
   -- lazyload it when there are 1+ buffers
-  tabufline = {
+  tufline = {
     enabled = true,
     lazyload = true,
     order = { "treeOffset", "buffers", "tabs" },
