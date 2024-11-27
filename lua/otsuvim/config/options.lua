@@ -22,7 +22,6 @@ opt.scrolloff = 999 -- vertitcal
 opt.cmdheight = 0
 opt.ignorecase = true
 opt.smartcase = true
-opt.mouse = ""
 
 -- Numbers
 opt.relativenumber = true
