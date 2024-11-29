@@ -129,7 +129,8 @@ return {
     },
     opts = {
       keywords = {
-        FIX = { alt = { "FIXME", "BUG", "FIXIT", "ISSUE", "DEBUG" } },
+        FIX = { alt = { "FIXME", "BUG", "FIXIT", "ISSUE", "DEBUG", "DEBUGGING" } },
+        TEST = { alt = { "TESTING", "PASSED", "FAILED", "PROFILE", "PROFILING" } },
       },
     },
   },
