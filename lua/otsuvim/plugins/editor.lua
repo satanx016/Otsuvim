@@ -127,6 +127,10 @@ return {
       { "[t", function() require("todo-comments").jump_prev() end, desc = "Previous Todo Comment" },
       { "<leader>st", "<cmd>TodoTelescope<cr>", desc = "Todo's" },
     },
-    opts = {},
+    opts = {
+      keywords = {
+        FIX = { alt = { "FIXME", "BUG", "FIXIT", "ISSUE", "DEBUG" } },
+      },
+    },
   },
 }
