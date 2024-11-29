@@ -37,6 +37,8 @@ return {
           map("n", "<leader>gB", function() gs.blame_line({ full = true }) end, "Full Blame")
           map("n", "<leader>gd", gs.diffthis, "Diff This")
           -- stylua: ignore end
+
+          map({ "o", "x" }, "ah", "<Esc><cmd>Gitsigns select_hunk<CR>", "hunk")
         end,
       }
     end,
