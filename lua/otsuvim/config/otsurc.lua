@@ -11,6 +11,12 @@ M.based = {
 }
 
 M.ui = {
+  term = {
+    float = { width = 0.6, height = 0.55 },
+    hsplit = { height = 0.3 },
+    vsplit = { width = 0.3 },
+  },
+
   lsp = { signature = true },
 
   cmp = {

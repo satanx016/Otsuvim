@@ -4,7 +4,6 @@ end
 local n, i, v, c, t = "n", "i", "v", "c", "t"
 local ic = { i, c }
 local nt = { n, t }
-local nv = { n, v }
 
 map(n, "<leader>L", "<Cmd>Lazy<CR>", "Lazy") -- lazy
 
@@ -115,3 +114,10 @@ map(v, "<leader>/", "<cmd>normal gc<CR>", "Comment Toggle")
 -- format
 -- stylua: ignore
 map(n, "<leader>cf", function() require("conform").format({ async = true, lsp_fallback = true }) end, "Format")
+
+-- terminals
+-- stylua: ignore start
+map(nt, "<A-t>", function() require("otsu-ui.terminal").toggle({ type = "float" }) end, "Terminal Toggle float")
+map(nt, "<A-s>", function() require("otsu-ui.terminal").toggle({ type = "hsplit" }) end, "Terminal Toggle hsplit")
+map(nt, "<A-v>", function() require("otsu-ui.terminal").toggle({ type = "vsplit" }) end, "Terminal Toggle vsplit")
+-- stylua: ignore end
