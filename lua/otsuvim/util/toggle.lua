@@ -6,9 +6,9 @@ function M.wrap(toggle)
       toggle.set(not toggle.get())
       local state = toggle.get()
       if state then
-        Otsuvim.info("Enabled " .. toggle.name, { title = toggle.name })
+        Otsuvim.notify.info("Enabled " .. toggle.name, { title = toggle.name })
       else
-        Otsuvim.warn("Disabled " .. toggle.name, { title = toggle.name })
+        Otsuvim.notify.warn("Disabled " .. toggle.name, { title = toggle.name })
       end
       return state
     end,
