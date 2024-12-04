@@ -30,7 +30,7 @@ return {
       dofile(vim.g.based_cache .. "notify")
 
       return {
-        fps = 60,
+        stages = "static",
         top_down = false,
         max_height = function()
           return math.floor(vim.o.lines * 0.5)
