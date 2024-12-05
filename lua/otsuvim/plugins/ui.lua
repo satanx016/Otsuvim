@@ -78,33 +78,37 @@ return {
   },
 
   {
-    "lukas-reineke/indent-blankline.nvim",
-    event = "LazyFile",
+    "shellRaining/hlchunk.nvim",
+    event = { "BufReadPre", "BufNewFile" },
     opts = function()
+      local exclude_filetypes = {
+        "man",
+        "help",
+        "norg",
+        "lazy",
+        "mason",
+        "notify",
+        "NvimTree",
+        "NeogitStatus",
+      }
+
       return {
-        indent = { char = "│", highlight = "IblChar" },
-        scope = { char = "│", highlight = "IblScopeChar" },
-        exclude = {
-          filetypes = {
-            "man",
-            "help",
-            "norg",
-            "lazy",
-            "mason",
-            "notify",
-            "NvimTree",
-            "NeogitStatus",
+        chunk = {
+          enable = true,
+          chars = {
+            right_arrow = "─",
           },
+          exclude_filetypes = exclude_filetypes,
+        },
+        indent = {
+          enable = true,
+          chars = { "│" },
+          exclude_filetypes = exclude_filetypes,
         },
       }
     end,
     config = function(_, opts)
-      dofile(vim.g.based_cache .. "blankline")
-
-      local hooks = require("ibl.hooks")
-      hooks.register(hooks.type.WHITESPACE, hooks.builtin.hide_first_space_indent_level)
-      require("ibl").setup(opts)
-
+      require("hlchunk").setup(opts)
       dofile(vim.g.based_cache .. "blankline")
     end,
   },
