@@ -109,7 +109,7 @@ return {
     end,
     config = function(_, opts)
       require("hlchunk").setup(opts)
-      dofile(vim.g.based_cache .. "blankline")
+      dofile(vim.g.based_cache .. "hlchunk")
     end,
   },
 
