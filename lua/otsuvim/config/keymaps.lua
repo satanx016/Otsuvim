@@ -1,5 +1,5 @@
-local map = function(mode, lhs, rhs, desc)
-  vim.keymap.set(mode, lhs, rhs, { desc = desc, silent = true })
+local map = function(mode, lhs, rhs, desc, opts)
+  vim.keymap.set(mode, lhs, rhs, type(desc) == "string" and vim.tbl_extend("keep", { desc = desc }, opts or {}) or desc)
 end
 local n, i, v, c, t = "n", "i", "v", "c", "t"
 local ic = { i, c }
@@ -11,8 +11,8 @@ map(n, "<leader>L", "<Cmd>Lazy<CR>", "Lazy") -- lazy
 map(n, ";", ":", "CMD enter command mode")
 map(i, "kj", "<ESC>")
 map(i, "jk", "<ESC>")
-map(v, "K", ":m '<-2<CR>gv=gv")
-map(v, "J", ":m '>+1<CR>gv=gv")
+map(v, "K", ":m '<-2<CR>gv=gv", { silent = true })
+map(v, "J", ":m '>+1<CR>gv=gv", { silent = true })
 -- quit
 map("n", "<leader>Q", "<cmd>qa<cr>", "Quit All")
 -- qol or fixes
