@@ -136,7 +136,6 @@ return {
       dofile(vim.g.based_cache .. "whichkey")
 
       return {
-        preset = "modern",
         spec = {
           {
             { "<leader>c", group = "Code" },
