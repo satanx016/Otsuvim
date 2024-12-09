@@ -31,9 +31,8 @@ return {
     keys = {
       { "<leader>nn", "<cmd>Neorg<CR>", desc = "neorg" },
       { "<leader>ni", "<cmd>Neorg index<CR>", desc = "index" },
-      { "<leader>nc", "<cmd>Neorg toggle-concealer<CR>", desc = "toggle concealer" },
       { "<leader>nr", "<cmd>Neorg return<CR>", desc = "return" },
-      { "<localleader>nn", "<Plug>(neorg.dirman.new-note)", desc = "[neorg] Create New Note" },
+      { "<leader>nc", "<Plug>(neorg.dirman.new-note)", desc = "Create New Note" },
     },
     opts = function()
       dofile(vim.g.based_cache .. "neorg")
