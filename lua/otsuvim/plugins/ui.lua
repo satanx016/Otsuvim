@@ -152,6 +152,7 @@ return {
             { "<leader>b", group = "Buffer" },
             -- stylua: ignore
             { "<leader>?", function() require("which-key").show({ global = false }) end, desc = "Buffer Keymaps (which-key)" },
+            { "gx", desc = "Open with system app" },
           },
         },
         win = {
