@@ -5,7 +5,8 @@ local n, i, v, c, t = "n", "i", "v", "c", "t"
 local ic = { i, c }
 local nt = { n, t }
 
-map(n, "<leader>L", "<Cmd>Lazy<CR>", "Lazy") -- lazy
+-- lazy
+map(n, "<leader>L", "<Cmd>Lazy<CR>", "Lazy")
 
 -- essentials
 map(n, ";", ":", "CMD enter command mode")
@@ -46,36 +47,6 @@ map(nt, "<A-j>", "<Cmd>hor res -1<CR>", "Window Resize down")
 map(nt, "<A-k>", "<Cmd>hor res +1<CR>", "Window Resize up")
 map(n, "<C-q>", "<C-w>q", "Window Close")
 
--- colorizer
-map(n, "<leader>h", "<Cmd>ColorizerToggle<CR>", "Highlight Colors")
-
--- nvimtree
-map(n, "<leader>e", "<cmd>NvimTreeToggle<CR>", "Explorer NvimTree")
-
--- telescope supermacy
--- stylua: ignore
-map(n, "<leader>fa", "<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>", "Find All Files")
-map(n, "<leader>fb", "<cmd>Telescope buffers<CR>", "Buffers")
-map(n, "<leader>ff", "<cmd>Telescope find_files<cr>", "Files")
-map(n, "<leader>fr", "<cmd>Telescope oldfiles<CR>", "Recent Files")
-
-map(n, '<leader>s"', "<cmd>Telescope registers<cr>", "Registers")
-map(n, "<leader>sa", "<cmd>Telescope autocommands<cr>", "Auto Commands")
-map(n, "<leader>sp", "<cmd>Telescope builtin<CR>", "Pickers")
-map(n, "<leader>sc", "<cmd>Telescope commands<cr>", "Commands")
-map(n, "<leader>sd", "<cmd>Telescope diagnostics_document<cr>", "Diagnostics")
-map(n, "<leader>sh", "<cmd>Telescope help_tags<CR>", "Help Page")
-map(n, "<leader>sg", "<cmd>Telescope live_grep<CR>", "Grep")
-map(n, "<leader>sk", "<cmd>Telescope keymaps<CR>", "Keymaps")
-map(n, "<leader>sw", "<cmd>Telescope current_buffer_fuzzy_find<CR>", "Word")
-
-map(n, "<leader>gfc", "<cmd>Telescope git_commits<CR>", "Commits")
-map(n, "<leader>gfC", "<cmd>Telescope git_bcommits<CR>", "Commits (%)")
-map(n, "<leader>gff", "<cmd>Telescope git_files<CR>", "Files (git-files)")
-map(n, "<leader>gfs", "<cmd>Telescope git_stash<CR>", "Stash")
-map(n, "<leader>gfb", "<cmd>Telescope git_branches<CR>", "Branches")
-map(n, "<leader>gs", "<cmd>Telescope git_status<CR>", "Status")
-
 -- tufline
 -- stylua: ignore start
 map(n, "<leader>bn", "<cmd>enew<CR>", "Buffer New")
@@ -85,16 +56,6 @@ map(n, "<leader>bq", function() require("otsu-ui.tufline").close_buffer() end, "
 map(n, "<leader>bo", function() require("otsu-ui.tufline").closeOtherBufs() end, "Buffer Close Others")
 map(n, "<leader>ba", "<cmd>silent only | enew | lua require('otsu-ui.tufline').closeOtherBufs()<CR>", "Buffer Close All")
 -- stylua: ignore end
-
--- neovim-projects
-map(n, "<leader>pf", "<cmd>NeovimProjectDiscover<CR>", "List All")
-map(n, "<leader>pr", "<cmd>NeovimProjectHistory<CR>", "List Recent")
-map(n, "<leader>pl", "<cmd>NeovimProjectLoadRecent<CR>", "Restore Last Project")
-
--- Neogit & Diffview
-map(n, "<leader>gg", "<cmd>Neogit<CR>", "Neogit Interface")
--- stylua: ignore
-map(n, "<leader>gD", function() require("neogit.integrations.diffview").open() end, "Diffview")
 
 -- ui qol's
 map(n, "<ESC>", "<cmd>noh<CR>", "Clear Highlights")
@@ -110,10 +71,6 @@ Otsuvim.toggle.map("<leader>ut", Otsuvim.toggle.transparency())
 -- comment
 map(n, "<leader>/", "<cmd>normal gcc<CR>", "Comment Toggle")
 map(v, "<leader>/", "<cmd>normal gc<CR>", "Comment Toggle")
-
--- format
--- stylua: ignore
-map(n, "<leader>cf", function() require("conform").format({ async = true, lsp_fallback = true }) end, "Format")
 
 -- terminals
 -- stylua: ignore start

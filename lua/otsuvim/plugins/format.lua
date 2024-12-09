@@ -2,6 +2,10 @@ return {
   {
     "stevearc/conform.nvim",
     event = "LazyFile",
+    keys = {
+      -- stylua: ignore
+      { "<leader>cf", function() require("conform").format({ async = true, lsp_fallback = true }) end, desc = "Format" },
+    },
     opts = function()
       return {
         formatters_by_ft = {

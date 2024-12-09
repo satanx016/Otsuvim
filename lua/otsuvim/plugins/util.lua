@@ -5,6 +5,11 @@ return {
     "coffebar/neovim-project",
     dependencies = { "Shatur/neovim-session-manager" },
     cmd = { "NeovimProjectDiscover", "NeovimProjectHistory", "NeovimProjectLoadRecent" },
+    keys = {
+      { "<leader>pf", "<cmd>NeovimProjectDiscover<CR>", desc = "List All" },
+      { "<leader>pr", "<cmd>NeovimProjectHistory<CR>", desc = "List Recent" },
+      { "<leader>pl", "<cmd>NeovimProjectLoadRecent<CR>", desc = "Restore Last Project" },
+    },
     opts = function()
       vim.opt.sessionoptions:remove("folds")
 
@@ -18,6 +23,7 @@ return {
   {
     "NvChad/nvim-colorizer.lua",
     event = "LazyFile",
+    keys = { { "<leader>h", "<Cmd>ColorizerToggle<CR>", "Highlight Colors" } },
     opts = function()
       return { user_default_options = { names = false } }
     end,

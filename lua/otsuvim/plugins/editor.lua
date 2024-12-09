@@ -2,6 +2,7 @@ return {
   {
     "nvim-tree/nvim-tree.lua",
     cmd = { "NvimTreeToggle", "NvimTreeFocus" },
+    keys = { { "<leader>e", "<cmd>NvimTreeToggle<CR>", desc = "Explorer NvimTree" } },
     opts = function()
       dofile(vim.g.based_cache .. "nvimtree")
 
@@ -37,6 +38,30 @@ return {
   {
     "nvim-telescope/telescope.nvim",
     cmd = "Telescope",
+    keys = {
+      -- find
+      { "<leader>fa", "<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>", desc = "Find All Files" },
+      { "<leader>fb", "<cmd>Telescope buffers<CR>", desc = "Buffers" },
+      { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Files" },
+      { "<leader>fr", "<cmd>Telescope oldfiles<CR>", desc = "Recent Files" },
+      -- search
+      { '<leader>s"', "<cmd>Telescope registers<cr>", desc = "Registers" },
+      { "<leader>sa", "<cmd>Telescope autocommands<cr>", desc = "Auto Commands" },
+      { "<leader>sp", "<cmd>Telescope builtin<CR>", desc = "Pickers" },
+      { "<leader>sc", "<cmd>Telescope commands<cr>", desc = "Commands" },
+      { "<leader>sd", "<cmd>Telescope diagnostics_document<cr>", desc = "Diagnostics" },
+      { "<leader>sh", "<cmd>Telescope help_tags<CR>", desc = "Help Page" },
+      { "<leader>sg", "<cmd>Telescope live_grep<CR>", desc = "Grep" },
+      { "<leader>sk", "<cmd>Telescope keymaps<CR>", desc = "Keymaps" },
+      { "<leader>sw", "<cmd>Telescope current_buffer_fuzzy_find<CR>", desc = "Word" },
+      -- git
+      { "<leader>gfc", "<cmd>Telescope git_commits<CR>", desc = "Commits" },
+      { "<leader>gfC", "<cmd>Telescope git_bcommits<CR>", desc = "Commits (%)" },
+      { "<leader>gff", "<cmd>Telescope git_files<CR>", desc = "Files (git-files)" },
+      { "<leader>gfs", "<cmd>Telescope git_stash<CR>", desc = "Stash" },
+      { "<leader>gfb", "<cmd>Telescope git_branches<CR>", desc = "Branches" },
+      { "<leader>gs", "<cmd>Telescope git_status<CR>", desc = "Status" },
+    },
     opts = function()
       dofile(vim.g.based_cache .. "telescope")
 

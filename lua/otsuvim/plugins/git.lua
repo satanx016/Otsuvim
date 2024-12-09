@@ -49,6 +49,11 @@ return {
   {
     "NeogitOrg/neogit",
     cmd = { "Neogit" },
+    keys = {
+      { "<leader>gg", "<cmd>Neogit<CR>", desc = "Neogit Interface" },
+      -- stylua: ignore
+      { "<leader>gD", function() require("neogit.integrations.diffview").open() end, desc = "Diffview", },
+    },
     opts = function()
       dofile(vim.g.based_cache .. "neogit")
       return {}
