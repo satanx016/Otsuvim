@@ -65,7 +65,7 @@ Otsuvim.toggle.map("<leader>uf", Otsuvim.toggle.format())
 Otsuvim.toggle.map("<leader>ur", Otsuvim.toggle("relativenumber", { name = "Relative Number" }))
 Otsuvim.toggle.map("<leader>us", Otsuvim.toggle("spell", { name = "Spelling" }))
 Otsuvim.toggle.map("<leader>uw", Otsuvim.toggle("wrap", { name = "Wrap" }))
-Otsuvim.toggle.map("<leader>uh", Otsuvim.toggle.inlay_hints())
+Otsuvim.toggle.map("<leader>uH", Otsuvim.toggle.inlay_hints())
 Otsuvim.toggle.map("<leader>ut", Otsuvim.toggle.transparency())
 
 -- comment
