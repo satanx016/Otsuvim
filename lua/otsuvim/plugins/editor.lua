@@ -99,23 +99,6 @@ return {
               ["<C-l>"] = Otsuvim.telescope.toggle_preview_focus,
             },
           },
-
-          file_ignore_patterns = {
-            "%.git/",
-            "node_modules/",
-            "%.mp3$",
-            "%.ogg$",
-            "%.m4a$",
-            "%.opus$",
-            "%.webp$",
-            "%.jpg$",
-            "%.jpeg$",
-            "%.png$",
-            "%.gif$",
-            "%.mp4$",
-            "%.gz$",
-            "%.zip$",
-          },
         },
       }
     end,
