@@ -37,6 +37,7 @@ return {
 
   {
     "nvim-telescope/telescope.nvim",
+    dependencies = { { "nvim-telescope/telescope-fzf-native.nvim", build = "make" } },
     cmd = "Telescope",
     keys = {
       -- find
@@ -64,6 +65,8 @@ return {
     },
     opts = function()
       dofile(vim.g.based_cache .. "telescope")
+
+      require("telescope").load_extension("fzf")
 
       return {
         defaults = {
