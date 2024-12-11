@@ -43,6 +43,7 @@ return {
       -- find
       { "<leader>fa", "<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>", desc = "Find All Files" },
       { "<leader>fb", "<cmd>Telescope buffers<CR>", desc = "Buffers" },
+      { "<leader>fc", "<cmd>Telescope find_files cwd=" .. vim.fn.stdpath("config") .. "<CR>", desc = "Config Files" },
       { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Files" },
       { "<leader>fr", "<cmd>Telescope oldfiles<CR>", desc = "Recent Files" },
       -- search
