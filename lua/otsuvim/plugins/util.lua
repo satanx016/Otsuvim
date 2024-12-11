@@ -23,7 +23,7 @@ return {
   {
     "NvChad/nvim-colorizer.lua",
     event = "LazyFile",
-    keys = { { "<leader>uh", "<Cmd>ColorizerToggle<CR>", "Highlight Colors" } },
+    keys = { { "<leader>uh", "<Cmd>ColorizerToggle<CR>", desc = "Toggle Highlight Colors" } },
     opts = function()
       return { user_default_options = { names = false } }
     end,
