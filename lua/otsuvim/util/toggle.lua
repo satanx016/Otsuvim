@@ -1,25 +1,48 @@
-local M = {}
+local M = setmetatable({}, {
+  __call = function(M, ...)
+    return M.new(...)
+  end,
+})
 
-function M.wrap(toggle)
-  return setmetatable(toggle, {
-    __call = function()
-      toggle.set(not toggle.get())
-      local state = toggle.get()
-      if state then
-        Otsuvim.notify.info("Enabled " .. toggle.name, { title = toggle.name })
-      else
-        Otsuvim.notify.warn("Disabled " .. toggle.name, { title = toggle.name })
-      end
-      return state
-    end,
+local Toggle = {
+  __call = function(Toggle)
+    Toggle.opts.set(not Toggle.opts.get())
+    local state = Toggle.opts.get()
+    if state then
+      Otsuvim.notify.info("Enabled " .. Toggle.opts.name, { title = Toggle.name })
+    else
+      Otsuvim.notify.warn("Disabled " .. Toggle.opts.name, { title = Toggle.name })
+    end
+    return state
+  end,
+}
+Toggle.__index = Toggle
+
+function M.new(opts)
+  return setmetatable({ opts = opts }, Toggle)
+end
+
+function Toggle:map(key)
+  vim.keymap.set("n", key, function()
+    self()
+  end)
+
+  require("which-key").add({
+    {
+      key,
+      icon = function()
+        return self.opts.get() and { icon = " ", color = "green" } or { icon = " ", color = "yellow" }
+      end,
+      desc = function()
+        return (self.opts.get() and "Disable " or "Enable ") .. self.opts.name
+      end,
+    },
   })
 end
 
 function M.option(option, opts)
-  opts = opts or {}
-  local name = opts.name or option
-  return M.wrap({
-    name = name,
+  return M.new({
+    name = opts.name or option,
     get = function()
       return vim.opt_local[option]:get()
     end,
@@ -29,33 +52,8 @@ function M.option(option, opts)
   })
 end
 
-setmetatable(M, {
-  __call = function(m, ...)
-    return m.option(...)
-  end,
-})
-
-function M.map(lhs, toggle)
-  local t = M.wrap(toggle)
-  vim.keymap.set("n", lhs, function()
-    t()
-  end)
-
-  require("which-key").add({
-    {
-      lhs,
-      icon = function()
-        return toggle.get() and { icon = " ", color = "green" } or { icon = " ", color = "yellow" }
-      end,
-      desc = function()
-        return (toggle.get() and "Disable " or "Enable ") .. toggle.name
-      end,
-    },
-  })
-end
-
 function M.format()
-  return M.wrap({
+  return M.new({
     name = "Auto Format",
     get = function()
       return vim.g.autoformat == nil or vim.g.autoformat
@@ -67,7 +65,7 @@ function M.format()
 end
 
 function M.inlay_hints()
-  return M.wrap({
+  return M.new({
     name = "Inlay Hints",
     get = function()
       return vim.lsp.inlay_hint.is_enabled({ bufnr = 0 })
@@ -79,7 +77,7 @@ function M.inlay_hints()
 end
 
 function M.transparency()
-  return M.wrap({
+  return M.new({
     name = "Transparency",
     get = function()
       return Otsuvim.config.based.transparency

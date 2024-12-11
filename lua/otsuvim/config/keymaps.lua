@@ -61,12 +61,12 @@ map(n, "<leader>ba", "<cmd>silent only | enew | lua require('otsu-ui.tufline').c
 map(n, "<ESC>", "<cmd>noh<CR>", "Clear Highlights")
 map(n, "<leader>ui", vim.show_pos, "Inspect Pos")
 map(n, "<leader>uI", "<cmd>InspectTree<cr>")
-Otsuvim.toggle.map("<leader>uf", Otsuvim.toggle.format())
-Otsuvim.toggle.map("<leader>ur", Otsuvim.toggle("relativenumber", { name = "Relative Number" }))
-Otsuvim.toggle.map("<leader>us", Otsuvim.toggle("spell", { name = "Spelling" }))
-Otsuvim.toggle.map("<leader>uw", Otsuvim.toggle("wrap", { name = "Wrap" }))
-Otsuvim.toggle.map("<leader>uH", Otsuvim.toggle.inlay_hints())
-Otsuvim.toggle.map("<leader>ut", Otsuvim.toggle.transparency())
+Otsuvim.toggle.format():map("<leader>uf")
+Otsuvim.toggle.option("relativenumber", { name = "Relative Number" }):map("<leader>ur")
+Otsuvim.toggle.option("spell", { name = "Spelling" }):map("<leader>us")
+Otsuvim.toggle.option("wrap", { name = "Wrap" }):map("<leader>uw")
+Otsuvim.toggle.inlay_hints():map("<leader>uH")
+Otsuvim.toggle.transparency():map("<leader>ut")
 
 -- comment
 map(n, "<leader>/", "<cmd>normal gcc<CR>", "Comment Toggle")
