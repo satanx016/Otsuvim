@@ -1,14 +1,20 @@
 return {
   {
+    "folke/which-key.nvim",
+    opts = {
+      spec = {
+        { "<C-space>", desc = "Increment Selection", mode = { "x", "n" } },
+        { "<A-space>", desc = "Decrement Selection", mode = "x" },
+      },
+    },
+  },
+
+  {
     "nvim-treesitter/nvim-treesitter",
     dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
     event = { "LazyFile", "User TelescopePreviewerLoaded" },
     cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
     build = ":TSUpdate",
-    keys = {
-      { "<c-space>", desc = "Increment Selection", mode = { "x", "n" } },
-      { "<bs>", desc = "Decrement Selection", mode = "x" },
-    },
     opts = function()
       return {
         highlight = { enable = true },

@@ -132,33 +132,34 @@ return {
   {
     "folke/which-key.nvim",
     event = "VeryLazy",
-    opts = function()
+    opts_extend = { "spec" },
+    opts = {
+      spec = {
+        {
+          { "<leader>c", group = "Code" },
+          { "<leader>f", group = "File/Find" },
+          { "<leader>s", group = "Search" },
+          { "<leader>g", group = "Git" },
+          { "<leader>gf", group = "Find" },
+          { "<leader>gh", group = "Hunk" },
+          { "<leader>u", group = "UI", icon = { icon = "󰙵 ", color = "azure" } },
+          { "<leader>p", group = "Projects", icon = { icon = "󰉋 ", color = "blue" } },
+          { "<leader>L", icon = { icon = "󰒲", color = "azure" } },
+          { "<leader>M", icon = { icon = "󱌢", color = "yellow" } },
+          { "<leader>n", group = "Neorg", icon = { icon = "󱚌", color = "grey" } },
+          { "<leader>b", group = "Buffer" },
+          -- stylua: ignore
+          { "<leader>?", function() require("which-key").show({ global = false }) end, desc = "Buffer Keymaps (which-key)" },
+          { "gx", desc = "Open with system app" },
+        },
+      },
+      win = {
+        no_overlap = false,
+      },
+    },
+    config = function(_, opts)
       dofile(vim.g.based_cache .. "whichkey")
-
-      return {
-        spec = {
-          {
-            { "<leader>c", group = "Code" },
-            { "<leader>f", group = "File/Find" },
-            { "<leader>s", group = "Search" },
-            { "<leader>g", group = "Git" },
-            { "<leader>gf", group = "Find" },
-            { "<leader>gh", group = "Hunk" },
-            { "<leader>u", group = "UI", icon = { icon = "󰙵 ", color = "azure" } },
-            { "<leader>p", group = "Projects", icon = { icon = "󰉋 ", color = "blue" } },
-            { "<leader>L", icon = { icon = "󰒲", color = "azure" } },
-            { "<leader>M", icon = { icon = "󱌢", color = "yellow" } },
-            { "<leader>n", group = "Neorg", icon = { icon = "󱚌", color = "grey" } },
-            { "<leader>b", group = "Buffer" },
-            -- stylua: ignore
-            { "<leader>?", function() require("which-key").show({ global = false }) end, desc = "Buffer Keymaps (which-key)" },
-            { "gx", desc = "Open with system app" },
-          },
-        },
-        win = {
-          no_overlap = false,
-        },
-      }
+      require("which-key").setup(opts)
     end,
   },
 }
