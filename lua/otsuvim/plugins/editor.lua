@@ -41,7 +41,7 @@ return {
     cmd = "Telescope",
     keys = {
       -- find
-      { "<leader>fa", "<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>", desc = "Find All Files" },
+      { "<leader>fa", "<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>", desc = "All Files" },
       { "<leader>fb", "<cmd>Telescope buffers<CR>", desc = "Buffers" },
       { "<leader>fc", "<cmd>Telescope find_files cwd=" .. vim.fn.stdpath("config") .. "<CR>", desc = "Config Files" },
       { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Files" },
