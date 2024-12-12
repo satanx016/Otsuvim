@@ -2,8 +2,7 @@ local map = function(mode, lhs, rhs, desc, opts)
   vim.keymap.set(mode, lhs, rhs, type(desc) == "string" and vim.tbl_extend("keep", { desc = desc }, opts or {}) or desc)
 end
 local n, i, v, c, t = "n", "i", "v", "c", "t"
-local ic = { i, c }
-local nt = { n, t }
+local ic, nt, nv = { i, c }, { n, t }, { n, v }
 
 -- lazy
 map(n, "<leader>L", "<Cmd>Lazy<CR>", "Lazy")
