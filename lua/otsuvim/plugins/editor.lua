@@ -93,6 +93,15 @@ return {
             },
           },
         },
+
+        pickers = {
+          find_files = {
+            find_command = function()
+              return { "rg", "--files", "--color", "never", "-g", "!.git" }
+            end,
+            hidden = true,
+          },
+        },
       }
     end,
   },
