@@ -78,3 +78,9 @@ map(nt, "<A-t>", function() require("otsu-ui.terminal").toggle({ type = "float" 
 map(nt, "<A-s>", function() require("otsu-ui.terminal").toggle({ type = "hsplit" }) end, "Terminal Toggle hsplit")
 map(nt, "<A-v>", function() require("otsu-ui.terminal").toggle({ type = "vsplit" }) end, "Terminal Toggle vsplit")
 -- stylua: ignore end
+
+-- git
+-- stylua: ignore start
+map(nv, "<leader>gB", function() Otsuvim.git.git_browse({ open = true }) end, "Git-Browse (open)")
+map(nv, "<leader>gY", function() Otsuvim.git.git_browse({ open = false }) end, "Git-Browse (copy)")
+-- stylua: ignore end
