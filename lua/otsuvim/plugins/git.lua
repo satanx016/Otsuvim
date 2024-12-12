@@ -33,8 +33,7 @@ return {
           map("n", "<leader>ghu", gs.undo_stage_hunk, "Undo Stage Hunk")
           map("n", "<leader>ghS", gs.stage_buffer, "Stage Buffer")
           map("n", "<leader>ghR", gs.reset_buffer, "Reset Buffer")
-          map("n", "<leader>gb", gs.blame_line, "Blame Line")
-          map("n", "<leader>gB", function() gs.blame_line({ full = true }) end, "Full Blame")
+          map("n", "<leader>gb", function() gs.blame_line({ full = true }) end, "Blame Line")
           map("n", "<leader>gd", gs.diffthis, "Diff This")
           -- stylua: ignore end
 
