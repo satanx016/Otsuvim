@@ -56,6 +56,7 @@ return {
       { "<leader>sg", "<cmd>Telescope live_grep<CR>", desc = "Grep" },
       { "<leader>sk", "<cmd>Telescope keymaps<CR>", desc = "Keymaps" },
       { "<leader>sw", "<cmd>Telescope current_buffer_fuzzy_find<CR>", desc = "Word" },
+      { "<leader>s:", "<cmd>Telescope command_history<CR>", desc = "Command History" },
       -- git
       { "<leader>gfc", "<cmd>Telescope git_commits<CR>", desc = "Commits" },
       { "<leader>gfC", "<cmd>Telescope git_bcommits<CR>", desc = "Commits (%)" },
