@@ -80,8 +80,8 @@ return {
               preview_width = 0.55,
               results_width = 0.8,
             },
-            width = 0.87,
-            height = 0.80,
+            width = 0.75,
+            height = 0.75,
           },
 
           mappings = {
@@ -99,6 +99,9 @@ return {
 
         pickers = {
           find_files = {
+            preview = {
+              hide_on_startup = true,
+            },
             find_command = function()
               return { "rg", "--files", "--color", "never", "-g", "!.git" }
             end,
