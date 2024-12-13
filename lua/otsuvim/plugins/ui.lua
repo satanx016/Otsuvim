@@ -46,6 +46,14 @@ return {
   {
     "folke/noice.nvim",
     event = "VeryLazy",
+    -- stylua: ignore
+    keys = {
+      { "<leader>sn", "", desc = "+Noice" },
+      { "<leader>sna", function() require("noice").cmd("all") end, desc = "Noice All" },
+      { "<leader>snd", function() require("noice").cmd("dismiss") end, desc = "Dismiss All" },
+      { "<leader>snl", function() require("noice").cmd("last") end, desc = "Last Message" },
+      { "<leader>snh", function() require("noice").cmd("pick") end, desc = "History" },
+    },
     opts = function()
       return {
         cmdline = { format = { cmdline = { icon = " " } } },
