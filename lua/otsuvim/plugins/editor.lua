@@ -41,10 +41,11 @@ return {
     cmd = "Telescope",
     keys = {
       -- find
-      { "<leader>fa", "<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>", desc = "All Files" },
+      { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Files" },
+      -- stylua: ignore
+      { "<leader>fa", "<cmd>Telescope find_files cwd=" .. vim.fs.joinpath(tostring(vim.fn.stdpath("data")), "lazy") .. "<CR>", desc = "All Files" },
       { "<leader>fb", "<cmd>Telescope buffers<CR>", desc = "Buffers" },
       { "<leader>fc", "<cmd>Telescope find_files cwd=" .. vim.fn.stdpath("config") .. "<CR>", desc = "Config Files" },
-      { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Files" },
       { "<leader>fr", "<cmd>Telescope oldfiles<CR>", desc = "Recent Files" },
       -- search
       { '<leader>s"', "<cmd>Telescope registers<cr>", desc = "Registers" },
