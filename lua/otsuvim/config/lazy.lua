@@ -32,6 +32,8 @@ M.setup = function()
       },
     },
 
+    checker = { enabled = true },
+
     performance = {
       rtp = {
         -- disable some rtp plugins for faster startup / increased overall performance
