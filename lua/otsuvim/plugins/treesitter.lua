@@ -79,5 +79,9 @@ return {
         n_lines = 150,
       }
     end,
+    config = function(_, opts)
+      require("mini.ai").setup(opts)
+      Otsuvim.mini.ai_whichkey(opts)
+    end,
   },
 }
