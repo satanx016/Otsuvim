@@ -70,7 +70,7 @@ return {
           f = ai.gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }), -- function
           c = ai.gen_spec.treesitter({ a = "@class.outer", i = "@class.inner" }), -- class
           d = { "%f[%d]%d+" }, -- digits
-          g = Otsuvim.mini.gen_spec_buffer(),
+          g = Otsuvim.mini.ai_gen_spec_buffer(),
           e = { -- snake/camel case
             { "%u[%l%d]+%f[^%l%d]", "%f[%S][%l%d]+%f[^%l%d]", "%f[%P][%l%d]+%f[^%l%d]", "^[%l%d]+%f[^%l%d]" },
             "^().*()$",

@@ -1,6 +1,6 @@
 local M = {}
 
-function M.gen_spec_buffer()
+function M.ai_gen_spec_buffer()
   local from = { line = 1, col = 1 }
   local to = {
     line = vim.fn.line("$"),
