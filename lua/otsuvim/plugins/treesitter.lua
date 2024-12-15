@@ -69,7 +69,7 @@ return {
           a = ai.gen_spec.argument({ brackets = { "%b()" }, separator = ";" }), -- argument
           f = ai.gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }), -- function
           c = ai.gen_spec.treesitter({ a = "@class.outer", i = "@class.inner" }), -- class
-          d = ai.gen_spec.treesitter({ a = "@number.inner", i = "@number.inner" }), -- number
+          d = { "%f[%d]%d+" }, -- digits
           g = Otsuvim.mini.gen_spec_buffer(),
         },
         n_lines = 150,
