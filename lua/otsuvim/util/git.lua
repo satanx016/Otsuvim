@@ -48,6 +48,7 @@ function M.git_browse(opts)
     vim.ui.open(url)
   else
     vim.fn.setreg("+", url)
+    Otsuvim.notify.info(url, { icon = "󰊢", title = "Link Copied!", timeout = 4300 })
   end
 end
 
