@@ -38,9 +38,9 @@ function M.git_browse(opts)
       ln_num = "#L" .. vim.fn.line(".")
     end
 
-    url = remote_url:match("(https.*)%.git$") .. "/blob/" .. branch .. "/" .. file .. ln_num
+    url = remote_url:gsub("%.git$", "") .. "/blob/" .. branch .. "/" .. file .. ln_num
   else
-    url = remote_url:match("(https.*)%.git$") .. "/tree/" .. branch
+    url = remote_url:gsub("%.git$", "") .. "/tree/" .. branch
   end
 
   if opts.open then
