@@ -105,14 +105,14 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     opts = function()
       local exclude_filetypes = {
-        "man",
-        "help",
-        "norg",
-        "lazy",
-        "mason",
-        "notify",
-        "NvimTree",
-        "NeogitStatus",
+        man = true,
+        help = true,
+        norg = true,
+        lazy = true,
+        mason = true,
+        notify = true,
+        NvimTree = true,
+        NeogitStatus = true,
       }
 
       return {
