@@ -101,7 +101,8 @@ return {
   },
 
   {
-    "shellRaining/hlchunk.nvim",
+    "satanx016/hlchunk.nvim",
+    branch = "better-chunk-keymapping",
     event = { "BufReadPre", "BufNewFile" },
     opts = function()
       local exclude_filetypes = {
@@ -121,6 +122,7 @@ return {
           chars = {
             right_arrow = "─",
           },
+          textobject = { keymap = "as", desc = "scope" },
           exclude_filetypes = exclude_filetypes,
         },
         indent = {
