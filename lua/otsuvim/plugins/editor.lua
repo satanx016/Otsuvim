@@ -89,11 +89,11 @@ return {
 
           mappings = {
             i = {
-              ["<C-p>"] = require("telescope.actions.layout").toggle_preview,
+              ["<A-p>"] = require("telescope.actions.layout").toggle_preview,
             },
             n = {
               ["q"] = require("telescope.actions").close,
-              ["<C-p>"] = require("telescope.actions.layout").toggle_preview,
+              ["<A-p>"] = require("telescope.actions.layout").toggle_preview,
               ["<C-l>"] = Otsuvim.telescope.toggle_preview_focus,
             },
           },
