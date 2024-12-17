@@ -1,9 +1,12 @@
 return {
   {
-    "nvim-tree/nvim-web-devicons",
-    opts = function()
-      dofile(vim.g.based_cache .. "devicons")
-      return { override = require("otsu-ui.icons.devicons") }
+    "echasnovski/mini.icons",
+    opts = {},
+    init = function()
+      package.preload["nvim-web-devicons"] = function()
+        require("mini.icons").mock_nvim_web_devicons()
+        return package.loaded["nvim-web-devicons"]
+      end
     end,
   },
 
