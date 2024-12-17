@@ -15,6 +15,5 @@ vim.api.nvim_create_autocmd("User", {
   pattern = "VeryLazy",
   callback = function()
     require("otsuvim.config.keymaps")
-    require("otsuvim.config.autocmds")
   end,
 })
