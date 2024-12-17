@@ -77,7 +77,6 @@ M.utils = {
   projects = {
     "~/projects",
     "~/projects/*",
-    "~/projects/repo/*",
 
     "~/dotfiles",
     "~/dotfiles/*",
