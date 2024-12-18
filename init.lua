@@ -8,12 +8,6 @@ require("otsuvim.config.lazy").setup()
 vim.api.nvim_create_autocmd("UIEnter", {
   callback = function()
     require("otsuvim.config.options")
-  end,
-})
-
-vim.api.nvim_create_autocmd("User", {
-  pattern = "VeryLazy",
-  callback = function()
     require("otsuvim.config.keymaps")
   end,
 })
