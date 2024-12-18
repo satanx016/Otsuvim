@@ -164,6 +164,7 @@ return {
     opts = {
       spec = {
         {
+          mode = { "n", "v" },
           { "<leader>c", group = "Code" },
           { "<leader>f", group = "File/Find" },
           { "<leader>s", group = "Search" },
