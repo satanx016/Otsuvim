@@ -18,7 +18,6 @@ map("n", "<leader>Q", "<cmd>qa<cr>", "Quit All")
 -- qol or fixes
 map(n, "<leader>w", "<cmd>w<CR>", "Save")
 map(n, "<leader>W", "<cmd>w !sudo tee %<CR>", "Sudo Save") -- Use this wisely
-map(n, "<C-a>", "ggVG", "Select all")
 map(i, "<C-Del>", "<Cmd>norm! dw<CR>")
 map(i, "<A-Del>", "<Cmd>norm! dw<CR>")
 map(ic, "<C-BS>", "<C-w>")
