@@ -1,3 +1,4 @@
+;; extends
 (field
   "=" value: (_) @value)
 
