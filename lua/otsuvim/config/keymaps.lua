@@ -45,6 +45,8 @@ map(n, "<A-l>", "<Cmd>vert res +1<CR>", "Window Resize right")
 map(n, "<A-j>", "<Cmd>hor res -1<CR>", "Window Resize down")
 map(n, "<A-k>", "<Cmd>hor res +1<CR>", "Window Resize up")
 map(n, "<C-q>", "<C-w>q", "Window Close")
+-- tab management
+map(n, "<C-t>", "<cmd>tabnew<cr>", "Tab new")
 
 -- tufline
 -- stylua: ignore start
