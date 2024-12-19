@@ -1,41 +1,5 @@
 return {
   {
-    "nvim-tree/nvim-tree.lua",
-    cmd = { "NvimTreeToggle", "NvimTreeFocus" },
-    keys = { { "<leader>e", "<cmd>NvimTreeToggle<CR>", desc = "Explorer NvimTree" } },
-    opts = function()
-      dofile(vim.g.based_cache .. "nvimtree")
-
-      return {
-        hijack_cursor = true,
-        sync_root_with_cwd = true,
-        update_focused_file = {
-          enable = true,
-          update_root = true,
-        },
-        modified = {
-          enable = true,
-        },
-        diagnostics = {
-          enable = true,
-          show_on_dirs = true,
-          severity = {
-            -- min = vim.diagnostic.severity.ERROR,
-          },
-        },
-        renderer = {
-          root_folder_label = false,
-          highlight_git = true,
-
-          indent_markers = {
-            enable = true,
-          },
-        },
-      }
-    end,
-  },
-
-  {
     "nvim-telescope/telescope.nvim",
     dependencies = { { "nvim-telescope/telescope-fzf-native.nvim", build = "make" } },
     cmd = "Telescope",
