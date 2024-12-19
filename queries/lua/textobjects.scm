@@ -3,4 +3,4 @@
 
 (variable_declaration
   (assignment_statement
-    (expression_list (_) @value)))
+    "=" (expression_list) @value))
