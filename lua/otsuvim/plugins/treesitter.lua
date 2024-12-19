@@ -65,7 +65,7 @@ return {
             i = { "@block.inner", "@conditional.inner", "@loop.inner" },
           }), -- code block
 
-          ["="] = ai.gen_spec.treesitter({ a = { "@assignment.rhs" }, i = { "@assignment.rhs" } }), -- assignment
+          ["="] = ai.gen_spec.treesitter({ a = { "@value" }, i = { "@value" } }), -- assignment
           a = ai.gen_spec.argument({ brackets = { "%b()" }, separator = ";" }), -- argument
           f = ai.gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }), -- function
           c = ai.gen_spec.treesitter({ a = "@class.outer", i = "@class.inner" }), -- class
