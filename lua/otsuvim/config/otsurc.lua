@@ -17,8 +17,6 @@ M.ui = {
     vsplit = { width = 0.3 },
   },
 
-  lsp = { signature = true },
-
   cmp = {
     icons = true,
     lspkind_text = true,
