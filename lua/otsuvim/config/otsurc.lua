@@ -71,18 +71,4 @@ M.ui = {
   },
 }
 
-M.utils = {
-  -- define project roots
-  projects = {
-    "~/projects",
-    "~/projects/*",
-
-    "~/dotfiles",
-    "~/dotfiles/*",
-    "~/.config/*",
-
-    "~/notes",
-  },
-}
-
 return M

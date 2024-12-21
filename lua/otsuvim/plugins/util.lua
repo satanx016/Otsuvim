@@ -14,7 +14,16 @@ return {
       vim.opt.sessionoptions:remove("folds")
 
       return {
-        projects = Otsuvim.config.utils.projects,
+        projects = {
+          "~/projects",
+          "~/projects/*",
+
+          "~/dotfiles",
+          "~/dotfiles/*",
+          "~/.config/*",
+
+          "~/notes",
+        },
         last_session_on_startup = false,
       }
     end,
