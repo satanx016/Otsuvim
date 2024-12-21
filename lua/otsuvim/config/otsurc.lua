@@ -27,6 +27,7 @@ M.ui = {
 
   ------------------------------- otsu-ui modules -----------------------------
   statusline = {
+    enabled = true,
     theme = "default", -- default/vscode/minimal
     -- default/round/block/arrow separators work only for default statusline theme
     -- round and block will work for minimal theme only
