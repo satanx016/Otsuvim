@@ -61,8 +61,8 @@ return {
       return {
         custom_textobjects = {
           o = ai.gen_spec.treesitter({
-            a = { "@block.outer", "@conditional.outer", "@loop.outer" },
-            i = { "@block.inner", "@conditional.inner", "@loop.inner" },
+            a = { "@conditional.outer", "@loop.outer" },
+            i = { "@conditional.inner", "@loop.inner" },
           }), -- code block
 
           ["="] = ai.gen_spec.treesitter({ a = { "@value" }, i = { "@value" } }), -- assignment
