@@ -66,7 +66,7 @@ return {
           }), -- code block
 
           ["="] = ai.gen_spec.treesitter({ a = { "@value" }, i = { "@value" } }), -- assignment
-          a = ai.gen_spec.argument({ brackets = { "%b()" }, separator = ";" }), -- argument
+          a = ai.gen_spec.treesitter({ a = { "@parameter.outer" }, i = { "@parameter.inner" } }), -- argument
           f = ai.gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }), -- function
           c = ai.gen_spec.treesitter({ a = "@class.outer", i = "@class.inner" }), -- class
           d = { "%f[%d]%d+" }, -- digits
