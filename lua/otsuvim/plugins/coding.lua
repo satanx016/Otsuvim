@@ -93,9 +93,9 @@ return {
           ["<C-d>"] = cmp.mapping.scroll_docs(4),
           ["<C-Space>"] = cmp.mapping.complete(),
           ["<ESC>"] = cmp.mapping.close(),
-          ["<CR>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Insert, select = true }),
-          ["<Tab>"] = Otsuvim.cmp.select_next(),
-          ["<S-Tab>"] = Otsuvim.cmp.select_prev(),
+          ["<C-y>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Insert, select = true }),
+          ["<C-n>"] = Otsuvim.cmp.select_next(),
+          ["<C-p>"] = Otsuvim.cmp.select_prev(),
         },
         sources = {
           { name = "lazydev", group_index = 0 },
