@@ -30,7 +30,7 @@ return {
   },
 
   {
-    "NvChad/nvim-colorizer.lua",
+    "catgoose/nvim-colorizer.lua",
     event = "LazyFile",
     keys = { { "<leader>uh", "<Cmd>ColorizerToggle<CR>", desc = "Toggle Highlight Colors" } },
     opts = function()
