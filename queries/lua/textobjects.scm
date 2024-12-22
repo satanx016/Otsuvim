@@ -1,7 +1,8 @@
 ;; extends
 (field
-  "=" value: (_) @value)
+  name: (identifier) @value.outer
+  "=" value: (_) @value.inner)
 
-(variable_declaration
-  (assignment_statement
-    "=" (expression_list) @value))
+(assignment_statement
+  (variable_list) @value.outer
+  "=" (expression_list) @value.inner)
