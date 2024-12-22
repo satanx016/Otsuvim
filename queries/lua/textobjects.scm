@@ -4,5 +4,7 @@
   "=" value: (_) @value.inner)
 
 (assignment_statement
-  (variable_list) @value.outer
-  "=" (expression_list) @value.inner)
+  (variable_list
+    name: (_) @value.outer)
+  "=" (expression_list
+        value: (_) @value.inner ))
