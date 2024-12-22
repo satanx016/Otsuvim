@@ -22,7 +22,7 @@ function M.ai_whichkey(opts)
     { "d", desc = "digit(s)" },
     { "e", desc = "CaMel/sn_ake case" },
 
-    { "=", desc = "assignement" },
+    { "=", desc = "assignment" },
     { "a", desc = "argument" },
     { "b", desc = ")]} block" },
     { "o", desc = "block, conditional, loop" },
