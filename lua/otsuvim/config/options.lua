@@ -33,7 +33,7 @@ opt.shortmess:append("sI") -- disable nvim intro
 opt.signcolumn = "yes"
 opt.splitbelow = true
 opt.splitright = true
-opt.timeoutlen = 80
+opt.timeoutlen = 100
 opt.undofile = true
 
 opt.swapfile = false
