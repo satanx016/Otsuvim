@@ -42,6 +42,7 @@ return {
     "nvim-neorg/neorg",
     version = "*",
     dependencies = { "satanx016/neorg-colorizer" },
+    cmd = "Neorg",
     ft = "norg",
     keys = {
       { "<leader>nn", "<cmd>Neorg<CR>", desc = "neorg" },
