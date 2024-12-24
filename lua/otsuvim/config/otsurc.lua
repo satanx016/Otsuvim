@@ -63,7 +63,7 @@ M.ui = {
 
     buttons = {
       { icon = " ", key = "f", txt = "Find File", action = "Telescope find_files" },
-      { icon = " ", key = "n", txt = "New File", action = "bnew" },
+      { icon = " ", key = "n", txt = "New File", action = "ene | startinsert" },
       { icon = " ", key = "r", txt = "Recent Files", action = "Telescope oldfiles" },
       { icon = "󰙅 ", key = "p", txt = "Find Project", action = "NeovimProjectDiscover" },
       { icon = "󰒓 ", key = "c", txt = "Config", action = "Telescope find_files cwd=" .. vim.fn.stdpath("config") },
