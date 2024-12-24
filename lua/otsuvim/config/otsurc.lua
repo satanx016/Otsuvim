@@ -44,7 +44,7 @@ M.ui = {
     modules = nil,
   },
 
-  otsudash = {
+  dash = {
     load_on_startup = true,
 
     header = {
@@ -58,15 +58,17 @@ M.ui = {
       "░   ░ ▒                    ░          ░  ░   ",
       "      ░        ░           ░                 ",
       "               ░                      ░      ",
-      "      ░                                   002",
+      "      ░                                      ",
     },
 
     buttons = {
-      { "󰉋  Recent Project", "Spc p r", "Telescope neovim-project discover" },
-      { "󰈚  Recent Files", "Spc f r", "Telescope oldfiles" },
-      { "  Themes", "Spc o t", "Telescope themes" },
-      { "  Mappings", "Spc c h", "Cheatsheet" },
-      { "󰒲  Lazy", "Spc L", "Lazy" },
+      { icon = " ", key = "f", txt = "Find File", action = "Telescope find_files" },
+      { icon = " ", key = "n", txt = "New File", action = "bnew" },
+      { icon = " ", key = "r", txt = "Recent Files", action = "Telescope oldfiles" },
+      { icon = "󰙅 ", key = "p", txt = "Find Project", action = "NeovimProjectDiscover" },
+      { icon = "󰒓 ", key = "c", txt = "Config", action = "Telescope find_files cwd=" .. vim.fn.stdpath("config") },
+      { icon = " ", key = "l", txt = "Last project", action = "NeovimProjectLoadRecent" },
+      { icon = " ", key = "q", txt = "Quit", action = "qa!" },
     },
   },
 }
