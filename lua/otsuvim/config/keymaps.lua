@@ -5,7 +5,7 @@ local n, i, v, c, t = "n", "i", "v", "c", "t"
 local ic, nt, nv = { i, c }, { n, t }, { n, v }
 
 -- lazy
-map(n, "<leader>L", "<Cmd>Lazy<CR>", "Lazy")
+map(n, "<leader>l", "<Cmd>Lazy<CR>", "Lazy")
 
 -- essentials
 map(n, ";", ":", "CMD enter command mode")
