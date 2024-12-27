@@ -125,8 +125,5 @@ return {
         update_n_lines = "gsn",
       },
     },
-    config = function(_, opts)
-      require("mini.surround").setup(opts)
-    end,
   },
 }
