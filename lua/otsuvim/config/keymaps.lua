@@ -46,15 +46,14 @@ map(n, "<A-k>", "<Cmd>hor res +1<CR>", "Window Resize up")
 map(n, "<C-q>", "<C-w>q", "Window Close")
 -- tab management
 map(n, "<C-t>", "<cmd>tabnew<cr>", "Tab new")
-
--- tufline
+-- buffer management
 -- stylua: ignore start
 map(n, "<leader>bn", "<cmd>enew<CR>", "Buffer New")
-map(n, "<tab>", function() require("otsu-ui.tufline").next() end, "Buffer Goto next")
-map(n, "<S-tab>", function() require("otsu-ui.tufline").prev() end, "Buffer Goto prev")
+map(n, "L", function() require("otsu-ui.tufline").next() end, "Buffer Goto next")
+map(n, "H", function() require("otsu-ui.tufline").prev() end, "Buffer Goto prev")
 map(n, "<leader>bq", function() require("otsu-ui.tufline").close_buffer() end, "Buffer Close")
 map(n, "<leader>bo", function() require("otsu-ui.tufline").closeOtherBufs() end, "Buffer Close Others")
-map(n, "<leader>ba", "<cmd>silent only | enew | lua require('otsu-ui.tufline').closeOtherBufs()<CR>", "Buffer Close All")
+map(n, "<leader>ba", "<cmd>lua require('otsu-ui.dash').open();require('otsu-ui.tufline').closeOtherBufs()<CR>", "Buffer Close All")
 -- stylua: ignore end
 
 -- ui qol's
