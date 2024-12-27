@@ -45,7 +45,9 @@ map(n, "<A-j>", "<Cmd>hor res -1<CR>", "Window Resize down")
 map(n, "<A-k>", "<Cmd>hor res +1<CR>", "Window Resize up")
 map(n, "<C-q>", "<C-w>q", "Window Close")
 -- tab management
-map(n, "<C-t>", "<cmd>tabnew<cr>", "Tab new")
+map(n, "<leader><tab><tab>", "<cmd>tabnew<cr>", { desc = "New" })
+map(n, "<leader><tab>q", "<cmd>tabclose<cr>", { desc = "Close" })
+map(n, "<leader><tab>o", "<cmd>tabonly<cr>", { desc = "Close others" })
 -- buffer management
 -- stylua: ignore start
 map(n, "<leader>bn", "<cmd>enew<CR>", "New")
