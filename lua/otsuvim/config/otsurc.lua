@@ -65,7 +65,7 @@ M.ui = {
       { icon = " ", key = "f", txt = "Find File", action = "Telescope find_files" },
       { icon = " ", key = "r", txt = "Recent Files", action = "Telescope oldfiles" },
       { icon = "󰙅 ", key = "p", txt = "Find Project", action = "NeovimProjectDiscover" },
-      { icon = " ", key = "n", txt = "Notes", action = "cd notes/ | Neorg index" },
+      { icon = " ", key = "n", txt = "Notes", action = "cd ~/notes | Neorg index" },
       { icon = "󰒓 ", key = "c", txt = "Config", action = "Telescope find_files cwd=" .. vim.fn.stdpath("config") },
       { icon = " ", key = "l", txt = "Last project", action = "NeovimProjectLoadRecent" },
       { icon = " ", key = "q", txt = "Quit", action = "qa!" },
