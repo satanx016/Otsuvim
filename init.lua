@@ -1,4 +1,4 @@
--- NOTE: Temp fix (delete on rebuild:release-0.10)
+-- HACK: Temp fix (delete on rebuild:release-0.10)
 -- https://github.com/neovim/neovim/pull/31676
 vim.hl = vim.highlight
 
