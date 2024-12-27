@@ -14,27 +14,27 @@ map(i, "jk", "<ESC>")
 map(v, "K", ":m '<-2<CR>gv=gv", { silent = true })
 map(v, "J", ":m '>+1<CR>gv=gv", { silent = true })
 -- quit
-map("n", "<leader>Q", "<cmd>qa<cr>", "Quit All")
+map("n", "<leader>Q", "<cmd>qa<cr>", "Quit all")
 -- qol or fixes
 map(n, "<leader>w", "<cmd>w<CR>", "Save")
-map(n, "<leader>W", "<cmd>w !sudo tee %<CR>", "Sudo Save") -- Use this wisely
+map(n, "<leader>W", "<cmd>w !sudo tee %<CR>", "Save sudo") -- Use this wisely
 map(i, "<C-Del>", "<Cmd>norm! dw<CR>")
 map(i, "<A-Del>", "<Cmd>norm! dw<CR>")
 map(ic, "<C-BS>", "<C-w>")
 map(ic, "<A-BS>", "<C-w>")
 map(c, "<C-S-v>", "<C-r>+") -- add Ctrl+Shift+V paste in command-line mode
 -- caret movement
-map(ic, "<C-b>", "<ESC>^i", "Caret Goto beginning of line")
-map(ic, "<C-e>", "<End>", "Caret Goto end of line")
+map(ic, "<C-b>", "<ESC>^i", "Caret Goto BOF")
+map(ic, "<C-e>", "<End>", "Caret Goto EOF")
 map(ic, "<C-h>", "<Left>", "Caret Goto left")
 map(ic, "<C-l>", "<Right>", "Caret Goto right")
 map(ic, "<C-j>", "<Down>", "Caret Goto down")
 map(ic, "<C-k>", "<Up>", "Caret Goto up")
 -- window management
-map(n, "<C-h>", "<C-w>h", "Window Swap left")
-map(n, "<C-l>", "<C-w>l", "Window Swap right")
-map(n, "<C-j>", "<C-w>j", "Window Swap bottom")
-map(n, "<C-k>", "<C-w>k", "Window Swap top")
+map(n, "<C-h>", "<C-w>h", "Window Focus left")
+map(n, "<C-l>", "<C-w>l", "Window Focus right")
+map(n, "<C-j>", "<C-w>j", "Window Focus bottom")
+map(n, "<C-k>", "<C-w>k", "Window Focus top")
 map(n, "<C-S-h>", "<C-w>H", "Window Move left")
 map(n, "<C-S-l>", "<C-w>L", "Window Move right")
 map(n, "<C-S-j>", "<C-w>J", "Window Move bottom")
@@ -48,28 +48,28 @@ map(n, "<C-q>", "<C-w>q", "Window Close")
 map(n, "<C-t>", "<cmd>tabnew<cr>", "Tab new")
 -- buffer management
 -- stylua: ignore start
-map(n, "<leader>bn", "<cmd>enew<CR>", "Buffer New")
+map(n, "<leader>bn", "<cmd>enew<CR>", "New")
 map(n, "L", function() require("otsu-ui.tufline").next() end, "Buffer Goto next")
 map(n, "H", function() require("otsu-ui.tufline").prev() end, "Buffer Goto prev")
-map(n, "<leader>bq", function() require("otsu-ui.tufline").close_buffer() end, "Buffer Close")
-map(n, "<leader>bo", function() require("otsu-ui.tufline").closeOtherBufs() end, "Buffer Close Others")
-map(n, "<leader>ba", "<cmd>lua require('otsu-ui.dash').open();require('otsu-ui.tufline').closeOtherBufs()<CR>", "Buffer Close All")
+map(n, "<leader>bq", function() require("otsu-ui.tufline").close_buffer() end, "Close")
+map(n, "<leader>bo", function() require("otsu-ui.tufline").closeOtherBufs() end, "Close others")
+map(n, "<leader>ba", "<cmd>lua require('otsu-ui.dash').open();require('otsu-ui.tufline').closeOtherBufs()<CR>", "Close all")
 -- stylua: ignore end
 
 -- ui qol's
-map(n, "<ESC>", "<cmd>noh<CR>", "Clear Highlights")
-map(n, "<leader>ui", vim.show_pos, "Inspect Pos")
-map(n, "<leader>uI", "<cmd>InspectTree<cr>")
+map(n, "<ESC>", "<cmd>noh<CR>", "Clear highlights")
+map(n, "<leader>ui", vim.show_pos, "Inspect pos")
+map(n, "<leader>uI", "<cmd>InspectTree<cr>", "Inspect tree")
 Otsuvim.toggle.format():map("<leader>uf")
-Otsuvim.toggle.option("relativenumber", { name = "Relative Number" }):map("<leader>ur")
-Otsuvim.toggle.option("spell", { name = "Spelling" }):map("<leader>us")
-Otsuvim.toggle.option("wrap", { name = "Wrap" }):map("<leader>uw")
+Otsuvim.toggle.option("relativenumber", { name = "relative number" }):map("<leader>ur")
+Otsuvim.toggle.option("spell", { name = "spelling" }):map("<leader>us")
+Otsuvim.toggle.option("wrap", { name = "wrap" }):map("<leader>uw")
 Otsuvim.toggle.inlay_hints():map("<leader>uH")
 Otsuvim.toggle.transparency():map("<leader>ut")
 
 -- comment
-map(n, "<leader>/", "<cmd>normal gcc<CR>", "Comment Toggle")
-map(v, "<leader>/", "<cmd>normal gc<CR>", "Comment Toggle")
+map(n, "<leader>/", "<cmd>normal gcc<CR>", "Comment toggle")
+map(v, "<leader>/", "<cmd>normal gc<CR>", "Comment toggle")
 
 -- terminals
 -- stylua: ignore start

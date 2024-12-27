@@ -6,9 +6,9 @@ return {
     dependencies = { "Shatur/neovim-session-manager" },
     cmd = { "NeovimProjectDiscover", "NeovimProjectHistory", "NeovimProjectLoadRecent" },
     keys = {
-      { "<leader>pf", "<cmd>NeovimProjectDiscover<CR>", desc = "List All" },
-      { "<leader>pr", "<cmd>NeovimProjectHistory<CR>", desc = "List Recent" },
-      { "<leader>pl", "<cmd>NeovimProjectLoadRecent<CR>", desc = "Restore Last Project" },
+      { "<leader>pf", "<cmd>NeovimProjectDiscover<CR>", desc = "List all" },
+      { "<leader>pr", "<cmd>NeovimProjectHistory<CR>", desc = "List recent" },
+      { "<leader>pl", "<cmd>NeovimProjectLoadRecent<CR>", desc = "Restore last" },
     },
     opts = function()
       vim.opt.sessionoptions:remove("folds")
@@ -33,6 +33,7 @@ return {
     "catgoose/nvim-colorizer.lua",
     event = "LazyFile",
     keys = { { "<leader>uh", "<Cmd>ColorizerToggle<CR>", desc = "Toggle Highlight Colors" } },
+    keys = { { "<leader>uh", "<Cmd>ColorizerToggle<CR>", desc = "Toggle highlight colors" } },
     opts = function()
       return { user_default_options = { names = false } }
     end,
@@ -45,10 +46,10 @@ return {
     cmd = "Neorg",
     ft = "norg",
     keys = {
-      { "<leader>nn", "<cmd>Neorg<CR>", desc = "neorg" },
-      { "<leader>ni", "<cmd>Neorg index<CR>", desc = "index" },
-      { "<leader>nr", "<cmd>Neorg return<CR>", desc = "return" },
-      { "<leader>nc", "<Plug>(neorg.dirman.new-note)", desc = "Create New Note" },
+      { "<leader>nn", "<cmd>Neorg<CR>", desc = "Neorg" },
+      { "<leader>ni", "<cmd>Neorg index<CR>", desc = "Index" },
+      { "<leader>nr", "<cmd>Neorg return<CR>", desc = "Return" },
+      { "<leader>nc", "<Plug>(neorg.dirman.new-note)", desc = "Create note" },
     },
     opts = function()
       dofile(vim.g.based_cache .. "neorg")

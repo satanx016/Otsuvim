@@ -54,7 +54,7 @@ end
 
 function M.format()
   return M.new({
-    name = "Auto Format",
+    name = "auto format",
     get = function()
       return vim.g.autoformat == nil or vim.g.autoformat
     end,
@@ -66,7 +66,7 @@ end
 
 function M.inlay_hints()
   return M.new({
-    name = "Inlay Hints",
+    name = "inlay hints",
     get = function()
       return vim.lsp.inlay_hint.is_enabled({ bufnr = 0 })
     end,
@@ -78,7 +78,7 @@ end
 
 function M.transparency()
   return M.new({
-    name = "Transparency",
+    name = "transparency",
     get = function()
       return Otsuvim.config.based.transparency
     end,

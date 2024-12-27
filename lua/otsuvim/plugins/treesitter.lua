@@ -3,8 +3,8 @@ return {
     "folke/which-key.nvim",
     opts = {
       spec = {
-        { "<C-space>", desc = "Increment Selection", mode = { "x", "n" } },
-        { "<A-space>", desc = "Decrement Selection", mode = "x" },
+        { "<C-space>", desc = "Increment selection", mode = { "x", "n" } },
+        { "<A-space>", desc = "Decrement selection", mode = "x" },
       },
     },
   },
