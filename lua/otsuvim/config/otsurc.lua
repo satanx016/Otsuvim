@@ -45,6 +45,7 @@ M.ui = {
   },
 
   dash = {
+    enabled = true,
     load_on_startup = true,
 
     header = {
