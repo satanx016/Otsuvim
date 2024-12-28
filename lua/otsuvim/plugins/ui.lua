@@ -174,8 +174,6 @@ return {
           { "<leader>gh", group = "Hunk" },
           { "<leader>u", group = "UI", icon = { icon = "󰙵 ", color = "azure" } },
           { "<leader>p", group = "Projects", icon = { icon = "󰉋 ", color = "blue" } },
-          { "<leader>L", icon = { icon = "󰒲", color = "azure" } },
-          { "<leader>M", icon = { icon = "󱌢", color = "yellow" } },
           { "<leader>n", group = "Neorg", icon = { icon = "󱚌", color = "grey" } },
           { "<leader>b", group = "Buffer" },
           -- stylua: ignore
