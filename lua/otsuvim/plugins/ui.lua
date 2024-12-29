@@ -177,7 +177,7 @@ return {
           { "<leader>n", group = "Neorg", icon = { icon = "󱚌", color = "grey" } },
           { "<leader>b", group = "Buffer" },
           { "<leader><tab>", group = "Tabs" },
-          { "<leader>x", group = "diagnostics/quickfix" },
+          { "<leader>x", group = "Diagnostics/Quickfix" },
           -- stylua: ignore
           { "<leader>?", function() require("which-key").show({ global = false }) end, desc = "Buffer Keymaps (which-key)" },
           { "gx", desc = "Open with system app" },
