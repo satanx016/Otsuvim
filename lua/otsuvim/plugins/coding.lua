@@ -96,6 +96,8 @@ return {
           ["<C-x>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Insert, select = true }),
           ["<C-n>"] = Otsuvim.cmp.select_next(),
           ["<C-p>"] = Otsuvim.cmp.select_prev(),
+          ["<Tab>"] = Otsuvim.cmp.snippet_next(),
+          ["<S-Tab>"] = Otsuvim.cmp.snippet_prev(),
         },
         sources = {
           { name = "lazydev", group_index = 0 },

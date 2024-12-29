@@ -9,10 +9,21 @@ local luasnip = require("luasnip")
 
 function M.select_next()
   local cmp = require("cmp")
+  return function()
+    cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+  end, { "i", "s" }
+end
+
+function M.select_prev()
+  local cmp = require("cmp")
+  return function()
+    cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
+  end, { "i", "s" }
+end
+
+function M.snippet_next()
   return function(fallback)
-    if M.is_visible() then
-      cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
-    elseif luasnip.expand_or_jumpable() then
+    if not M.is_visible() and luasnip.expand_or_jumpable() then
       luasnip.expand_or_jump()
     else
       fallback()
@@ -20,12 +31,9 @@ function M.select_next()
   end, { "i", "s" }
 end
 
-function M.select_prev()
-  local cmp = require("cmp")
+function M.snippet_prev()
   return function(fallback)
-    if M.is_visible() then
-      cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
-    elseif luasnip.jumpable(-1) then
+    if not M.is_visible() and luasnip.jumpable(-1) then
       luasnip.jump(-1)
     else
       fallback()
