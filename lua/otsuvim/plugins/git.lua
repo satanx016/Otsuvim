@@ -43,15 +43,26 @@ return {
     end,
   },
 
-  { "sindrets/diffview.nvim" },
+  {
+    "sindrets/diffview.nvim",
+    cmd = { "DiffviewOpen" },
+    keys = {
+      { "<leader>gD", "<cmd>DiffviewOpen<CR>", desc = "Diffview" },
+    },
+    opts = {
+      keymaps = {
+        view = {
+          ["q"] = "<cmd>DiffviewClose<CR>",
+        },
+      },
+    },
+  },
 
   {
     "NeogitOrg/neogit",
     cmd = { "Neogit" },
     keys = {
       { "<leader>gg", "<cmd>Neogit<CR>", desc = "Neogit" },
-      -- stylua: ignore
-      { "<leader>gD", function() require("neogit.integrations.diffview").open() end, desc = "Diffview", },
     },
     opts = function()
       dofile(vim.g.based_cache .. "neogit")
