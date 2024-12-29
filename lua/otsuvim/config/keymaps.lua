@@ -55,7 +55,7 @@ map(n, "L", function() require("otsu-ui.tufline").next() end, "Buffer Goto next"
 map(n, "H", function() require("otsu-ui.tufline").prev() end, "Buffer Goto prev")
 map(n, "<leader>bq", function() require("otsu-ui.tufline").close_buffer() end, "Close")
 map(n, "<leader>bo", function() require("otsu-ui.tufline").closeOtherBufs() end, "Close others")
-map(n, "<leader>ba", "<cmd>lua require('otsu-ui.dash').open();require('otsu-ui.tufline').closeOtherBufs()<CR>", "Close all")
+map(n, "<leader>ba", function() require('otsu-ui.tufline').closeOtherBufs()end, "Close all")
 -- stylua: ignore end
 
 -- ui qol's
@@ -68,6 +68,7 @@ Otsuvim.toggle.option("spell", { name = "spelling" }):map("<leader>us")
 Otsuvim.toggle.option("wrap", { name = "wrap" }):map("<leader>uw")
 Otsuvim.toggle.inlay_hints():map("<leader>uH")
 Otsuvim.toggle.transparency():map("<leader>ut")
+map(n, "<leader>ud", require("otsu-ui.dash").open, "Open dash")
 
 -- comment
 map(n, "<leader>/", "<cmd>normal gcc<CR>", "Comment toggle")
