@@ -32,7 +32,6 @@ return {
   {
     "catgoose/nvim-colorizer.lua",
     event = "LazyFile",
-    keys = { { "<leader>uh", "<Cmd>ColorizerToggle<CR>", desc = "Toggle Highlight Colors" } },
     keys = { { "<leader>uh", "<Cmd>ColorizerToggle<CR>", desc = "Toggle highlight colors" } },
     opts = function()
       return { user_default_options = { names = false } }
