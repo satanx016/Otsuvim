@@ -12,6 +12,7 @@ opt.cursorlineopt = "number"
 -- Indenting
 opt.expandtab = true
 opt.smartindent = true
+opt.shiftwidth = 4
 opt.tabstop = 4
 opt.softtabstop = 4
 
