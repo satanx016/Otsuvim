@@ -25,6 +25,10 @@ return {
           "~/notes",
         },
         last_session_on_startup = false,
+
+        session_manager_opts = {
+          autosave_ignore_filetypes = { "dash", "help" },
+        },
       }
     end,
   },
