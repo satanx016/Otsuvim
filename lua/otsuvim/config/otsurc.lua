@@ -1,5 +1,18 @@
 local M = {}
 
+-- Reload Otsuvim to load plugins{} changes
+M.plugins = {
+  extras = {
+    util = {
+      fcitx = true,
+    },
+
+    vanity = {
+      neocord = false,
+    },
+  },
+}
+
 M.based = {
   integrations = {},
   changed_themes = {},
