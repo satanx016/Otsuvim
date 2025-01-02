@@ -1,36 +1,35 @@
 local M = {}
 
-function M.setup(keys, buffer)
-  local function map(mode, lhs, rhs, desc)
-    vim.keymap.set(mode, lhs, rhs, { buffer = buffer, desc = desc })
-  end
-
+function M.setup(client, buffer)
   local ts = require("telescope.builtin")
 
   M.keys = {
     { "<leader>cl", "<cmd>LspInfo<cr>", desc = "Lsp info" },
+    { "<leader>ss", ts.lsp_document_symbols, desc = "Goto document [s]ymbols" },
     { "gy", ts.lsp_type_definitions, desc = "Goto t[y]pe definition" },
-    { "gD", vim.lsp.buf.declaration, desc = "Goto [D]eclaration" },
-    { "gd", ts.lsp_definitions, desc = "Goto [d]efinition" },
+    { "gD", vim.lsp.buf.declaration, desc = "Goto [D]eclaration", support = "declaration" },
+    { "gd", ts.lsp_definitions, desc = "Goto [d]efinition", support = "definition" },
     { "gr", ts.lsp_references, desc = "Goto [r]eferences" },
     { "gI", ts.lsp_implementations, desc = "Goto [I]mplementation" },
-    { "<leader>ss", ts.lsp_document_symbols, desc = "Goto document [s]ymbols" },
-    { "gk", vim.lsp.buf.signature_help, desc = "Signature help" },
-    { "<leader>ca", vim.lsp.buf.code_action, desc = "Code action" },
-    { "<leader>cr", vim.lsp.buf.rename, desc = "Rename" },
-    { "<leader>cc", vim.lsp.codelens.run, desc = "Codelens run" },
-    { "<leader>cC", vim.lsp.codelens.refresh, desc = "Codelens refresh" },
+    { "gk", vim.lsp.buf.signature_help, desc = "Signature help", support = "signatureHelp" },
+    { "<leader>cr", vim.lsp.buf.rename, desc = "Rename", support = "rename" },
+    { "<leader>ca", vim.lsp.buf.code_action, desc = "Code action", support = "codeAction" },
+    { "<leader>cc", vim.lsp.codelens.run, desc = "Codelens run", support = "codeLens" },
+    { "<leader>cC", vim.lsp.codelens.refresh, desc = "Codelens refresh", support = "codeLens" },
     { "<leader>cd", vim.diagnostic.open_float, desc = "Line diagnostics" },
   }
 
-  -- client specific keys
-  if not keys then
-    return
-  end
+  vim.list_extend(M.keys, client.config.keys or {})
 
   for _, key in pairs(M.keys) do
-    vim.keymap.set(key.mode or "n", key[1], key[2], { buffer = buffer, desc = key.desc })
+    if not key.support or M.support(client, key.support) then
+      vim.keymap.set(key.mode or "n", key[1], key[2], { buffer = buffer, desc = key.desc })
+    end
   end
+end
+
+function M.support(client, method)
+  return client.supports_method(method:find("/") and method or "textDocument/" .. method)
 end
 
 return M
