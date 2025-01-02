@@ -114,8 +114,8 @@ return {
       dofile(vim.g.based_cache .. "semantic_tokens")
 
       Otsuvim.lsp.setup(opts)
-      Otsuvim.lsp.on_attach(function(_, buffer) -- set keymaps
-        require("otsuvim.plugins.lsp.keymaps").setup(buffer)
+      Otsuvim.lsp.on_attach(function(client, buffer) -- set keymaps
+        require("otsuvim.plugins.lsp.keymaps").setup(opts.servers[client.name].keys, buffer)
       end)
 
       vim.diagnostic.config(vim.deepcopy(opts.diagnostics))
