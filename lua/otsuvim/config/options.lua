@@ -24,6 +24,7 @@ opt.tabstop = 4
 opt.softtabstop = 4
 
 -- Search
+opt.hlsearch = false
 opt.ignorecase = true
 opt.smartcase = true
 
