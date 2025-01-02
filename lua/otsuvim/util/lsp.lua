@@ -1,7 +1,22 @@
 local M = {}
 
 function M.setup(opts)
+  local register_capability = vim.lsp.handlers["client/registerCapability"]
+  vim.lsp.handlers["client/registerCapability"] = function(err, res, ctx)
+    local client = vim.lsp.get_client_by_id(ctx.client_id)
+    if client then
+      for buffer in pairs(client.attached_buffers) do
+        vim.api.nvim_exec_autocmds("User", {
+          pattern = "LspDynamicCapability",
+          data = { client_id = client.id, buffer = buffer },
+        })
+      end
+    end
+    return register_capability(err, res, ctx)
+  end
+
   M.on_attach(M.check_cache_methods)
+  M.on_dynamic_capability(M.check_cache_methods)
 
   -- document_highlight
   if opts.document_highlight.enabled then
@@ -74,6 +89,20 @@ function M.on_supports_method(method, fn)
       local client = vim.lsp.get_client_by_id(args.data.client_id)
       local buffer = args.data.buffer
       if client and method == args.data.method then
+        return fn(client, buffer)
+      end
+    end,
+  })
+end
+
+function M.on_dynamic_capability(fn, opts)
+  return vim.api.nvim_create_autocmd("User", {
+    pattern = "LspDynamicCapability",
+    group = opts and opts.group or nil,
+    callback = function(args)
+      local client = vim.lsp.get_client_by_id(args.data.client_id)
+      local buffer = args.data.buffer
+      if client then
         return fn(client, buffer)
       end
     end,
