@@ -3,11 +3,18 @@ local g = vim.g
 
 g.autoformat = true -- Otsuvim auto format
 
-opt.laststatus = 3
-
 opt.clipboard = "unnamedplus" -- Synchronize with system clipboard
+
+opt.shortmess:append("sI") -- disable nvim intro
+opt.scrolloff = 999 -- vertitcal
+-- opt.sidescrolloff = 999 -- horizontal centering
 opt.cursorline = true
 opt.cursorlineopt = "number"
+opt.whichwrap:append("<>[]hl") -- switch to previous/next line when cursor reaches end/beginning of line
+opt.laststatus = 3
+opt.cmdheight = 0
+opt.splitbelow = true
+opt.splitright = true
 
 -- Indenting
 opt.expandtab = true
@@ -16,9 +23,7 @@ opt.shiftwidth = 4
 opt.tabstop = 4
 opt.softtabstop = 4
 
--- opt.sidescrolloff = 999 -- horizontal centering
-opt.scrolloff = 999 -- vertitcal
-opt.cmdheight = 0
+-- Search
 opt.ignorecase = true
 opt.smartcase = true
 
@@ -29,17 +34,9 @@ opt.numberwidth = 2
 opt.ruler = false
 opt.wrap = false
 
-opt.shortmess:append("sI") -- disable nvim intro
-
-opt.signcolumn = "yes"
-opt.splitbelow = true
-opt.splitright = true
 opt.timeoutlen = 100
 opt.undofile = true
-
 opt.swapfile = false
-
-opt.whichwrap:append("<>[]hl") -- switch to previous/next line when cursor reaches end/beginning of line
 
 if vim.g.neovide then
   require("otsuvim.config.neovide")
