@@ -120,21 +120,19 @@ return {
 
       vim.diagnostic.config(vim.deepcopy(opts.diagnostics))
 
-      local servers = opts.servers
-      local mp_nvim_lsp = require("cmp_nvim_lsp")
       local capabilities = vim.tbl_deep_extend(
         "force",
         {},
         vim.lsp.protocol.make_client_capabilities(),
-        mp_nvim_lsp.default_capabilities() or {},
+        require("cmp_nvim_lsp").default_capabilities() or {},
         opts.capabilities or {}
       )
 
-      -- util func for lsp's manual setup
+      -- lsp manual setup
       local function setup(server)
         local server_opts = vim.tbl_deep_extend("force", {
           capabilities = vim.deepcopy(capabilities),
-        }, servers[server] or {})
+        }, opts.servers[server] or {})
         if server_opts.enabled == false then
           return
         end
@@ -145,7 +143,7 @@ return {
       local all_mlsp_servers = vim.tbl_keys(require("mason-lspconfig.mappings.server").lspconfig_to_package)
       local ensure_installed = {}
 
-      for server, server_opts in pairs(servers) do
+      for server, server_opts in pairs(opts.servers) do
         if server_opts then
           server_opts = server_opts == true and {} or server_opts
           if server_opts.enabled ~= false then
