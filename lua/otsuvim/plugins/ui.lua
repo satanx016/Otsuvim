@@ -215,7 +215,7 @@ return {
     },
     opts = {
       window = { backdrop = 1 },
-      zen = { options = { showtabline = 0 } },
+      zen = { opts = { showtabline = 0 } },
       auto_zen = true,
       auto_disable_zen = true,
     },
