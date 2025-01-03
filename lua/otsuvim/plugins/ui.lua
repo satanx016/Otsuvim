@@ -192,4 +192,32 @@ return {
       require("which-key").setup(opts)
     end,
   },
+
+  {
+    "folke/twilight.nvim",
+    keys = { { "<leader>ud", "<cmd>Twilight<cr>", desc = "Toggle Twilight" } },
+    config = function()
+      vim.schedule(function() -- fix dimming on transparent bg
+        local hl = vim.api.nvim_get_hl(0, { name = "Twilight" })
+        vim.api.nvim_set_hl(0, "Twilight", { fg = hl.fg })
+      end)
+    end,
+  },
+
+  {
+    "cdmill/focus.nvim",
+    cmd = { "Focus", "Zen", "Narrow" },
+    -- stylua: ignore
+    keys = {
+      { "<leader>uz", "<cmd>Focus<cr>", desc = "Zen Mode" },
+      { "<leader>uz", ":'<,'>Focus<cr>", mode = "v", silent = true, desc = "Zen Mode" },
+      { "<leader>uZ", "<cmd>Zen<cr>", desc = "Toggle UI" },
+    },
+    opts = {
+      window = { backdrop = 1 },
+      zen = { options = { showtabline = 0 } },
+      auto_zen = true,
+      auto_disable_zen = true,
+    },
+  },
 }

@@ -68,7 +68,6 @@ Otsuvim.toggle.option("spell", { name = "spelling" }):map("<leader>us")
 Otsuvim.toggle.option("wrap", { name = "wrap" }):map("<leader>uw")
 Otsuvim.toggle.inlay_hints():map("<leader>uH")
 Otsuvim.toggle.transparency():map("<leader>ut")
-map(n, "<leader>ud", require("otsu-ui.dash").open, "Open dash")
 
 -- comment
 map(n, "<leader>/", "<cmd>normal gcc<CR>", "Comment toggle")
