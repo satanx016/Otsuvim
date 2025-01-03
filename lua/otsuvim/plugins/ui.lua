@@ -213,11 +213,46 @@ return {
       { "<leader>uz", ":'<,'>Focus<cr>", mode = "v", silent = true, desc = "Zen Mode" },
       { "<leader>uZ", "<cmd>Zen<cr>", desc = "Toggle UI" },
     },
-    opts = {
-      window = { backdrop = 1 },
-      zen = { opts = { showtabline = 0 } },
-      auto_zen = true,
-      auto_disable_zen = true,
-    },
+    opts = function()
+      local neovide_saved_opts
+      return {
+        zen = {
+          opts = {
+            showtabline = 0,
+          },
+          diagnostics = true,
+        },
+        auto_zen = true,
+
+        on_open = function()
+          neovide_saved_opts = {}
+          local neovide_opts = {
+            neovide_animation_length = 0,
+            neovide_cursor_animate_command_line = false,
+            neovide_scroll_animation_length = 0,
+            neovide_position_animation_length = 0,
+            neovide_cursor_animation_length = 0,
+            neovide_cursor_vfx_mode = "",
+          }
+
+          for k, v in pairs(neovide_opts) do -- save(prev)/load(new) neovide opts
+            neovide_saved_opts[k] = vim.g[k]
+            vim.g[k] = v
+          end
+
+          vim.cmd([[DisableHLIndent]]) -- Disable HLIndent
+        end,
+
+        on_close = function()
+          for k, v in pairs(neovide_saved_opts) do -- load saved neovide opts
+            vim.g[k] = v
+          end
+
+          -- Enable HLIndent back
+          vim.cmd([[EnableHLIndent]])
+          dofile(vim.g.based_cache .. "hlchunk")
+        end,
+      }
+    end,
   },
 }
