@@ -206,7 +206,6 @@ return {
 
   {
     "cdmill/focus.nvim",
-    commit = "26a61b0",
     cmd = { "Focus", "Zen", "Narrow" },
     -- stylua: ignore
     keys = {
