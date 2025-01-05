@@ -211,7 +211,7 @@ return {
     keys = {
       { "<leader>uz", "<cmd>Focus<cr>", desc = "Zen Mode" },
       { "<leader>uz", ":'<,'>Focus<cr>", mode = "v", silent = true, desc = "Zen Mode" },
-      { "<leader>uZ", "<cmd>Zen<cr>", desc = "Toggle UI" },
+      { "<leader>uu", "<cmd>Zen<cr>", desc = "Toggle UI" },
     },
     opts = function()
       local neovide_saved_opts
