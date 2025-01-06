@@ -33,8 +33,8 @@ return {
           map("n", "<leader>ghu", gs.undo_stage_hunk, "Undo Stage hunk")
           map("n", "<leader>ghS", gs.stage_buffer, "Stage buffer")
           map("n", "<leader>ghR", gs.reset_buffer, "Reset buffer")
-          map("n", "<leader>gb", function() gs.blame_line({ full = true }) end, "Blame line")
-          map("n", "<leader>gd", gs.diffthis, "Diff this")
+          map("n", "<leader>ghb", function() gs.blame_line({ full = true }) end, "Blame line")
+          map("n", "<leader>ghd", gs.diffthis, "Diff this")
           -- stylua: ignore end
 
           map({ "o", "x" }, "ah", "<Esc><cmd>Gitsigns select_hunk<CR>", "hunk")
