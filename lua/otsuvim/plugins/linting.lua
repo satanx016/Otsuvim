@@ -25,7 +25,7 @@ return {
           end
           debounce = vim.fn.timer_start(
             200,
-            vim.schedule(function()
+            vim.schedule_wrap(function()
               require("lint").try_lint()
             end)
           )
