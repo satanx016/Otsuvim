@@ -14,6 +14,7 @@ function M.setup(client, buffer)
     { "gk", vim.lsp.buf.signature_help, desc = "Signature help", support = "signatureHelp" },
     { "<leader>cr", vim.lsp.buf.rename, desc = "Rename", support = "rename" },
     { "<leader>ca", vim.lsp.buf.code_action, desc = "Code action", support = "codeAction" },
+    { "<leader>cA", Otsuvim.lsp.action.source, desc = "Source actions", support = "codeAction" },
     { "<leader>cc", vim.lsp.codelens.run, desc = "Codelens run", support = "codeLens" },
     { "<leader>cC", vim.lsp.codelens.refresh, desc = "Codelens refresh", support = "codeLens" },
     { "<leader>cd", vim.diagnostic.open_float, desc = "Line diagnostics" },
