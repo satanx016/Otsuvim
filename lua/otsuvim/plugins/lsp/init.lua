@@ -46,11 +46,13 @@ return {
     end,
   },
 
-  { "williamboman/mason-lspconfig.nvim" },
-
   {
     "neovim/nvim-lspconfig",
     event = "LazyFile",
+    dependencies = {
+      "mason.nvim",
+      { "williamboman/mason-lspconfig.nvim", config = function() end },
+    },
     opts = function()
       return {
         diagnostics = {
