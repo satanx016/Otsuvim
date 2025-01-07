@@ -136,6 +136,10 @@ function M.check_cache_methods(client, buffer)
   end
 end
 
+function M.supports_method(client, method)
+  return client.supports_method(method:find("/") and method or "textDocument/" .. method)
+end
+
 M.action = setmetatable({}, {
   __index = function(_, action)
     return function()

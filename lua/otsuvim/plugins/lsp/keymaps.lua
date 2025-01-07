@@ -23,14 +23,10 @@ function M.setup(client, buffer)
   vim.list_extend(M.keys, client.config.keys or {})
 
   for _, key in pairs(M.keys) do
-    if not key.support or M.support(client, key.support) then
+    if not key.support or Otsuvim.lsp.supports_method(client, key.support) then
       vim.keymap.set(key.mode or "n", key[1], key[2], { buffer = buffer, desc = key.desc })
     end
   end
-end
-
-function M.support(client, method)
-  return client.supports_method(method:find("/") and method or "textDocument/" .. method)
 end
 
 return M
