@@ -4,6 +4,7 @@ return {
     cmd = "Mason",
     keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
     build = ":MasonUpdate",
+    opts_extend = { "ensure_installed" },
     opts = {
       ensure_installed = {
         "bash-language-server",
@@ -35,10 +36,10 @@ return {
       end)
 
       mr.refresh(function()
-        for _, tool in ipairs(opts.ensure_installed) do
-          local p = mr.get_package(tool)
-          if not p:is_installed() then
-            p:install()
+        for _, package_id in ipairs(opts.ensure_installed) do
+          local package = mr.get_package(package_id)
+          if not package:is_installed() then
+            package:install()
           end
         end
       end)
@@ -161,6 +162,7 @@ return {
       end
 
       require("mason-lspconfig").setup({
+        automatic_installation = false,
         ensure_installed = ensure_installed or {},
         handlers = { setup },
       })
