@@ -1,6 +1,4 @@
-[selene]
-base = "lua51"
-name = "vim"
+std = "lua51"
 
 [vim]
 any = true
