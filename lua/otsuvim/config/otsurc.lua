@@ -1,18 +1,5 @@
 local M = {}
 
--- Reload Otsuvim to load plugins{} changes
-M.plugins = {
-  extras = {
-    util = {
-      fcitx = true,
-    },
-
-    vanity = {
-      neocord = false,
-    },
-  },
-}
-
 M.based = {
   integrations = {},
   changed_themes = {},
@@ -84,6 +71,14 @@ M.ui = {
       { icon = " ", key = "l", txt = "Last project", action = "NeovimProjectLoadRecent" },
       { icon = " ", key = "q", txt = "Quit", action = "qa!" },
     },
+  },
+}
+
+-- Reload Otsuvim to load plugins{} changes
+M.plugins = {
+  extras = {
+    util = { fcitx = true },
+    vanity = { neocord = false },
   },
 }
 
