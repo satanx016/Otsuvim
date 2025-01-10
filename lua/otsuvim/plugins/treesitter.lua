@@ -77,6 +77,7 @@ return {
           },
         },
         n_lines = 150,
+        silent = true,
       }
     end,
     config = function(_, opts)
