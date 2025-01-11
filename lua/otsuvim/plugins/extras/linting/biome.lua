@@ -8,7 +8,7 @@ return {
     "mfussenegger/nvim-lint",
     opts = {
       linters_by_ft = {
-        css = { "biomejss" },
+        css = { "biomejs" },
         javascript = { "biomejs" },
         javascriptreact = { "biomejs" },
         json = { "biomejs" },
