@@ -31,6 +31,16 @@ return {
               },
             },
           },
+          keys = {
+            {
+              "<leader>co",
+              function()
+                Otsuvim.lsp.action["source.organizeImports"]()
+                Otsuvim.lsp.action["source.addMissingImports.ts"]()
+              end,
+              desc = "Organize imports",
+            },
+          },
         },
       },
     },
