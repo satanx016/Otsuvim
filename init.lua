@@ -1,7 +1,3 @@
--- HACK: Temp fix (delete on rebuild:release-0.10)
--- https://github.com/neovim/neovim/pull/31676
-vim.hl = vim.highlight
-
 vim.g.based_cache = vim.fn.stdpath("data") .. "/otsu-ui/based/"
 
 _G.Otsuvim = require("otsuvim.util")
