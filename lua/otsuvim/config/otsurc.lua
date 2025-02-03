@@ -78,7 +78,7 @@ M.ui = {
 M.plugins = {
   extras = {
     util = { fcitx = true },
-    vanity = { neocord = false },
+    vanity = { cord = false },
   },
 }
 
