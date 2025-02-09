@@ -32,9 +32,6 @@ return {
         },
         plugins = {
           "cord.plugins.diagnostics",
-          ["cord.plugins.diagnostics"] = {
-            severity = { min = vim.diagnostic.severity.WARN },
-          },
         },
       }
     end,
