@@ -63,6 +63,7 @@ return {
             source = "if_many",
             prefix = "●",
           },
+          virtual_lines = true,
           severity_sort = true,
           signs = {
             text = {
