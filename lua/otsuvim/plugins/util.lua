@@ -29,6 +29,11 @@ return {
         session_manager_opts = {
           autosave_ignore_filetypes = { "dash", "help" },
         },
+        picker = {
+          preview = {
+            git_status = false,
+          },
+        },
       }
     end,
   },
