@@ -7,5 +7,5 @@ vim.g.neovide_floating_corner_radius = 0.3
 
 vim.g.neovide_opacity = 0.9
 vim.g.neovide_cursor_vfx_mode = "pixiedust"
-vim.g.neovide_cursor_vfx_particle_density = 32.0
-vim.g.neovide_cursor_vfx_particle_lifetime = 3.5
+vim.g.neovide_cursor_vfx_particle_density = 3.5
+vim.g.neovide_cursor_vfx_particle_lifetime = 1.5
