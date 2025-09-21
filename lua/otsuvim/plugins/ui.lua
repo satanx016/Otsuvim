@@ -11,14 +11,14 @@ return {
   },
 
   {
-    "satanx016/based",
+    "zerachiel016/based",
     build = function()
       require("based").load_all_highlights()
     end,
   },
 
   {
-    "satanx016/otsu-ui",
+    "zerachiel016/otsu-ui",
     event = "UIEnter",
     opts = function()
       dofile(vim.g.based_cache .. "defaults")
