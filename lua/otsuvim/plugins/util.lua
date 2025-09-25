@@ -19,7 +19,6 @@ return {
           "~/projects/*",
 
           "~/dotfiles",
-          "~/dotfiles/*",
           "~/.config/*",
 
           "~/notes",
