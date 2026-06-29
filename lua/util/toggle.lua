@@ -1,4 +1,4 @@
--- this module should create toggles for options (currently)
+-- NOTE: this module should create toggles for options (currently)
 
 local Toggle = {}
 Toggle.__index = Toggle
