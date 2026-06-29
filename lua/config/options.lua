@@ -8,9 +8,10 @@ g.maplocalleader = ","
 opt.clipboard = "unnamedplus" -- Synchronize with system clipboard
 
 opt.wrap = false
-opt.swapfile = false
 opt.scrolloff = 999 -- vertitcal cursor centering
 opt.whichwrap:append("<>[]hl") -- switch to previous/next line when cursor reaches end/beginning of line
+opt.laststatus = 3
+opt.cmdheight = 0
 opt.splitbelow = true
 opt.splitright = true
 
@@ -21,9 +22,7 @@ opt.expandtab = true
 opt.relativenumber = true
 opt.number = true
 
-vim.o.laststatus = 3
-vim.o.cmdheight = 0
-
+opt.swapfile = false
 opt.timeoutlen = 100
 
 -- opt.winborder = "rounded"
