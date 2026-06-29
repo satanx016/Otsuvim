@@ -7,6 +7,7 @@ g.maplocalleader = ","
 -- opt.shortmess:append("I") -- disable nvim intro
 opt.clipboard = "unnamedplus" -- Synchronize with system clipboard
 
+opt.wrap = false
 opt.swapfile = false
 opt.scrolloff = 999 -- vertitcal cursor centering
 opt.whichwrap:append("<>[]hl") -- switch to previous/next line when cursor reaches end/beginning of line
