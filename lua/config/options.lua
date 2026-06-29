@@ -28,8 +28,8 @@ opt.timeoutlen = 100
 -- opt.winborder = "rounded"
 
 -- if vim.g.neovide then
-	-- require("neovide")
+-- require("neovide")
 -- end
 
 -- Add mason binaries to PATH manually since it's lazy-loaded
-vim.env.PATH = vim.fn.stdpath('data') .. '/mason/bin:' .. vim.env.PATH
+vim.env.PATH = vim.fn.stdpath("data") .. "/mason/bin:" .. vim.env.PATH

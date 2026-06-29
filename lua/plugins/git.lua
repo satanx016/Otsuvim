@@ -1,22 +1,22 @@
 return {
-    {
-        "lewis6991/gitsigns.nvim",
-        event = "LazyFile",
-        opts = function()
-            return {
-                signs = {
-                    delete = { text = "" },
-                    topdelete = { text = "" },
-                    changedelete = { text = "󱕖" },
-                },
-                signs_staged_enable = false,
+	{
+		"lewis6991/gitsigns.nvim",
+		event = "LazyFile",
+		opts = function()
+			return {
+				signs = {
+					delete = { text = "" },
+					topdelete = { text = "" },
+					changedelete = { text = "󱕖" },
+				},
+				signs_staged_enable = false,
 
-                on_attach = function(bufnr)
-                    local gs = package.loaded.gitsigns
+				on_attach = function(bufnr)
+					local gs = package.loaded.gitsigns
 
-                    local map = function(mode, lhs, rhs, desc)
-                        vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, desc = desc })
-                    end
+					local map = function(mode, lhs, rhs, desc)
+						vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, desc = desc })
+					end
 
                     -- stylua: ignore start
                     map("n", "[H", function() gs.nav_hunk("first") end, "First hunk")
@@ -34,18 +34,18 @@ return {
                     map("n", "<leader>ghb", function() gs.blame_line({ full = true }) end, "Blame line")
                     map("n", "<leader>ghB", function() gs.blame() end, "Blame buffer")
                     map("n", "<leader>ghd", function() gs.diffthis(nil, { split = "belowright"}) end, "Diff this")
-                    -- stylua: ignore end
+					-- stylua: ignore end
 
-                    map({ "o", "x" }, "ah", "<Esc><cmd>Gitsigns select_hunk<CR>", "hunk")
-                end,
-            }
-        end,
-    },
+					map({ "o", "x" }, "ah", "<Esc><cmd>Gitsigns select_hunk<CR>", "hunk")
+				end,
+			}
+		end,
+	},
 
-    {
-        "NeogitOrg/neogit",
-        cmd = { "Neogit" },
-        keys = { { "<leader>gg", "<cmd>Neogit<CR>", desc = "Neogit" }},
-        opts = {}
-    },
+	{
+		"NeogitOrg/neogit",
+		cmd = { "Neogit" },
+		keys = { { "<leader>gg", "<cmd>Neogit<CR>", desc = "Neogit" } },
+		opts = {},
+	},
 }

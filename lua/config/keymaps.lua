@@ -1,11 +1,11 @@
 local map = vim.keymap.set
 
 -- lazy
-map('n', "<leader>l", "<Cmd>Lazy<CR>", { desc = "Lazy" })
+map("n", "<leader>l", "<Cmd>Lazy<CR>", { desc = "Lazy" })
 
 -- Remap for dealing with word wrap and adding jumps to the jumplist.
-map('n', 'j', [[(v:count > 1 ? 'm`' . v:count : 'g') . 'j']], { expr = true })
-map('n', 'k', [[(v:count > 1 ? 'm`' . v:count : 'g') . 'k']], { expr = true })
+map("n", "j", [[(v:count > 1 ? 'm`' . v:count : 'g') . 'j']], { expr = true })
+map("n", "k", [[(v:count > 1 ? 'm`' . v:count : 'g') . 'k']], { expr = true })
 
 -- qol or fixes
 map("i", "kj", "<ESC>")

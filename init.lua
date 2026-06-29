@@ -11,4 +11,4 @@ vim.schedule(function()
 end)
 
 -- Enable the new experimental command-line features.
-require('vim._core.ui2').enable {}
+require("vim._core.ui2").enable({})
