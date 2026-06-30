@@ -41,6 +41,9 @@ return {
       { "<leader>sg", "<cmd>FzfLua grep_visual<cr>", mode = "x", desc = "Grep" },
       { "<leader>sh", "<cmd>FzfLua help_tags<cr>", desc = "Help" },
       { "<leader>sk", "<cmd>FzfLua keymaps<CR>", desc = "Keymaps" },
+      --git
+      { "<leader>gfc", "<cmd>FzfLua git_commits<CR>", desc = "Commits" },
+      { "<leader>gfC", "<cmd>FzfLua git_bcommits<CR>", desc = "Commits (%)" },
       -- other
       { "z=", "<cmd>FzfLua spell_suggest<cr>", desc = "Spelling Suggestions" },
     },
