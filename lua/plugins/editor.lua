@@ -1,13 +1,15 @@
 return {
   {
     "stevearc/oil.nvim",
-    keys = { {
-      "<leader>-",
-      function()
-        require("oil").toggle_float()
-      end,
-      desc = "Oil",
-    } },
+    keys = {
+      {
+        "<leader>-",
+        function()
+          require("oil").toggle_float()
+        end,
+        desc = "Oil",
+      },
+    },
     opts = {
       keymaps = {
         ["q"] = "actions.close",
@@ -72,28 +74,12 @@ return {
     event = "LazyFile",
     dependencies = { "nvim-lua/plenary.nvim" },
     keys = {
-      {
-        "]t",
-        function()
-          require("todo-comments").jump_next()
-        end,
-        desc = "Next todo",
-      },
-      {
-        "[t",
-        function()
-          require("todo-comments").jump_prev()
-        end,
-        desc = "Previous todo",
-      },
+      -- stylua: ignore start
+      { "]t", function() require("todo-comments").jump_next() end, desc = "Next todo" },
+      { "[t", function() require("todo-comments").jump_prev() end, desc = "Previous todo" },
       { "<leader>st", "<cmd>TodoFzfLua<cr>", desc = "Todo (all)" },
-      {
-        "<leader>sT",
-        function()
-          require("todo-comments.fzf").todo({ keywords = { "TODO", "FIX", "FIXME" } })
-        end,
-        desc = "Todo/Fix/Fixme",
-      },
+      { "<leader>sT", function() require("todo-comments.fzf").todo({ keywords = { "TODO", "FIX", "FIXME" } }) end, desc = "Todo/Fix/Fixme" },
+      -- stylua: ignore end
     },
     opts = {},
   },
