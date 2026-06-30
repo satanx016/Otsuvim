@@ -81,6 +81,10 @@ return {
       { "<leader>sT", function() require("todo-comments.fzf").todo({ keywords = { "TODO", "FIX", "FIXME" } }) end, desc = "Todo/Fix/Fixme" },
       -- stylua: ignore end
     },
-    opts = {},
+    opts = {
+      keywords = {
+        FIX = { alt = { "DEBUG" } },
+      },
+    },
   },
 }
