@@ -17,6 +17,7 @@ return {
     opts = {
       delay = 0,
       preset = "helix",
+      plugins = { spelling = { enabled = false } },
       spec = {
         mode = { "n", "v" },
         { "<leader>f", group = "find" },
