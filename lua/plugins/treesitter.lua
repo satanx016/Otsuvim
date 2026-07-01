@@ -21,7 +21,10 @@ return {
       local ai = require("mini.ai")
       return {
         custom_textobjects = {
-          o = ai.gen_spec.treesitter({ a = { "@conditional.outer" }, i = { "@conditional.inner" } }), -- code block
+          o = ai.gen_spec.treesitter({
+            a = { "@conditional.outer", "@loop.outer" },
+            i = { "@conditional.inner", "@loop.inner" },
+          }), -- code block
           a = ai.gen_spec.treesitter({ a = { "@parameter.outer" }, i = { "@parameter.inner" } }), -- argument
           f = ai.gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }), -- function
           c = ai.gen_spec.treesitter({ a = "@class.outer", i = "@class.inner" }), -- class
