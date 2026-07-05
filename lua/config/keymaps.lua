@@ -26,4 +26,8 @@ Util.toggle({ name = "wrap" }):map("<leader>tw")
 
 -- buffer management
 map("n", "<leader>bq", "<cmd>bd<CR>", { desc = "Close" })
-map("n", "<leader>ba", "<cmd>%bd!<CR>", { desc = "Close All" })
+map("n", "<leader>ba", "<cmd>%bd!<CR>", { desc = "Close all" })
+-- tab management
+map("n", "<leader><tab><tab>", "<cmd>tabnew<cr>", { desc = "New" })
+map("n", "<leader><tab>q", "<cmd>tabclose<cr>", { desc = "Close" })
+map("n", "<leader><tab>o", "<cmd>tabonly<cr>", { desc = "Close others" })
