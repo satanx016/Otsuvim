@@ -1,5 +1,12 @@
 return {
   {
+    "zerachiel016/otsu-ui",
+    branch = "rewrite",
+    event = "UIEnter",
+    opts = {},
+  },
+
+  {
     "nvim-mini/mini.icons",
     version = "*",
     opts = {},

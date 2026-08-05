@@ -31,3 +31,9 @@ map("n", "<leader>ba", "<cmd>%bd!<CR>", { desc = "Close all" })
 map("n", "<leader><tab><tab>", "<cmd>tabnew<cr>", { desc = "New" })
 map("n", "<leader><tab>q", "<cmd>tabclose<cr>", { desc = "Close" })
 map("n", "<leader><tab>o", "<cmd>tabonly<cr>", { desc = "Close others" })
+-- terminals
+-- stylua: ignore start
+map({"n", "t"}, "<A-t>", function() require("neo-ui.terminal").toggle({ type = "float" }) end, { desc = "Terminal Toggle float" })
+map({"n", "t"}, "<A-s>", function() require("neo-ui.terminal").toggle({ type = "hsplit" }) end, { desc = "Terminal Toggle hsplit" })
+map({"n", "t"}, "<A-v>", function() require("neo-ui.terminal").toggle({ type = "vsplit" }) end, { desc = "Terminal Toggle vsplit" })
+-- stylua: ignore end
